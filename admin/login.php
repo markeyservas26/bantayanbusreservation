@@ -36,7 +36,7 @@
   <body class="bg-light">
 
   <!-- Just an image -->
-<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm" style="background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(255,209,67,1) 0%, rgba(255,145,83,1) 90% );">
   <div class="container">
     <a class="navbar-brand" href="index.php" style="font-family: 'Times New Roman', serif;">
     
@@ -49,11 +49,11 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav ml-auto">
     <li class="nav-item">
-              <a class="nav-link" href="/bobrs/index.php"> <i class="fa fa-home w3-large "> <b>Home</a></b></i>
+              <a class="nav-link" href="/bantayan/index.php"> <i class="fa fa-home w3-large " style="color: black"> <b>Home</a></b></i>
               </li>
               <li class="nav-item">
-              <a class="nav-link" href="/bobrs/login.php"> <i class="fa fa-user icon w3-large "> <b>User</a></b></i>
-              </li> 
+              <a class="nav-link" href="/bantayan/login.php"> <i class="fa fa-user icon w3-large " style="color: black"> <b>User</a></b></i>
+              </li>
        
     </ul>
   </div>
@@ -62,10 +62,10 @@
     <div style="width: 100vw; height: 80vh" class="bg-light">
         <div class="h-100 d-flex flex-column justify-content-center align-items-center">
             <div class="container">
-                <div class="w-100 m-auto" style="max-width: 500px">
-                    <div class="bg-white rounded shadow p-3">
+                <div class="w-100 m-auto" style="max-width: 500px; ">
+                    <div class="bg-white rounded shadow p-3" style="background: #ADA996; background: -webkit-linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996);  background: linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996);">
                         <div class="text-center mb-5">
-                            <img class="img-fluid" alt="login" src="../assets/images/bobrs3.png" style="width: 300px" />
+                            <img class="img-fluid" alt="login" src="../assets/images/bobrs3.png" style=" width: 300px" />
                             <br>
                             <br>
                             <h4 style="font-family: 'Times New Roman', serif;">BUS ADMINISTRATOR</h4>
@@ -87,17 +87,17 @@
                             <input type="hidden" value="3" name="type">
 
                             <div class="form mb-3">
-                                <input type="email" class="form__input" id="email" name="email" placeholder=" "
+                                <input type="email" class="form__input" id="email" name="email" style="border-color: black" placeholder=" "
                                     required />
-                                <label for="email" class="form__label" style="font-family: 'Times New Roman', serif;">Email address</label>
+                                <label for="email" class="form__label" style="font-family: 'Times New Roman', serif; background-color: #F2F2F2">Email address</label>
                             </div>
                             <div class="mb-3">
                                 <div class="form">
-                                    <input type="password" class="form__input" id="password" name="password"
+                                    <input type="password" class="form__input" id="password" name="password" style="border-color: black"
                                         placeholder=" " required />
-                                    <label for="password" class="form__label" style="font-family: 'Times New Roman', serif; text-size: 20px;">Password</label>
+                                    <label for="password" class="form__label" style="font-family: 'Times New Roman', serif; text-size: 20px; background-color: #F2F2F2">Password</label>
                                 </div>
-                                <a href="reset-password.php" style="font-family: 'Times New Roman', serif; text-size: 20px;">Forgot password?</a>
+                                <a href="reset-password.php" style="font-family: 'Times New Roman', serif; text-size: 20px; background-color: #F2F2F2">Forgot password?</a>
                             </div>
                             <button type="submit" class="btn btn-block btn-primary" style="font-family: 'Times New Roman', serif; text-size: 20px;" >LOGIN</button>
                         </form>

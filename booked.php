@@ -25,15 +25,11 @@
             include('controllers/vessel.php');
             include('controllers/driver.php');
             
-            
-            
-
             $new_route = new Route($db);
             $route = $new_route->getById($schedule["route_id"]);
 
             $new_bus = new Bus($db);
             $bus = $new_bus->getById($schedule["bus_id"]);
-
 
             $new_driver= new Driver($db);
             $driver = $new_driver->getById($schedule["driver_id"]);
@@ -54,10 +50,7 @@
                 </h4>
             </div>
             <div class="p-3">
-                <!-- <p class="d-flex align-items-center justify-content-between mb-0">
-                                        <span class="text-muted d-block">Rate per kilometer :</span>
-                                        <strong class="text-uppercase"><?php echo $bus['rate_km'] ?></strong>
-                                    </p> -->
+                <!-- Schedule details -->
                 <p class="d-flex align-items-center justify-content-between mb-0">
                     <span class="text-muted d-block">Date:</span>
                     <strong><?php echo date_format(date_create($schedule['schedule_date']),'F j, Y') ?></strong>
@@ -66,7 +59,6 @@
                     <span class="text-muted d-block">Status:</span>
                     <strong class="text-uppercase"><?php echo $schedule['status'] ?></strong>
                 </p>
-          
                 <p class="d-flex align-items-center justify-content-between mb-0">
                     <span class="text-muted d-block">Departure Time:</span>
                     <strong><?php echo date_format(date_create($schedule['departure']), 'g:i A') ?></strong>
@@ -77,35 +69,39 @@
                 </p>
                 <hr>
                 <p class="d-flex align-items-center justify-content-between mb-0">
-                                        <span class="text-muted d-block">Bus Driver :</span>
-                                        <strong class="text-uppercase"><?php echo $driver['name'] ?></strong>
-                                    </p>
-                    
+                    <span class="text-muted d-block">Bus Driver :</span>
+                    <strong class="text-uppercase"><?php echo $driver['name'] ?></strong>
+                </p>
                 <p class="d-flex align-items-center justify-content-between mb-0">
-                                        <span class="text-muted d-block">Bus Number :</span>
-                                        <strong class="text-uppercase"><?php echo $bus['bus_num'] ?></strong>
-                                    </p>
-                         <p class="d-flex align-items-center justify-content-between mb-0">
-                                        <span class="text-muted d-block">Bus Type :</span>
-                                        <strong class="text-uppercase"><?php echo $bus['bus_type'] ?></strong>
-                        </p>
-                        
+                    <span class="text-muted d-block">Bus Number :</span>
+                    <strong class="text-uppercase"><?php echo $bus['bus_num'] ?></strong>
+                </p>
+                <p class="d-flex align-items-center justify-content-between mb-0">
+                    <span class="text-muted d-block">Bus Type :</span>
+                    <strong class="text-uppercase"><?php echo $bus['bus_type'] ?></strong>
+                </p>
                 <p class="d-flex align-items-center justify-content-between mb-0">
                     <span class="text-muted d-block">Fare:</span>
                     <strong><?php echo $schedule['fare'] ?></strong>
                 </p>
-               
                 
-                 
-
-              <!--  <p class="d-flex align-items-center justify-content-between mb-0">
-                    <span class="text-muted d-block">Email:</span>
-                    <strong>''</strong>
-                </p>
-                <p class="d-flex align-items-center justify-content-between mb-0">
-                    <span class="text-muted d-block">Address:</span>
-                    <strong>''</strong>
-                </p> -->
+                <hr>
+                
+                <!-- Discount selection and file upload -->
+                <div class="form-group">
+                    <label for="discountType">Discount:</label>
+                    <select id="discountType" class="form-control">
+                        <option value="">None</option>
+                        <option value="student">Student</option>
+                        <option value="pwd">Person with Disability (PWD)</option>
+                        <option value="senior">Senior Citizen</option>
+                    </select>
+                </div>
+                <div class="form-group" id="uploadIdSection" style="display: none;">
+                    <label for="uploadId">Upload ID:</label>
+                    <input type="file" id="uploadId" class="form-control">
+                </div>
+                
                 <hr />
 
                 <div>
@@ -129,35 +125,32 @@
 
                     <div class="bg-dark text-white text-center">Front</div>
                     <div class="py-0">
-                    <table class="table table-borderless">
-                        <tbody>
-                        <?php
-                            $seat_row_num = 0;
+                        <table class="table table-borderless">
+                            <tbody>
+                                <?php
+                                    $seat_row_num = 0;
+                                    for ($i = 1; $i <= 10; $i++) {
+                                        echo '<tr>';
+                                        for ($x = 1; $x <= 5; $x++) {
+                                            if($x == 3){
+                                                echo '<td>&nbsp;</td>';
+                                            }else{
+                                                $seat_row_num++;
+                                                $new_book = new Book($db);
+                                                $book = $new_book->checkSeat($schedule["id"], $seat_row_num);
 
-                            for ($i = 1; $i <= 10; $i++)
-                            {
-                                echo '<tr>';
-                                for ($x = 1; $x <= 5; $x++) {
-                                    if($x == 3){
-                                        echo '<td>&nbsp;</td>';
-                                    }else{
-                                        $seat_row_num++;
-                                        
-                                        $new_book = new Book($db);
-                                        $book = $new_book->checkSeat($schedule["id"], $seat_row_num);
-
-                                        if(empty($book["id"])){
-                                            echo '<td><button data-seat="'.$seat_row_num.'" class="btn-seat btn btn-sm btn-block btn-outline-dark">'.$seat_row_num.'</button></td>';
-                                        }else{
-                                            echo '<td><button class="btn btn-sm btn-block btn-primary" disabled>'.$seat_row_num.'</button></td>';
+                                                if(empty($book["id"])){
+                                                    echo '<td><button data-seat="'.$seat_row_num.'" class="btn-seat btn btn-sm btn-block btn-outline-dark">'.$seat_row_num.'</button></td>';
+                                                }else{
+                                                    echo '<td><button class="btn btn-sm btn-block btn-primary" disabled>'.$seat_row_num.'</button></td>';
+                                                }
+                                            }
                                         }
+                                        echo '</tr>';
                                     }
-                                }
-                                echo '</tr>';
-                            }
-                        ?>
-                        </tbody>
-                    </table>
+                                ?>
+                            </tbody>
+                        </table>
                     </div>
                     <div class="bg-dark text-white text-center">Back</div>
                 </div>
@@ -177,9 +170,9 @@
 <?php include('includes/scripts.php')?>
 
 <script>
-    const from ='<?php echo $location_from["location_name"] ?>';
-    const to ='<?php echo $location_to["location_name"] ?>';
-    const routeName = `${from.slice(0, 3)}-${to.slice(0, 3)}`
+    const from = '<?php echo $location_from["location_name"] ?>';
+    const to = '<?php echo $location_to["location_name"] ?>';
+    const routeName = `${from.slice(0, 3)}-${to.slice(0, 3)}`;
 
     const isVerified = '<?php echo isset($_SESSION["isVerified"]) && !empty($_SESSION["isVerified"]) ? $_SESSION["isVerified"] : false ?>';
     const schedule_id = '<?php echo isset($_GET['schedule_id']) && !empty($_GET['schedule_id']) ? $_GET['schedule_id'] : false ;?>';
@@ -188,96 +181,90 @@
     const fare = '<?php echo $fare ;?>';
     let totalFare = 0;
     let seats = [];
-    const status = '<?php echo $schedule['status'] ?>'
+    let discount = 0;
+    const status = '<?php echo $schedule['status'] ?>';
 
-    $( ".btn-seat" ).click(function() {
+    $("#discountType").change(function() {
+        const discountType = $(this).val();
+        if (discountType) {
+            discount = 0.20;
+            $("#uploadIdSection").show();
+        } else {
+            discount = 0;
+            $("#uploadIdSection").hide();
+        }
+        handleTotal();
+    });
+
+    $(".btn-seat").click(function() {
         const seat_num = $(this).attr("data-seat");
-        if(seats.includes(seat_num)){
-            seats = seats.filter(el => el !== seat_num)
-            $(this).removeClass("btn-dark");
-            $(this).addClass("btn-outline-dark");
+        if (!seats.includes(seat_num)) {
+            seats.push(seat_num);
+            $(this).addClass("btn-dark").removeClass("btn-outline-dark");
+        } else {
+            seats = seats.filter(el => el !== seat_num);
+            $(this).removeClass("btn-dark").addClass("btn-outline-dark");
+        }
+        handleTotal();
+    });
 
-            handleTotal();
-        }else{
-            seats.push(seat_num)
-            $(this).addClass("btn-dark");
-            $(this).removeClass("btn-outline-dark");
+    $("#booked").click(async function() {
+        if (seats.length === 0) {
+            alert('Please select seat number.');
+            return;
+        }
 
-            handleTotal();
+        if (!passenger_id) {
+            alert('Unable to create booking. Please sign in your account.');
+            return;
+        }
+
+        if (!isVerified) {
+            alert('Unable to create booking. Please verify your account.');
+            return;
+        }
+
+        if (status === 'waiting') {
+            let promises = [];
+            for (let i = 0; i < seats.length; i++) {
+                const seat = seats[i];
+
+                let formData = new FormData();
+                formData.append('type', 1);
+                formData.append('schedule_id', schedule_id);
+                formData.append('passenger_id', passenger_id);
+                formData.append('total', totalFare);
+                formData.append('seat_num', seat);
+                formData.append('routeName', routeName);
+                formData.append('passenger_email', passenger_email);
+                formData.append('discount_type', $("#discountType").val());
+                formData.append('upload_id', $("#uploadId")[0].files[0]);
+
+                promises.push(
+                    fetch('controllers/create-booking.php', {
+                        method: 'POST',
+                        body: formData,
+                    })
+                );
+            }
+            try {
+                const values = await Promise.all(promises);
+                console.log('values', values);
+                alert("New booking added successfully!");
+                window.location.href = 'account.php';
+            } catch (error) {
+                alert("Error on booking.");
+                location.reload();
+            }
+        } else {
+            alert('Oops! Unable to book this schedule.');
+            return;
         }
     });
 
-    $( "#booked" ).click(async function() {
-        if(seats.length === 0){
-            alert('Please select seat number.')
-            return
-        }
-
-        if(!passenger_id){
-            alert('Unable to create booking. Please sign in your account.')
-            return
-        }
-
-        if(!isVerified){
-            alert('Unable to create booking. Please verify your account.')
-            return
-        }
-
-        if(status === 'waiting'){
-            let promises = []
-        for (let i = 0; i < seats.length; i++) {
-            const seat = seats[i];
-
-            let formData = new FormData();
-            formData.append('type', 1);
-            formData.append('schedule_id', schedule_id);
-            formData.append('passenger_id', passenger_id);
-            formData.append('total', totalFare);
-            formData.append('seat_num', seat);
-            formData.append('routeName', routeName);
-            formData.append('passenger_email', passenger_email);
-
-            promises.push(
-                fetch('controllers/create-booking.php', {
-                    method: 'POST',
-                    body: formData,
-                })
-            )
-
-            // fetch('controllers/create-booking.php', {
-            //         method: 'POST',
-            //         body: formData,
-            //     }).then(function(response) {
-            //         if (response.ok) {
-            //             alert("New booking added successfully!");
-            //             location.reload();
-            //         }
-            //         return Promise.reject(response);
-            //     }).then(function(data) {
-            //         console.log(data);
-            //     }).catch(function(error) {
-            //         console.warn(error);
-            //     });
-        }
-        try {
-            const values = await Promise.all(promises);
-            console.log('values', values)
-            alert("New booking added successfully!");
-            window.location.href = 'account.php'
-            // location.reload();
-        } catch (error) {
-            alert("Error on booking.");
-            location.reload();
-        }
-        }else{
-            alert('Oops! Unable to book this schedule.')
-            return
-        }
-    });
-
-    function handleTotal(){
-        totalFare = seats.length * +fare;
-        $("#total").text(totalFare);
+    function handleTotal() {
+        totalFare = seats.length * +fare * (1 - discount);
+        $("#total").text(totalFare.toFixed(2));
     }
 </script>
 
