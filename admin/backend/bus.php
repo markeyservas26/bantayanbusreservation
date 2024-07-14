@@ -6,6 +6,7 @@ require_once '../functions/bus.php';
         if($_POST['type']==1){
             $bus_num=$_POST['bus_num'];
             $bus_type=$_POST['bus_type'];
+            $bus_code=$_POST['bus_code'];
 
 
             if(isBusExist($conn, $bus_num, null)){
@@ -13,8 +14,8 @@ require_once '../functions/bus.php';
                 exit();
             }
             
-            $sql = "INSERT INTO `tblbus`( `bus_num`, `bus_type`) 
-            VALUES ('$bus_num', '$bus_num')";
+            $sql = "INSERT INTO `tblbus`( `bus_num`, `bus_type`, `bus_code`) 
+            VALUES ('$bus_num', '$bus_num', '$bus_code' )";
             if (mysqli_query($conn, $sql)) {
                 echo json_encode(array("statusCode"=>200));
             } 
@@ -30,13 +31,14 @@ require_once '../functions/bus.php';
             $id=$_POST['id'];
             $bus_num=$_POST['bus_num'];
             $bus_type=$_POST['bus_type'];
+            $bus_code=$_POST['bus_code'];
 
             // if(isBusExist($conn, $bus_num, $bus_type,  $rate_km, $id)){
             //     echo json_encode(array("statusCode"=>500, "title"=>"Bus number already exist."));
             //     exit();
             // }
             
-            $sql = "UPDATE `tblbus` SET `bus_num`='$bus_num', `bus_type`='$bus_type'  WHERE id=$id";
+            $sql = "UPDATE `tblbus` SET `bus_num`='$bus_num', `bus_type`='$bus_type', `bus_code`='$bus_code' WHERE id=$id";
             if (mysqli_query($conn, $sql)) {
                 echo json_encode(array("statusCode"=>200));
             } 

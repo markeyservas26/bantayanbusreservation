@@ -47,21 +47,21 @@
        </ol>
     </nav>
 
-    <ul class="nav nav-tabs" id="myTab" role="tablist">
+    <ul class="nav nav-tabs" id="myTab" role="tablist" style="background-image: linear-gradient(to left, #BDBBBE 0%, #9D9EA3 100%), radial-gradient(88% 271%, rgba(255, 255, 255, 0.25) 0%, rgba(254, 254, 254, 0.25) 1%, rgba(0, 0, 0, 0.25) 100%), radial-gradient(50% 100%, rgba(255, 255, 255, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%); background-blend-mode: normal, lighten, soft-light;">
         <li class="nav-item">
-            <a class="nav-link active" id="Pending-tab" data-toggle="tab" href="#Pending" role="tab" aria-controls="Pending" aria-selected="true">Pending</a>
+            <a class="nav-link active" id="Pending-tab" data-toggle="tab" href="#Pending" role="tab" aria-controls="Pending" aria-selected="true" style="color: black;">Pending</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" id="Confirmed-tab" data-toggle="tab" href="#Confirmed" role="tab" aria-controls="Confirmed" aria-selected="false">Confirmed</a>
+            <a class="nav-link" id="Confirmed-tab" data-toggle="tab" href="#Confirmed" role="tab" aria-controls="Confirmed" aria-selected="false" style="color: black;">Confirmed</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" id="Cancelled-tab" data-toggle="tab" href="#Cancelled" role="tab" aria-controls="Cancelled" aria-selected="false">Cancelled</a>
+            <a class="nav-link" id="Cancelled-tab" data-toggle="tab" href="#Cancelled" role="tab" aria-controls="Cancelled" aria-selected="false" style="color: black;">Cancelled</a>
         </li>
     </ul>
 
     <div class="tab-content" id="myTabContent">
         <div class="tab-pane fade show active p-3" id="Pending" role="tabpanel" aria-labelledby="Pending-tab">
-            <div class="row">
+            <div class="row" >
                 <?php
                     foreach ($bookings as &$row)
                     {
@@ -76,7 +76,15 @@
                             $passenger = $new_passenger->getById($row["passenger_id"]);
                            
                             ?>
-                                
+                                <div class="col-md-4 mb-3">
+                                    <div class="border bg-light">
+                                        <div id="<?php echo 'print_'.$row['book_id'] ?>">
+                                            <div class="bg-primary text-white p-3">
+                                                
+                                                <h4 class="mb-0">
+                                                    <?php echo $route_from["location_name"].' &#x2192; '.$route_to["location_name"] ?>
+                                                </h4>
+                                            </div>
 
                                             <div class="p-3">
                                             
@@ -104,7 +112,6 @@
                                                     <span class="text-muted">Bus Type :</span>
                                                     <span class="font-weight-bold"><?php echo $bus['bus_type'] ?></span>
                                                 </p>
-                                                
                                                 <p class="mb-0 d-flex align-items-center justify-content-between">
                                                     <span class="text-muted">Seat Number:</span>
                                                     <span class="font-weight-bold"><?php echo $row['seat_num'] ?></span>
@@ -132,7 +139,6 @@
                                         <strong><?php echo $row['fare'] ?></strong>
                                     </p>
                                    
-                                                
                                             </div>
                                         </div>
 
@@ -147,9 +153,9 @@
                 ?>
             </div>
         </div>
-        <div class="tab-pane fade p-3" id="Confirmed" role="tabpanel" aria-labelledby="Confirmed-tab">
+        <div class="tab-pane fade p-3" id="Confirmed" role="tabpanel" aria-labelledby="Confirmed-tab" >
             <div class="row">
-                <?php
+                <?php 
                     foreach ($bookings as &$row)
                     {
                         if($row['payment_status'] == 'confirmed')
@@ -160,7 +166,15 @@
                             $bus = $new_bus->getById($row["bus_id"]);
                             $driver = $new_driver->getById($row["driver_id"]);
                             ?>
-                                
+                                <div class="col-md-4 mb-3">
+                                    <div class="border bg-light" >
+                                        <div id="<?php echo 'print_'.$row['book_id'] ?>">
+                                            <div class="bg-primary text-white p-3">
+                                                
+                                                <h4 class="mb-0">
+                                                    <?php echo $route_from["location_name"].' &#x2192; '.$route_to["location_name"] ?>
+                                                </h4>
+                                            </div>
 
                                             <div class="p-3">
                                                 <p class="mb-0 d-flex align-items-center justify-content-between">
@@ -186,7 +200,6 @@
                                                     <span class="text-muted">Bus Type :</span>
                                                     <span class="font-weight-bold"><?php echo $bus['bus_type'] ?></span>
                                                 </p>
-                                                
                                                 <p class="mb-0 d-flex align-items-center justify-content-between">
                                                     <span class="text-muted">Seat Number:</span>
                                                     <span class="font-weight-bold"><?php echo $row['seat_num'] ?></span>
@@ -214,7 +227,6 @@
                                         <strong><?php echo $row['fare'] ?></strong>
                                     </p>
                                     
-                                    
                                             </div>
                                         </div>
                                     </div>
@@ -236,7 +248,15 @@
                             $route_to = $new_location->getById($row['route_to']);
                             $bus = $new_bus->getById($row["bus_id"]);
                             ?>
-                                
+                                <div class="col-md-4 mb-3">
+                                    <div class="border bg-light">
+                                        <div id="<?php echo 'print_'.$row['book_id'] ?>">
+                                            <div class="bg-primary text-white p-3">
+                                                
+                                                <h4 class="mb-0">
+                                                    <?php echo $route_from["location_name"].' &#x2192; '.$route_to["location_name"] ?>
+                                                </h4>
+                                            </div>
                                             <div class="p-3">
                                                 <p class="mb-0 d-flex align-items-center justify-content-between">
                                                     <span class="text-muted">Booked Date:</span>
@@ -261,7 +281,6 @@
                                                     <span class="text-muted">Bus Type :</span>
                                                     <span class="font-weight-bold"><?php echo $bus['bus_type'] ?></span>
                                                 </p>
-                                                
                                                 <p class="mb-0 d-flex align-items-center justify-content-between">
                                                     <span class="text-muted">Seat Number:</span>
                                                     <span class="font-weight-bold"><?php echo $row['seat_num'] ?></span>

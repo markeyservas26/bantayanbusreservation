@@ -20,10 +20,10 @@
 
 
   </head>
-  <body class="bg-light">
+  <body class="bg-light" >
 
   <!-- Just an image -->
-<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm" style="background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(255,209,67,1) 0%, rgba(255,145,83,1) 90% );">
   <div class="container">
     <a class="navbar-brand" href="index.php" style="font-family: 'Times New Roman', serif;">
       <img src="assets/images/bobrs3.png" style="width: 350px; height: 60px;" alt=""><b>
@@ -40,26 +40,26 @@
         if(isset($_SESSION["userId"]) && !empty($_SESSION["userId"])){
             ?>
             <li class="nav-item">
-                <a class="nav-link" href="account.php"><i class="fa fa-user icon w3-large color:black "><b>  <?php echo $_SESSION["userFname"]?></b></a></i>
+                <a class="nav-link" href="account.php"><i class="fa fa-user icon w3-large color:black " style="color: black; font-weight: bold"><b>  <?php echo $_SESSION["userFname"]?></b></a></i>
               </li>
             <li class="nav-item">
-                <a class="nav-link" href="index.php"><i class="fa fa-search"><b> Find Schedule</b></a></i>
+                <a class="nav-link" href="index.php"><i class="fa fa-search" style="color: black; font-weight: bold"><b> Find Schedule</b></a></i>
               </li>
               
-              <li class="nav-item">
-                <a class="nav-link" href="logout.php"><i class="fa fa-sign-out icon w3-large "><b> Logout</b></a></i>
+              <li class="nav-item" >
+                <a class="nav-link" href="logout.php"><i class="fa fa-sign-out icon w3-large " style="color: black; font-weight: bold"><b> Logout</b></a></i>
               </li>
             <?php
         }else{
             ?>
               <li class="nav-item">
-              <a class="nav-link" href="index.php"> <i class="fa fa-home w3-large "> <b>Home</a></b></i>
+              <a class="nav-link" href="index.php"> <i class="fa fa-home w3-large " style="color: black; font-weight: bold"> <b>Home</a></b></i>
               </li>
               <li class="nav-item">
-              <a class="nav-link" href="register.php"> <i class="fa fa-user icon w3-large "> <b>User</a></b></i>
+              <a class="nav-link" href="register.php"> <i class="fa fa-user icon w3-large " style="color: black; font-weight: bold"> <b>User</a></b></i>
               </li> 
               <li class="nav-item">
-                <a class="nav-link" href="./admin/index.php"> <i class="fa fa-user icon w3-large "><b> Admin</a></b></i>
+                <a class="nav-link" href="./admin/index.php"> <i class="fa fa-user icon w3-large " style="color: black; font-weight: bold"><b> Admin</a></b></i>
               </li>
             <?php
         }

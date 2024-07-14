@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en">
-  <head>
+<head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -11,111 +11,109 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./assets/styles.css" />
-    
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
     <title>Bantayan Online Bus Reservation</title>
-
-
-  </head>
+</head>
+<body>
 <div>
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item active" aria-current="page" style="font-family: 'Times New Roman', serif;" ><b>DASHBOARD</b></li>
+            <li class="breadcrumb-item active" aria-current="page" style="font-family: 'Times New Roman', serif;"><b>DASHBOARD</b></li>
         </ol>
     </nav>
 
     <div class="row">
+        <!-- Total Bookings -->
         <div class="col-6 col-sm-4 col-md-3 mb-3">
-            <div class="bg-white shadow border-top p-3 border-primary rounded h-100">
+            <div class="bg-white shadow border-top p-3 border-primary rounded h-100" style="background-image: linear-gradient(to top, #fddb92 0%, #d1fdff 100%);">
                 <div class="d-flex align-items-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="50px"
-                        viewBox="0 0 24 24" width="50px" fill="#000000">
+                    <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="50px" viewBox="0 0 24 24" width="50px" fill="#000000">
                         <rect fill="none" height="50" width="50" />
-                        <path
-                            d="M17,4H7V3h10V4z M17,21H7v-1h10V21z M17,1H7C5.9,1,5,1.9,5,3v18c0,1.1,0.9,2,2,2h10c1.1,0,2-0.9,2-2V3C19,1.9,18.1,1,17,1 L17,1z M7,6h10v12H7V6z M16,11V9.14C16,8.51,15.55,8,15,8H9C8.45,8,8,8.51,8,9.14l0,1.96c0.55,0,1,0.45,1,1c0,0.55-0.45,1-1,1 l0,1.76C8,15.49,8.45,16,9,16h6c0.55,0,1-0.51,1-1.14V13c-0.55,0-1-0.45-1-1C15,11.45,15.45,11,16,11z M12.5,14.5h-1v-1h1V14.5z M12.5,12.5h-1v-1h1V12.5z M12.5,10.5h-1v-1h1V10.5z" />
+                        <path d="M17,4H7V3h10V4z M17,21H7v-1h10V21z M17,1H7C5.9,1,5,1.9,5,3v18c0,1.1,0.9,2,2,2h10c1.1,0,2-0.9,2-2V3C19,1.9,18.1,1,17,1 L17,1z M7,6h10v12H7V6z M16,11V9.14C16,8.51,15.55,8,15,8H9C8.45,8,8,8.51,8,9.14l0,1.96c0.55,0,1,0.45,1,1c0,0.55-0.45,1-1,1 l0,1.76C8,15.49,8.45,16,9,16h6c0.55,0,1-0.51,1-1.14V13c-0.55,0-1-0.45-1-1C15,11.45,15.45,11,16,11z M12.5,14.5h-1v-1h1V14.5z M12.5,12.5h-1v-1h1V12.5z M12.5,10.5h-1v-1h1V10.5z" />
                     </svg>
                     <div class="text-center w-100">
-                        <p class="mb-0" style="font-family: 'Times New Roman', serif;" ><b>TOTAL BOOKINGS</b></p>
+                        <p class="mb-0" style="font-family: 'Times New Roman', serif;"><b>TOTAL BOOKINGS</b></p>
                         <h1>
                             <?php
-                    $q = mysqli_query($conn,"SELECT * from tblbook");
-                    $num_rows = mysqli_num_rows($q);
-                    echo $num_rows;
-                ?>
+                            $q = mysqli_query($conn,"SELECT * from tblbook");
+                            $num_rows = mysqli_num_rows($q);
+                            echo $num_rows;
+                            ?>
                         </h1>
                     </div>
                 </div>
             </div>
         </div>
+        <!-- Total Schedules -->
         <div class="col-6 col-sm-4 col-md-3 mb-3">
-            <div class="bg-white shadow border-top p-3 border-primary rounded h-100">
+            <div class="bg-white shadow border-top p-3 border-primary rounded h-100" style="background-image: linear-gradient(to top, #fddb92 0%, #d1fdff 100%);">
                 <div class="d-flex align-items-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" height="50px" viewBox="0 0 24 24" width="50px"
-                        fill="#000000">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="50px" viewBox="0 0 24 24" width="50px" fill="#000000">
                         <path d="M0 0h24v24H0V0z" fill="none" />
-                        <path
-                            d="M7 11h2v2H7v-2zm14-5v14c0 1.1-.9 2-2 2H5c-1.11 0-2-.9-2-2l.01-14c0-1.1.88-2 1.99-2h1V2h2v2h8V2h2v2h1c1.1 0 2 .9 2 2zM5 8h14V6H5v2zm14 12V10H5v10h14zm-4-7h2v-2h-2v2zm-4 0h2v-2h-2v2z" />
+                        <path d="M7 11h2v2H7v-2zm14-5v14c0 1.1-.9 2-2 2H5c-1.11 0-2-.9-2-2l.01-14c0-1.1.88-2 1.99-2h1V2h2v2h8V2h2v2h1c1.1 0 2 .9 2 2zM5 8h14V6H5v2zm14 12V10H5v10h14zm-4-7h2v-2h-2v2zm-4 0h2v-2h-2v2z" />
                     </svg>
                     <div class="text-center w-100">
                         <p class="mb-0" style="font-family: 'Times New Roman', serif;"><b>TOTAL SCHEDULES</b></p>
                         <h1>
                             <?php
-                    $q = mysqli_query($conn,"SELECT * from tblschedule");
-                    $num_rows = mysqli_num_rows($q);
-                    echo $num_rows;
-                ?>
+                            $q = mysqli_query($conn,"SELECT * from tblschedule");
+                            $num_rows = mysqli_num_rows($q);
+                            echo $num_rows;
+                            ?>
                         </h1>
                     </div>
                 </div>
             </div>
         </div>
+        <!-- Total Routes -->
         <div class="col-6 col-sm-4 col-md-3 mb-3">
-            <div class="bg-white shadow border-top p-3 border-primary rounded h-100">
+            <div class="bg-white shadow border-top p-3 border-primary rounded h-100" style="background-image: linear-gradient(to top, #fddb92 0%, #d1fdff 100%);">
                 <div class="d-flex align-items-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" height="50px" viewBox="0 0 24 24" width="50px"
-                        fill="#000000">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="50px" viewBox="0 0 24 24" width="50px" fill="#000000">
                         <path d="M0 0h24v24H0V0z" fill="none" />
-                        <path
-                            d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zM7 9c0-2.76 2.24-5 5-5s5 2.24 5 5c0 2.88-2.88 7.19-5 9.88C9.92 16.21 7 11.85 7 9z" />
+                        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zM7 9c0-2.76 2.24-5 5-5s5 2.24 5 5c0 2.88-2.88 7.19-5 9.88C9.92 16.21 7 11.85 7 9z" />
                         <circle cx="12" cy="9" r="2.5" />
                     </svg>
                     <div class="text-center w-100">
                         <p class="mb-0" style="font-family: 'Times New Roman', serif;"><b>TOTAL ROUTES</b></p>
                         <h1>
                             <?php
-                    $q = mysqli_query($conn,"SELECT * from tblroute");
-                    $num_rows = mysqli_num_rows($q);
-                    echo $num_rows;
-                ?>
+                            $q = mysqli_query($conn,"SELECT * from tblroute");
+                            $num_rows = mysqli_num_rows($q);
+                            echo $num_rows;
+                            ?>
                         </h1>
                     </div>
                 </div>
             </div>
         </div>
+        <!-- Total Locations -->
         <div class="col-6 col-sm-4 col-md-3 mb-3">
-            <div class="bg-white shadow border-top p-3 border-primary rounded h-100">
+            <div class="bg-white shadow border-top p-3 border-primary rounded h-100" style="background-image: linear-gradient(to top, #fddb92 0%, #d1fdff 100%);">
                 <div class="d-flex align-items-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" height="50px" viewBox="0 0 24 24" width="50px"
-                        fill="#000000">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="50px" viewBox="0 0 24 24" width="50px" fill="#000000">
                         <path d="M0 0h24v24H0V0z" fill="none" />
-                        <path
-                            d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zM7 9c0-2.76 2.24-5 5-5s5 2.24 5 5c0 2.88-2.88 7.19-5 9.88C9.92 16.21 7 11.85 7 9z" />
+                        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zM7 9c0-2.76 2.24-5 5-5s5 2.24 5 5c0 2.88-2.88 7.19-5 9.88C9.92 16.21 7 11.85 7 9z" />
                         <circle cx="12" cy="9" r="2.5" />
                     </svg>
                     <div class="text-center w-100">
                         <p class="mb-0" style="font-family: 'Times New Roman', serif;"><b>TOTAL LOCATIONS</b></p>
                         <h1>
                             <?php
-                    $q = mysqli_query($conn,"SELECT * from tbllocation");
-                    $num_rows = mysqli_num_rows($q);
-                    echo $num_rows;
-                ?>
+                            $q = mysqli_query($conn,"SELECT * from tbllocation");
+                            $num_rows = mysqli_num_rows($q);
+                            echo $num_rows;
+                            ?>
                         </h1>
                     </div>
                 </div>
             </div>
         </div>
         <div class="col-6 col-sm-4 col-md-3 mb-3">
-            <div class="bg-white shadow border-top p-3 border-primary rounded h-100">
+            <div class="bg-white shadow border-top p-3 border-primary rounded h-100" style="background-image: linear-gradient(to top, #fddb92 0%, #d1fdff 100%);">
                 <div class="d-flex align-items-center">
                     <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 20 20" height="50px"
                         viewBox="0 0 20 20" width="50px" fill="#000000">
@@ -149,7 +147,7 @@
             </div>
         </div>
         <div class="col-6 col-sm-4 col-md-3 mb-3">
-            <div class="bg-white shadow border-top p-3 border-primary rounded h-100">
+            <div class="bg-white shadow border-top p-3 border-primary rounded h-100" style="background-image: linear-gradient(to top, #fddb92 0%, #d1fdff 100%);">
                 <div class="d-flex align-items-center">
                     <svg xmlns="http://www.w3.org/2000/svg" height="50px" viewBox="0 0 24 24" width="50px"
                         fill="#000000">
@@ -170,9 +168,8 @@
                 </div>
             </div>
         </div>
-        
-        <div class="col-6 col-sm-4 col-md-3 mb-3">
-            <div class="bg-white shadow border-top p-3 border-primary rounded h-100">
+         <div class="col-6 col-sm-4 col-md-3 mb-3">
+            <div class="bg-white shadow border-top p-3 border-primary rounded h-100" style="background-image: linear-gradient(to top, #fddb92 0%, #d1fdff 100%);">
                 <div class="d-flex align-items-center">
                     <svg xmlns="http://www.w3.org/2000/svg" height="50px" viewBox="0 0 24 24" width="50px"
                         fill="#000000">
@@ -194,4 +191,66 @@
             </div>
         </div>
     </div>
+
+    <!-- Chart.js canvas -->
+    <div class="row mt-4" style="background-color: #D9AFD9;
+background-image: linear-gradient(0deg, #D9AFD9 0%, #97D9E1 100%);
+">
+        <div class="col-12">
+            <canvas id="myChart"></canvas>
+        </div>
+    </div>
 </div>
+
+<!-- Chart.js script -->
+<script>
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Bookings', 'Schedules', 'Routes', 'Locations', 'Buses', 'Drivers', 'Passengers'],
+            datasets: [{
+                label: 'Total Count',
+                data: [
+                    <?php
+                    echo mysqli_num_rows(mysqli_query($conn, "SELECT * FROM tblbook")) . ',';
+                    echo mysqli_num_rows(mysqli_query($conn, "SELECT * FROM tblschedule")) . ',';
+                    echo mysqli_num_rows(mysqli_query($conn, "SELECT * FROM tblroute")) . ',';
+                    echo mysqli_num_rows(mysqli_query($conn, "SELECT * FROM tbllocation")) . ',';
+                    echo mysqli_num_rows(mysqli_query($conn, "SELECT * FROM tblbus")) . ',';
+                    echo mysqli_num_rows(mysqli_query($conn, "SELECT * FROM tbldriver")) . ',';
+                    echo mysqli_num_rows(mysqli_query($conn, "SELECT * FROM tblpassenger"));
+                    ?>
+                ],
+                backgroundColor: [
+                    '#FA8072',
+                    '#6CB4EE',
+                    '#F0E68C',
+                    '#0CAFFF',
+                    '#E6E6FA',
+                    '#FFAA33',
+                    '#A0A0A0'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(199, 199, 199, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+</script>
+</body>
+</html>

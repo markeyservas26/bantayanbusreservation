@@ -29,7 +29,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./assets/styles.css" />
 
-    <title>Bantayan Online Bus Reservation</title>
+    <title>Bantayan Online Bus Reservation System</title>
 
 
   </head>
@@ -49,10 +49,10 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav ml-auto">
     <li class="nav-item">
-              <a class="nav-link" href="/onlinebusreservationsystem1/index.php"> <i class="fa fa-home w3-large "> <b>Home</a></b></i>
+              <a class="nav-link" href="/bobrs/index.php"> <i class="fa fa-home w3-large "> <b>Home</a></b></i>
               </li>
               <li class="nav-item">
-              <a class="nav-link" href="/onlinebusreservationsystem1/login.php"> <i class="fa fa-user icon w3-large "> <b>User</a></b></i>
+              <a class="nav-link" href="/bobrs/login.php"> <i class="fa fa-user icon w3-large "> <b>User</a></b></i>
               </li> 
        
     </ul>
@@ -65,7 +65,7 @@
                 <div class="w-100 m-auto" style="max-width: 500px">
                     <div class="bg-white rounded shadow p-3">
                         <div class="text-center mb-5">
-                            <img class="img-fluid" alt="login" src="../assets/images/logo5.png" style="width: 300px" />
+                            <img class="img-fluid" alt="login" src="../assets/images/bobrs3.png" style="width: 300px" />
                             <br>
                             <br>
                             <h4 style="font-family: 'Times New Roman', serif;">BUS ADMINISTRATOR</h4>

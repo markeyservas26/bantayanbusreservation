@@ -22,6 +22,7 @@
             include('controllers/location.php');
             include('controllers/book.php');
             include('controllers/bus.php');
+            include('controllers/vessel.php');
             include('controllers/driver.php');
             
             
@@ -53,10 +54,9 @@
                 </h4>
             </div>
             <div class="p-3">
-           
                 <!-- <p class="d-flex align-items-center justify-content-between mb-0">
                                         <span class="text-muted d-block">Rate per kilometer :</span>
-                                        <strong class="text-uppercase"></strong>
+                                        <strong class="text-uppercase"><?php echo $bus['rate_km'] ?></strong>
                                     </p> -->
                 <p class="d-flex align-items-center justify-content-between mb-0">
                     <span class="text-muted d-block">Date:</span>
@@ -94,7 +94,6 @@
                     <span class="text-muted d-block">Fare:</span>
                     <strong><?php echo $schedule['fare'] ?></strong>
                 </p>
-               
                
                 
                  

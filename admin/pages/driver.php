@@ -36,6 +36,8 @@
                     <tr>
                         <th scope="col">#</th>
                         <th scope="col">Fullname</th>
+                        <th scope="col">Contact</th>
+                        <th scope="col">Address</th>
                        <th scope="col">Actions</th>
                     </tr>
                 </thead>
@@ -48,6 +50,8 @@
                     <tr id="<?php echo $row["id"]; ?>">
                         <th scope="row"><?php echo $i; ?></th>
                         <td><?php echo $row["name"]; ?></td>
+                        <td><?php echo $row["phone"]; ?></td>
+                        <td><?php echo $row["address"]; ?></td>
                         <td>
                             <a href="#driverEditModal" class="btn btn-sm btn-warning driverUpdate"
                                 data-id="<?php echo $row["id"]; ?>" data-name="<?php echo $row["name"]; ?>"
@@ -84,6 +88,14 @@
                         <label>Fullname</label>
                         <input type="text" id="name" name="name" class="form-control" required>
                     </div>
+                    <div class="form-group">
+                        <label>Contact</label>
+                        <input type="tel" id="phone" name="phone" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Address</label>
+                        <input type="text" id="address" name="address" class="form-control" required>
+                    </div>
                     </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -112,6 +124,14 @@
                     <div class="form-group">
                         <label>Fullname</label>
                         <input type="text" id="name_u" name="name" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Contact</label>
+                        <input type="tel" id="phone_u" name="phone" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Address</label>
+                        <input type="text" id="address_u" name="address" class="form-control" required>
                     </div>
                     
                 </div>
@@ -175,6 +195,8 @@ $(document).on("click", ".driverUpdate", function(e) {
     var name = $(this).attr("data-name");
     $("#id_u").val(id);
     $("#name_u").val(name);
+    $("#phone_u").val(phone);
+    $("#address_u").val(address);
     });
 
 $("#edit_driver_form").submit(function(event) {

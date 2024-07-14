@@ -20,7 +20,8 @@
     $new_driver= new Driver($db);
 
 
-   
+    include('controllers/vessel.php');
+    $new_vessel = new Vessel($db);
 
 
     include('controllers/passenger.php');
@@ -38,8 +39,8 @@
     }
 ?>
 
-<main>
-    <div class="container mt-5">
+<main >
+    <div class="container mt-5" >
         <?php
             if(isset($_GET['error']) && !empty($_GET['error'])){
                 if($_GET['error'] == 'stmtfailed'){
@@ -58,18 +59,18 @@
             }
         ?>
 
-        <ul class="nav nav-tabs bg-white sm" id="myTab" role="tablist">
-            <li class="nav-item">
+        <ul class="nav nav-tabs bg-white sm" id="myTab" role="tablist" >
+            <li class="nav-item" style="background-image: linear-gradient( 109.6deg,  rgba(254,253,205,1) 11.2%, rgba(163,230,255,1) 91.1% );">
                 <a class="nav-link active" id="booking-tab" data-toggle="tab" href="#booking" role="tab" aria-controls="booking" aria-selected="true"><b>My Booking</a></b>
             </li>
-            <li class="nav-item">
+            <li class="nav-item" style="background-image: linear-gradient( 109.6deg,  rgba(254,253,205,1) 11.2%, rgba(163,230,255,1) 91.1% );">
                 <a class="nav-link" id="settings-tab" data-toggle="tab" href="#settings" role="tab" aria-controls="settings" aria-selected="false"><b>Account Settings</a></b>
             </li>
         </ul>
 
-        <div class="tab-content" id="myTabContent">
-            <div class="tab-pane fade bg-white p-3 border-right border-left border-bottom show active" id="booking" role="tabpanel" aria-labelledby="booking-tab">
-                <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <div class="tab-content" id="myTabContent" >
+            <div class="tab-pane fade bg-white p-3 border-right border-left border-bottom show active" id="booking" role="tabpanel" aria-labelledby="booking-tab" >
+                <ul class="nav nav-tabs" id="myTab" role="tablist" style="background-image: linear-gradient( 109.6deg,  rgba(254,253,205,1) 11.2%, rgba(163,230,255,1) 91.1% );">
                     <li class="nav-item">
                         <a class="nav-link active" id="Pending-tab" data-toggle="tab" href="#Pending" role="tab" aria-controls="Pending" aria-selected="true">Pending</a>
                     </li>
@@ -82,7 +83,7 @@
                 </ul>
 
                 <div class="tab-content" id="myTabContent">
-                    <div class="tab-pane fade show active p-3" id="Pending" role="tabpanel" aria-labelledby="Pending-tab">
+                    <div class="tab-pane fade show active p-3" id="Pending" role="tabpanel" aria-labelledby="Pending-tab" >
                         <div class="row">
                             <?php
                                 foreach ($bookings as &$row)
@@ -95,12 +96,19 @@
                                         $bus = $new_bus->getById($row["bus_id"]);
                                         $driver = $new_driver->getById($row["driver_id"]);
             
-                                       
+                                        $vessel = $new_vessel->getById($row["vessel_id"]);
                                         ?>
-                                            
+                                            <div class="col-md-4 mb-3">
+                                                <div class="border bg-light">
+                                                    <div id="<?php echo 'print_'.$row['book_id'] ?>">
+                                                        <div class="bg-primary p-3">
+                                                            <h4 class="mb-0">
+                                                                <?php echo $route_from["location_name"].' &#x2192; '.$route_to["location_name"] ?>
+                                                            </h4>
+                                                        </div>
                                                        
                                             
-                                            <div class="p-3">
+                                            <div class="p-3" style="background-image: linear-gradient( 109.6deg,  rgba(254,253,205,1) 11.2%, rgba(163,230,255,1) 91.1% );">
                                                 <p class="mb-0 d-flex align-items-center justify-content-between">
                                                     <span class="text-muted">Booked Date:</span>
                                                     <span class="font-weight-bold"><?php echo date_format(date_create($row['book_date']),'F j, Y') ?></span>
@@ -130,7 +138,7 @@
                                                 </p>
                                                 <!-- <p class="mb-0 d-flex align-items-center justify-content-between">
                                                     <span class="text-muted">Rate per kilometer :</span>
-                                                    <span class="font-weight-bold"></span>
+                                                    <span class="font-weight-bold"><?php echo $bus['rate_km'] ?></span>
                                                 </p> -->
                                                 <p class="mb-0 d-flex align-items-center justify-content-between">
                                                     <span class="text-muted">Seat Number:</span>
@@ -186,9 +194,17 @@
                                         $bus = $new_bus->getById($row["bus_id"]);
                                         $driver = $new_driver->getById($row["driver_id"]);
             
+                                        $vessel = $new_vessel->getById($row["vessel_id"]);
                             
                                         ?>
-                                            
+                                            <div class="col-md-4 mb-3">
+                                                <div class="border bg-light">
+                                                    <div id="<?php echo 'print_'.$row['book_id'] ?>">
+                                                        <div class="bg-primary p-3">
+                                                            <h4 class="mb-0">
+                                                                <?php echo $route_from["location_name"].' &#x2192; '.$route_to["location_name"] ?>
+                                                            </h4>
+                                                        </div>
 
                                                         <div class="p-3">
                                                 <p class="mb-0 d-flex align-items-center justify-content-between">
@@ -221,7 +237,7 @@
                                                 <!-- <p class="mb-0 d-flex align-items-center justify-content-between">
                                                     <span class="text-muted">Rate per kilometer
                                                     :</span>
-                                                    <span class="font-weight-bold"></span>
+                                                    <span class="font-weight-bold"><?php echo $bus['rate_km'] ?></span>
                                                 </p> -->
                                                 <p class="mb-0 d-flex align-items-center justify-content-between">
                                                     <span class="text-muted">Seat Number:</span>
@@ -275,7 +291,14 @@
                                         $route_to = $new_location->getById($row['route_to']);
 
                                         ?>
-                                            
+                                            <div class="col-md-4 mb-3">
+                                                <div class="border bg-light">
+                                                    <div id="<?php echo 'print_'.$row['book_id'] ?>">
+                                                        <div class="bg-primary p-3">
+                                                            <h4 class="mb-0">
+                                                                <?php echo $route_from["location_name"].' &#x2192; '.$route_to["location_name"] ?>
+                                                            </h4>
+                                                        </div>
 
                                                         <div class="p-3">
                                                 <p class="mb-0 d-flex align-items-center justify-content-between">
@@ -307,7 +330,7 @@
                                                 </p>
                                                 <!-- <p class="mb-0 d-flex align-items-center justify-content-between">
                                                     <span class="text-muted">Rate per kilometer :</span>
-                                                    <span class="font-weight-bold"></span>
+                                                    <span class="font-weight-bold"><?php echo $bus['rate_km'] ?></span>
                                                 </p> -->
                                                 <p class="mb-0 d-flex align-items-center justify-content-between">
                                                     <span class="text-muted">Seat Number:</span>

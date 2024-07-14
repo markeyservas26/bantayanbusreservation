@@ -50,7 +50,11 @@
                     </div>';
                 }else{
                     ?>
-                        
+                        <div class="mb-3">
+                            <h4 class="mb-0">
+                                <?php echo $location_from["location_name"].' &#x2192; '.$location_to["location_name"] ?>
+                            </h4>
+                        </div>
 
                         <!-- <div class="row p-2 bg-white">
                             <div class="col-md-2"><b>Date</b></div>
@@ -82,6 +86,7 @@
         
                                 $new_driver = new Driver($db);
                                 $driver = $new_driver->getById($row["driver_id"]);
+
 
                                 ?>
                                 <div class="col-md-4" id="<?php echo $row["id"]; ?>">
@@ -130,11 +135,11 @@
                                         <span class="text-muted d-block">Fare:</span>
                                         <strong><?php echo $row['fare'] ?></strong>
                                     </p>
-                                                                       
+                                    
                                     
 
                                     <a href="booked.php?schedule_id=<?php echo $row["id"]; ?>" class="text-uppercase btn btn-sm btn-outline-dark btn-block mt-3">
-                                        select
+                                        Select
                                     </a>
                                 </div>
                             </div>

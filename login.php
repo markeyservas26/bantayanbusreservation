@@ -24,8 +24,8 @@
 
 <main>
     <div class="container mt-5">
-        <div class="w-100 m-auto bg-white shadow-sm" style="max-width: 500px">
-            <div class="bg-primary p-3">
+        <div class="w-100 m-auto bg-white shadow-sm" style="max-width: 500px;">
+            <div class="bg-primary p-3" style="background-image: linear-gradient( 109.6deg,  rgba(254,253,205,1) 11.2%, rgba(163,230,255,1) 91.1% );">
                 <h1 class="text-center">Login</h1>
             </div>
 
@@ -63,7 +63,14 @@
                     </div>
                     <div class="form-group">
                         <label for="password">Password</label>
-                        <input type="password" class="form-control" id="password" name="password" required />
+                        <div class="input-group">
+                            <input type="password" class="form-control" id="password" name="password" required />
+                            <div class="input-group-append">
+                                <span class="input-group-text" id="toggle-password">
+                                    <i class="fa fa-eye" aria-hidden="true"></i>
+                                </span>
+                            </div>
+                        </div>
                         <a href="forget-password.php">Forgot password?</a>
                     </div>
                     <button type="submit" class="btn btn-block btn-dark" name="sign-in-submit">Login</button>
@@ -80,3 +87,21 @@
 
 <?php include('includes/scripts.php')?>
 <?php include('includes/layout-footer.php')?>
+
+<script>
+    document.getElementById('toggle-password').addEventListener('click', function (e) {
+        var password = document.getElementById('password');
+        var icon = e.target;
+        if (password.type === 'password') {
+            password.type = 'text';
+            icon.classList.remove('fa-eye');
+            icon.classList.add('fa-eye-slash');
+        } else {
+            password.type = 'password';
+            icon.classList.remove('fa-eye-slash');
+            icon.classList.add('fa-eye');
+        }
+    });
+</script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">

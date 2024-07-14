@@ -19,14 +19,13 @@
 <?php include('includes/scripts.php')?>
 <main>
    
-    <div style="background: rgb(255,246,50);
-background: linear-gradient(90deg, rgba(255,246,50,1) 0%, rgba(255,196,50,1) 35%, rgba(207,208,8,1) 100%);" class="d-flex align-items-center justify-content-center p-4">
+    <div class="d-flex align-items-center justify-content-center p-4">
         <?php include("includes/forms/schedule-form.php") ?>
     </div>
 
   <br>
   <br>
-<div id="carouselExampleIndicators" class="carousel slide carousel-fade"   style="color: black data-ride="carousel">
+<div id="carouselExampleIndicators" class="carousel slide carousel-fade"   style="color: black data-ride="carousel>
   <ol class="carousel-indicators" >
     <li data-target="#carouselExampleIndicators" style="color: black" data-slide-to="0" class="active"></li>
     <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -44,7 +43,6 @@ background: linear-gradient(90deg, rgba(255,246,50,1) 0%, rgba(255,196,50,1) 35%
     <div class="carousel-item">
       <img src="assets/images/slideshow6.jpg" class="d-block m-auto" style='width:40%; height: 400px;border: 1px solid black;' alt="...">
     </div>
-   
   </div>
   <button class="carousel-control-prev" type="button" data-target="#carouselExampleIndicators" data-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>

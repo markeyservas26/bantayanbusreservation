@@ -35,9 +35,9 @@
                 <thead>
                     <tr>
                         <th scope="col">#</th>
+                        <th scope="col">Bus Number</th>
                         <th scope="col">Bus Name</th>
                         <th scope="col">Bus Type</th>
-                        <!-- <th scope="col">Rate per km</th> -->
                         <th scope="col">Actions</th>
                     </tr>
                 </thead>
@@ -49,9 +49,9 @@
                 ?>
                     <tr id="<?php echo $row["id"]; ?>">
                         <th scope="row"><?php echo $i; ?></th>
+                        <td><?php echo $row["bus_code"]; ?></td>
                         <td><?php echo $row["bus_num"]; ?></td>
                         <td><?php echo $row["bus_type"]; ?></td>
-                        <!-- <td></td> -->
                         
                         <td>
                             <a href="#busEditModal" class="btn btn-sm btn-warning busUpdate"
@@ -88,6 +88,11 @@
                     <input type="hidden" value="1" name="type">
 
                     <div class="form-group">
+                        <label>Bus Number</label>
+                        <input type="number" id="bus_code" name="bus_code" class="form-control" required>
+                    </div>
+
+                    <div class="form-group">
                         <label>Bus Name</label>
                         <input type="text" id="bus_num" name="bus_num" class="form-control" required>
                     </div>
@@ -100,10 +105,6 @@
                         </select>
                         <!-- <input type="text" id="bus_type" name="bus_type" class="form-control" required> -->
                     </div>
-                    <!-- <div class="form-group">
-                        <label>Rate per km</label>
-                        <input type="text" id="rate_km" name="rate_km" class="form-control" required>
-                    </div> -->
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -130,6 +131,11 @@
                     <input type="hidden" id="id_u" name="id" class="form-control" required>
 
                     <div class="form-group">
+                        <label>Bus Number</label>
+                        <input type="number" id="bus_code_u" name="bus_code" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
                         <label>Bus Name</label>
                         <input type="text" id="bus_num_u" name="bus_num" class="form-control" required>
                     </div>
@@ -142,10 +148,6 @@
                         <!-- <input type="text" id="bus_type_u" name="bus_type" class="form-control" required> -->
                     </div>
                     
-                    <!-- <div class="form-group">
-                        <label>Rate per km</label>
-                        <input type="text" id="rate_km_u" name="rate_km" class="form-control" required>
-                    </div> -->
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -207,6 +209,7 @@ $(document).on("click", ".busUpdate", function(e) {
     var bus_num = $(this).attr("data-bus_num");
     var bus_type = $(this).attr("data-bus_type");
        $("#id_u").val(id);
+       $("#bus_code_u").val(bus_code);
     $("#bus_num_u").val(bus_num);
     $("#bus_type_u").val(bus_type);
   

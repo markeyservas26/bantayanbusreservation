@@ -7,7 +7,7 @@
             $route_to=$_POST['route_to'];
             
             $sql = "INSERT INTO `tblroute`( `route_from`, `route_to`) 
-            VALUES ('$route_from', '$route_to')";
+            VALUES ('$route_from', '$route_to', '$distance')";
             if (mysqli_query($conn, $sql)) {
                 echo json_encode(array("statusCode"=>200));
             } 

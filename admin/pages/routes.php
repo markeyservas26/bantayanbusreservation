@@ -65,7 +65,9 @@ $locations = $new_location->getAll();
                         <td><?php echo $location_to["location_name"]; ?></td>
                         <td>
                             <a href="#routeEditModal" class="btn btn-sm btn-warning routeUpdate"
-                                data-id="<?php echo $row["id"]; ?>" data-route_from="<?php echo $row["route_from"]; ?>"
+                                data-id="<?php echo $row["id"]; ?>" 
+                                data-route_from="<?php echo $row["route_from"]; ?>"
+                                data-route_to="<?php echo $row["route_to"]; ?>" 
                                 data-toggle="modal">Edit</a>
                             <a href="#routeDeleteModal" class="btn btn-sm btn-danger routeDelete"
                                 data-id="<?php echo $row["id"]; ?>" data-toggle="modal">Delete</a>
@@ -117,7 +119,6 @@ $locations = $new_location->getAll();
                             ?>
                         </select>
                     </div>
-                    
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -225,6 +226,7 @@ $(document).on("click", ".routeUpdate", function(e) {
     var id = $(this).attr("data-id");
     var route_from = $(this).attr("data-route_from");
     var route_to = $(this).attr("data-route_to");
+    var distance = $(this).attr("data-distance");
     $("#id_u").val(id);
     $("#route_from_u").val(route_from);
     $("#route_to_u").val(route_to);

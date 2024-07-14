@@ -24,6 +24,7 @@
     include('../controllers/bus.php');
     include('../controllers/driver.php');
     include('../controllers/conductor.php');
+    include('../controllers/vessel.php');
 
     $database = new Database();
     $db = $database->getConnection();
@@ -48,18 +49,18 @@
         </button>
     </div>
 
-    <ul class="nav nav-tabs" id="myTab" role="tablist">
+    <ul class="nav nav-tabs" id="myTab" role="tablist"  style="background-image: linear-gradient(to left, #BDBBBE 0%, #9D9EA3 100%), radial-gradient(88% 271%, rgba(255, 255, 255, 0.25) 0%, rgba(254, 254, 254, 0.25) 1%, rgba(0, 0, 0, 0.25) 100%), radial-gradient(50% 100%, rgba(255, 255, 255, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%); background-blend-mode: normal, lighten, soft-light;">
         <li class="nav-item" role="presentation">
-            <a class="nav-link active" id="waiting-tab" data-toggle="tab" href="#waiting" role="tab" aria-controls="waiting" aria-selected="true">Waiting</a>
+            <a class="nav-link active" id="waiting-tab" data-toggle="tab" href="#waiting" role="tab" aria-controls="waiting" aria-selected="true" style="color: black;">Waiting</a>
         </li>
         <li class="nav-item" role="presentation">
-            <a class="nav-link" id="cancelled-tab" data-toggle="tab" href="#cancelled" role="tab" aria-controls="cancelled" aria-selected="false">Cancelled</a>
+            <a class="nav-link" id="cancelled-tab" data-toggle="tab" href="#cancelled" role="tab" aria-controls="cancelled" aria-selected="false" style="color: black;">Cancelled</a>
         </li>
         <li class="nav-item" role="presentation">
-            <a class="nav-link" id="in-transit-tab" data-toggle="tab" href="#in-transit" role="tab" aria-controls="in-transit" aria-selected="false">In-transit</a>
+            <a class="nav-link" id="in-transit-tab" data-toggle="tab" href="#in-transit" role="tab" aria-controls="in-transit" aria-selected="false" style="color: black;">In-transit</a>
         </li>
         <li class="nav-item" role="presentation">
-            <a class="nav-link" id="arrived-tab" data-toggle="tab" href="#arrived" role="tab" aria-controls="arrived" aria-selected="false">Arrived</a>
+            <a class="nav-link" id="arrived-tab" data-toggle="tab" href="#arrived" role="tab" aria-controls="arrived" aria-selected="false" style="color: black;">Arrived</a>
         </li>
     </ul>
 
@@ -88,6 +89,7 @@
                         // $new_conductor = new Conductor($db);
                         // $conductor = $new_conductor->getById($row["conductor_id"]);
 
+                        
 
                         if($row["status"] === 'waiting'){
                             $status = '<span class="badge badge-primary">WAITING</span>';
@@ -150,16 +152,16 @@
                                     
 
                                     <div class="mt-3">
-                                        <a href="#scheduleEditModal" class="btn btn-sm btn-warning scheduleUpdate"
-                                        data-id="<?php echo $row["id"]; ?>" 
-                                        data-route_id="<?php echo $row["route_id"]; ?>"
-                                        data-schedule_date="<?php echo $row["schedule_date"]; ?>" 
-                                        data-departure="<?php echo $row["departure"]; ?>"
-                                        data-arrival="<?php echo $row["arrival"]; ?>" 
-                                        data-bus_id="<?php echo $row["bus_id"]; ?>" 
-                                        data-driver_id="<?php echo $row["driver_id"]; ?>" 
-                                        data-fare="<?php echo $row["fare"]; ?>" 
-                                        data-toggle="modal">Edit</a>
+    <a href="#scheduleEditModal" class="btn btn-sm btn-warning scheduleUpdate"
+    data-id="<?php echo $row["id"]; ?>" 
+    data-route_id="<?php echo $row["route_id"]; ?>"
+    data-schedule_date="<?php echo $row["schedule_date"]; ?>" 
+    data-departure="<?php echo $row["departure"]; ?>"
+    data-arrival="<?php echo $row["arrival"]; ?>" 
+    data-bus_id="<?php echo $row["bus_id"]; ?>" 
+    data-driver_id="<?php echo $row["driver_id"]; ?>" 
+    data-fare="<?php echo $row["fare"]; ?>" 
+    data-toggle="modal">Edit</a>
 
                                         <a href="#scheduleDeleteModal" class="btn btn-sm btn-danger scheduleDelete"
                                         data-id="<?php echo $row["id"]; ?>" data-toggle="modal">Delete</a>
@@ -200,6 +202,7 @@
                             // $new_conductor = new Conductor($db);
                             // $conductor = $new_conductor->getById($row["conductor_id"]);
 
+                            
 
                             if($row["status"] === 'waiting'){
                                 $status = '<span class="badge badge-primary">WAITING</span>';
@@ -248,12 +251,11 @@
                                         <span class="text-muted d-block">Bus Type:</span>
                                         <strong class="text-uppercase"><?php echo $bus['bus_type'] ?></strong>
                                     </p>
-                                    
+                                                                      
                                     <p class="d-flex align-items-center justify-content-between mb-0">
                                         <span class="text-muted d-block">Fare:</span>
                                         <strong><?php echo $row['fare'] ?></strong>
-                                    </p>
-                                    
+                                    </p>                                    
                                     <!-- <p class="d-flex align-items-center justify-content-between mb-0">
                                         <span class="text-muted d-block">Conductor Name:</span>
                                         <strong class="text-uppercase"><?php echo $conductor['name'] ?></strong>
@@ -262,15 +264,15 @@
 
                                         <div class="mt-3">
                                         <a href="#scheduleEditModal" class="btn btn-sm btn-warning scheduleUpdate"
-                                        data-id="<?php echo $row["id"]; ?>" 
-                                        data-route_id="<?php echo $row["route_id"]; ?>"
-                                        data-schedule_date="<?php echo $row["schedule_date"]; ?>" 
-                                        data-departure="<?php echo $row["departure"]; ?>"
-                                        data-arrival="<?php echo $row["arrival"]; ?>" 
-                                        data-bus_id="<?php echo $row["bus_id"]; ?>" 
-                                        data-driver_id="<?php echo $row["driver_id"]; ?>" 
-                                        data-fare="<?php echo $row["fare"]; ?>" 
-                                        data-toggle="modal">Edit</a>
+    data-id="<?php echo $row["id"]; ?>" 
+    data-route_id="<?php echo $row["route_id"]; ?>"
+    data-schedule_date="<?php echo $row["schedule_date"]; ?>" 
+    data-departure="<?php echo $row["departure"]; ?>"
+    data-arrival="<?php echo $row["arrival"]; ?>" 
+    data-bus_id="<?php echo $row["bus_id"]; ?>" 
+    data-driver_id="<?php echo $row["driver_id"]; ?>" 
+    data-fare="<?php echo $row["fare"]; ?>" 
+    data-toggle="modal">Edit</a>
                                             <a href="#scheduleDeleteModal" class="btn btn-sm btn-danger scheduleDelete"
                                             data-id="<?php echo $row["id"]; ?>" data-toggle="modal">Delete</a>
                                             <div class="btn-group" role="group" aria-label="Basic example">
@@ -310,6 +312,7 @@
                             // $new_conductor = new Conductor($db);
                             // $conductor = $new_conductor->getById($row["conductor_id"]);
 
+                           
 
                             if($row["status"] === 'waiting'){
                                 $status = '<span class="badge badge-primary">WAITING</span>';
@@ -373,15 +376,15 @@
 
                                         <div class="mt-3">
                                         <a href="#scheduleEditModal" class="btn btn-sm btn-warning scheduleUpdate"
-                                        data-id="<?php echo $row["id"]; ?>" 
-                                        data-route_id="<?php echo $row["route_id"]; ?>"
-                                        data-schedule_date="<?php echo $row["schedule_date"]; ?>" 
-                                        data-departure="<?php echo $row["departure"]; ?>"
-                                        data-arrival="<?php echo $row["arrival"]; ?>" 
-                                        data-bus_id="<?php echo $row["bus_id"]; ?>" 
-                                        data-driver_id="<?php echo $row["driver_id"]; ?>" 
-                                        data-fare="<?php echo $row["fare"]; ?>" 
-                                        data-toggle="modal">Edit</a>
+    data-id="<?php echo $row["id"]; ?>" 
+    data-route_id="<?php echo $row["route_id"]; ?>"
+    data-schedule_date="<?php echo $row["schedule_date"]; ?>" 
+    data-departure="<?php echo $row["departure"]; ?>"
+    data-arrival="<?php echo $row["arrival"]; ?>" 
+    data-bus_id="<?php echo $row["bus_id"]; ?>" 
+    data-driver_id="<?php echo $row["driver_id"]; ?>" 
+    data-fare="<?php echo $row["fare"]; ?>" 
+    data-toggle="modal">Edit</a>
                                             <a href="#scheduleDeleteModal" class="btn btn-sm btn-danger scheduleDelete"
                                             data-id="<?php echo $row["id"]; ?>" data-toggle="modal">Delete</a>
                                             <div class="btn-group" role="group" aria-label="Basic example">
@@ -421,6 +424,7 @@
                             // $new_conductor = new Conductor($db);
                             // $conductor = $new_conductor->getById($row["conductor_id"]);
 
+                           
 
                             if($row["status"] === 'waiting'){
                                 $status = '<span class="badge badge-primary">WAITING</span>';
@@ -482,18 +486,17 @@
                                     </p> -->
                                     
 
-
                                         <div class="mt-3">
                                         <a href="#scheduleEditModal" class="btn btn-sm btn-warning scheduleUpdate"
-                                        data-id="<?php echo $row["id"]; ?>" 
-                                        data-route_id="<?php echo $row["route_id"]; ?>"
-                                        data-schedule_date="<?php echo $row["schedule_date"]; ?>" 
-                                        data-departure="<?php echo $row["departure"]; ?>"
-                                        data-arrival="<?php echo $row["arrival"]; ?>" 
-                                        data-bus_id="<?php echo $row["bus_id"]; ?>" 
-                                        data-driver_id="<?php echo $row["driver_id"]; ?>" 
-                                        data-fare="<?php echo $row["fare"]; ?>" 
-                                        data-toggle="modal">Edit</a>
+    data-id="<?php echo $row["id"]; ?>" 
+    data-route_id="<?php echo $row["route_id"]; ?>"
+    data-schedule_date="<?php echo $row["schedule_date"]; ?>" 
+    data-departure="<?php echo $row["departure"]; ?>"
+    data-arrival="<?php echo $row["arrival"]; ?>" 
+    data-bus_id="<?php echo $row["bus_id"]; ?>" 
+    data-driver_id="<?php echo $row["driver_id"]; ?>" 
+    data-fare="<?php echo $row["fare"]; ?>" 
+    data-toggle="modal">Edit</a>
                                             <a href="#scheduleDeleteModal" class="btn btn-sm btn-danger scheduleDelete"
                                             data-id="<?php echo $row["id"]; ?>" data-toggle="modal">Delete</a>
                                             <div class="btn-group" role="group" aria-label="Basic example">
@@ -606,6 +609,7 @@
                         </select>
                     </div>
                     
+
                    
 
                     <!-- <div class="form-group">
@@ -624,7 +628,7 @@
                         </select>
                     </div> -->
                     
-                    
+
                     
 
                  <div class="form-group">
@@ -735,7 +739,7 @@
                         ?>
                         </select>
                     </div> -->
-                   
+                    
 
                     <!-- <div class="form-group">
                         <label>Fare</label>

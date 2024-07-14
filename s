@@ -13,6 +13,9 @@
     include('controllers/location.php');
     $new_location = new Location($db);
 
+    
+    include('controllers/vessel.php');
+    $new_vessel = new Vessel($db);
 
     include('controllers/passenger.php');
     $new_passenger = new Passenger($db);
@@ -86,8 +89,17 @@
                                         $bus = $new_bus->getById($row["bus_id"]);
                                         $driver = $new_driver->getById($row["driver_id"]);
             
+                                        $vessel = $new_vessel->getById($row["vessel_id"]);
                                         ?>
-                                            
+                                            <div class="col-md-4 mb-3">
+                                                <div class="border bg-light">
+                                                    <div id="<?php echo 'print_'.$row['book_id'] ?>">
+                                                        <div class="bg-primary p-3">
+                                                            <small><?php echo 'Distance: '.$row['distance'] ?></small>
+                                                            <h4 class="mb-0">
+                                                                <?php echo $route_from["location_name"].' &#x2192; '.$route_to["location_name"] ?>
+                                                            </h4>
+                                                        </div>
 
                                                         <div class="p-3">
                                                            <p class="mb-0 d-flex align-items-center justify-content-between">
@@ -117,7 +129,10 @@
                                                     <span class="text-muted">Bus Type :</span>
                                                     <span class="font-weight-bold"><?php echo $bus['bus_type'] ?></span>
                                                 </p>
-                                                
+                                                <p class="mb-0 d-flex align-items-center justify-content-between">
+                                                    <span class="text-muted">Rate per kilometer :</span>
+                                                    <span class="font-weight-bold"><?php echo $bus['rate_km'] ?></span>
+                                                </p>
                                                 <p class="mb-0 d-flex align-items-center justify-content-between">
                                                     <span class="text-muted">Seat Number:</span>
                                                     <span class="font-weight-bold"><?php echo $row['seat_num'] ?></span>
@@ -145,7 +160,10 @@
                                         <strong><?php echo $row['fare'] ?></strong>
                                     </p>
                                    
-                                                
+                                                <p class="d-flex align-items-center justify-content-between mb-0">
+                                        <span class="text-muted d-block">Corresponding Ferry:</span>
+                                        <strong class="text-uppercase"><?php echo $vessel['vessel_name'] ?></strong>
+                                    </p>
                                             
                                                         
                                                         </div>
@@ -175,8 +193,17 @@
                                         $bus = $new_bus->getById($row["bus_id"]);
                                         $driver = $new_driver->getById($row["driver_id"]);
             
+                                        $vessel = $new_vessel->getById($row["vessel_id"]);
                                         ?>
-                                            
+                                            <div class="col-md-4 mb-3">
+                                                <div class="border bg-light">
+                                                    <div id="<?php echo 'print_'.$row['book_id'] ?>">
+                                                        <div class="bg-primary p-3">
+                                                            <small><?php echo 'Distance: '.$row['distance'] ?></small>
+                                                            <h4 class="mb-0">
+                                                                <?php echo $route_from["location_name"].' &#x2192; '.$route_to["location_name"] ?>
+                                                            </h4>
+                                                        </div>
 
                                                         <div class="p-3">
                                                         <p class="mb-0 d-flex align-items-center justify-content-between">
@@ -206,7 +233,10 @@
                                                     <span class="text-muted">Bus Type :</span>
                                                     <span class="font-weight-bold"><?php echo $bus['bus_type'] ?></span>
                                                 </p>
-                                                
+                                                <p class="mb-0 d-flex align-items-center justify-content-between">
+                                                    <span class="text-muted">Rate per kilometer :</span>
+                                                    <span class="font-weight-bold"><?php echo $bus['rate_km'] ?></span>
+                                                </p>
                                                 <p class="mb-0 d-flex align-items-center justify-content-between">
                                                     <span class="text-muted">Seat Number:</span>
                                                     <span class="font-weight-bold"><?php echo $row['seat_num'] ?></span>
@@ -234,7 +264,10 @@
                                         <strong><?php echo $row['fare'] ?></strong>
                                     </p>
                                    
-                                                
+                                                <p class="d-flex align-items-center justify-content-between mb-0">
+                                        <span class="text-muted d-block">Corresponding Ferry:</span>
+                                        <strong class="text-uppercase"><?php echo $vessel['vessel_name'] ?></strong>
+                                    </p>
                                             </div>
                                         </div>
 
@@ -261,8 +294,17 @@
                                         $bus = $new_bus->getById($row["bus_id"]);
                                         $driver = $new_driver->getById($row["driver_id"]);
             
+                                        $vessel = $new_vessel->getById($row["vessel_id"]);
                                         ?>
-                                            
+                                            <div class="col-md-4 mb-3">
+                                                <div class="border bg-light">
+                                                    <div id="<?php echo 'print_'.$row['book_id'] ?>">
+                                                        <div class="bg-primary p-3">
+                                                            <small><?php echo 'Distance: '.$row['distance'] ?></small>
+                                                            <h4 class="mb-0">
+                                                                <?php echo $route_from["location_name"].' &#x2192; '.$route_to["location_name"] ?>
+                                                            </h4>
+                                                        </div>
 
                                                         <div class="p-3">
                                                         <p class="mb-0 d-flex align-items-center justify-content-between">
@@ -292,7 +334,10 @@
                                                     <span class="text-muted">Bus Type :</span>
                                                     <span class="font-weight-bold"><?php echo $bus['bus_type'] ?></span>
                                                 </p>
-                                                
+                                                <p class="mb-0 d-flex align-items-center justify-content-between">
+                                                    <span class="text-muted">Rate per kilometer :</span>
+                                                    <span class="font-weight-bold"><?php echo $bus['rate_km'] ?></span>
+                                                </p>
                                                 <p class="mb-0 d-flex align-items-center justify-content-between">
                                                     <span class="text-muted">Seat Number:</span>
                                                     <span class="font-weight-bold"><?php echo $row['seat_num'] ?></span>
@@ -320,7 +365,10 @@
                                         <strong><?php echo $row['fare'] ?></strong>
                                     </p>
                                    
-                                                
+                                                <p class="d-flex align-items-center justify-content-between mb-0">
+                                        <span class="text-muted d-block">Corresponding Ferry:</span>
+                                        <strong class="text-uppercase"><?php echo $vessel['vessel_name'] ?></strong>
+                                    </p>
                                             </div>
                                         </div>
                                                 </div>

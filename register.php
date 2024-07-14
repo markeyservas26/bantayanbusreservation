@@ -28,7 +28,7 @@
 <main>
     <div class="container mt-3">
         <div class="w-100 m-auto bg-white shadow-sm" style="max-width: 500px">
-            <div class="bg-primary p-3">
+            <div class="bg-primary p-3" style="background-image: linear-gradient( 109.6deg,  rgba(254,253,205,1) 11.2%, rgba(163,230,255,1) 91.1% );">
                 <h1 class="text-center">Create an Account</h1>
             </div>
 
@@ -68,9 +68,27 @@
                     </div>
                     <div class="form-group">
                         <label for="password">Password</label>
-                        <input type="password" class="form-control" id="password" name="password" required />
+                        <div class="input-group">
+                            <input type="password" class="form-control" id="password" name="password" required />
+                            <div class="input-group-append">
+                                <span class="input-group-text toggle-password" id="toggle-password">
+                                    <i class="fa fa-eye" aria-hidden="true"></i>
+                                </span>
+                            </div>
+                        </div>
                     </div>
-                    <button type="submit" class="btn btn-block btn-dark" name="sign-up-submit">Register</button>
+                    <div class="form-group">
+                        <label for="confirm_password">Confirm Password</label>
+                        <div class="input-group">
+                            <input type="password" class="form-control" id="confirm_password" name="confirm_password" required />
+                            <div class="input-group-append">
+                                <span class="input-group-text toggle-password" id="toggle-confirm-password">
+                                    <i class="fa fa-eye" aria-hidden="true"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-block glow-button" name="sign-up-submit">Register</button>
 
                     <div class="text-center">
                         <span>Already have an account? </span>
@@ -84,3 +102,40 @@
 
 <?php include('includes/scripts.php')?>
 <?php include('includes/layout-footer.php')?>
+
+<script>
+    document.querySelectorAll('.toggle-password').forEach(function(icon) {
+        icon.addEventListener('click', function(e) {
+            var passwordField = (icon.id === 'toggle-password') ? document.getElementById('password') : document.getElementById('confirm_password');
+            var type = passwordField.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordField.setAttribute('type', type);
+            icon.querySelector('i').classList.toggle('fa-eye');
+            icon.querySelector('i').classList.toggle('fa-eye-slash');
+        });
+    });
+</script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+.glow-button {
+  position: relative;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: white;
+  background-image: linear-gradient( 68.6deg,  rgba(79,183,131,1) 14.4%, rgba(254,235,151,1) 92.7% );
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.glow-button:hover {
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+.glow-button:focus {
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+}
+</style>
