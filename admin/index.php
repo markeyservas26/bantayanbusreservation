@@ -215,7 +215,7 @@
 </svg>
 
                         </span>
-                        <span class="title" style="color: white; font-weight: bold">Users</span>
+                        <span class="title" style="color: white; font-weight: bold">Reports</span>
                     </a>
                 </li>
             </ul>
