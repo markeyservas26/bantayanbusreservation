@@ -50,6 +50,7 @@
             $new_route = new Route($conn);
             $route = $new_route->getById($route_id);
 
+            $fare=$_POST['fare'];
             
             $sql = "UPDATE `tblschedule` SET `bus_id`='$bus_id', `driver_id`='$driver_id',  `route_id`='$route_id', `departure`='$departure', `arrival`='$arrival', `fare`='$fare', `schedule_date`='$schedule_date' WHERE id=$id";
             if (mysqli_query($conn, $sql)) {
