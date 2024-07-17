@@ -4,7 +4,7 @@
         display: inline-block;
         padding: 10px 20px;
         color: #fff;
-        background-image: linear-gradient(68.6deg, rgba(79,183,131,1) 14.4%, rgba(254,235,151,1) 92.7%);
+        background-image: linear-gradient(-20deg, #b721ff 0%, #21d4fd 100%);
         border: none;
         text-transform: uppercase;
         text-decoration: none;

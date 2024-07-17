@@ -28,7 +28,7 @@
 <main>
     <div class="container mt-3">
         <div class="w-100 m-auto bg-white shadow-sm" style="max-width: 500px">
-            <div class="bg-primary p-3" style="background-image: linear-gradient( 109.6deg,  rgba(254,253,205,1) 11.2%, rgba(163,230,255,1) 91.1% );">
+            <div class="bg-primary p-3" style="background-image: linear-gradient(-20deg, #b721ff 0%, #21d4fd 100%);">
                 <h1 class="text-center">Create an Account</h1>
             </div>
 
@@ -116,14 +116,13 @@
 </script>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
 <style>
 .glow-button {
   position: relative;
   padding: 10px 20px;
   font-size: 16px;
   color: white;
-  background-image: linear-gradient( 68.6deg,  rgba(79,183,131,1) 14.4%, rgba(254,235,151,1) 92.7% );
+  background-image: linear-gradient(-20deg, #b721ff 0%, #21d4fd 100%);
   border: none;
   border-radius: 5px;
   cursor: pointer;

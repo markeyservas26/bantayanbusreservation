@@ -612,7 +612,7 @@
 
                    
 
-                    <!-- <div class="form-group">
+                     <!-- <div class="form-group">
                         <label>Conductor</label>
                         <select class="form-control" id="conductor_id" name="conductor_id" required>
                             <option value="">Select conductor</option>
@@ -741,10 +741,10 @@
                     </div> -->
                     
 
-                    <!-- <div class="form-group">
+                    <div class="form-group">
                         <label>Fare</label>
-                        <input type="number" id="fare_u" name="fare" class="form-control" required>
-                    </div> -->
+                        <input type="number" id="fare_u" name="fare" class="form-control" required readonly>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

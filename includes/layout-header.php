@@ -23,7 +23,7 @@
   <body class="bg-light" >
 
   <!-- Just an image -->
-<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm" style="background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(255,209,67,1) 0%, rgba(255,145,83,1) 90% );">
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm" style="background-image: linear-gradient(-20deg, #b721ff 0%, #21d4fd 100%);">
   <div class="container">
     <a class="navbar-brand" href="index.php" style="font-family: 'Times New Roman', serif;">
       <img src="assets/images/bobrs3.png" style="width: 350px; height: 60px;" alt=""><b>

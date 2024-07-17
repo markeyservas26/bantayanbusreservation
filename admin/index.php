@@ -177,7 +177,7 @@
                         </span>
                         <span class="title" style="color: white; font-weight: bold">Conductors</span>
                     </a>
-                </li> -->
+                </li>
                 
                 <li
                     class="nav-item <?php if(isset($_GET['page']) && $_GET['page'] === 'customer') echo 'bg-primary' ?>">
