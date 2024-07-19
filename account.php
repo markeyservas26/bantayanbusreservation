@@ -124,8 +124,13 @@
                                                             </p>
                                                            
                                                 <p class="mb-0 d-flex align-items-center justify-content-between">
-                                                    <span class="text-muted">Bus Number :</span>
+                                                    <span class="text-muted">Bus Name :</span>
                                                     <span class="font-weight-bold"><?php echo $bus['bus_num'] ?></span>
+                                                </p>
+
+                                                <p class="mb-0 d-flex align-items-center justify-content-between">
+                                                    <span class="text-muted">Bus Number :</span>
+                                                    <span class="font-weight-bold"><?php echo $bus['bus_code'] ?></span>
                                                 </p>
                                                 
                                                 <p class="d-flex align-items-center justify-content-between mb-0">
@@ -222,8 +227,13 @@
                                                             </p>
                                                            
                                                 <p class="mb-0 d-flex align-items-center justify-content-between">
-                                                    <span class="text-muted">Bus Number :</span>
+                                                    <span class="text-muted">Bus Name :</span>
                                                     <span class="font-weight-bold"><?php echo $bus['bus_num'] ?></span>
+                                                </p>
+
+                                                <p class="mb-0 d-flex align-items-center justify-content-between">
+                                                    <span class="text-muted">Bus Number :</span>
+                                                    <span class="font-weight-bold"><?php echo $bus['bus_code'] ?></span>
                                                 </p>
                                                 
                                                 <p class="d-flex align-items-center justify-content-between mb-0">
@@ -316,8 +326,13 @@
                                                             </p>
                                                            
                                                 <p class="mb-0 d-flex align-items-center justify-content-between">
-                                                    <span class="text-muted">Bus Number :</span>
+                                                    <span class="text-muted">Bus Name :</span>
                                                     <span class="font-weight-bold"><?php echo $bus['bus_num'] ?></span>
+                                                </p>
+
+                                                <p class="mb-0 d-flex align-items-center justify-content-between">
+                                                    <span class="text-muted">Bus Number :</span>
+                                                    <span class="font-weight-bold"><?php echo $bus['bus_code'] ?></span>
                                                 </p>
                                                 
                                                 <p class="d-flex align-items-center justify-content-between mb-0">

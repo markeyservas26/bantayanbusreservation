@@ -6,7 +6,9 @@
     if(count($_POST)>0){
         if($_POST['type']==1){
             $bus_id=$_POST['bus_id'];
+            $bus_code_id=$_POST['bus_code_id'];
             $driver_id=$_POST['driver_id'];
+            $conductor_id=$_POST['conductor_id'];
             $route_id=$_POST['route_id'];
             $departure=$_POST['departure'];
             $arrival=$_POST['arrival'];
@@ -22,8 +24,8 @@
             
            $fare=$_POST['fare'];
 
-            $sql = "INSERT INTO `tblschedule`( `bus_id`, `driver_id`, `route_id`, `departure`, `arrival`, `status`, `fare`, `schedule_date`) 
-            VALUES ('$bus_id', '$driver_id', '$route_id', '$departure', '$arrival', '$status', '$fare', '$schedule_date')";
+            $sql = "INSERT INTO `tblschedule`( `bus_id`, `bus_code_id`, `driver_id`, `conductor_id`, `route_id`, `departure`, `arrival`, `status`, `fare`, `schedule_date`) 
+            VALUES ('$bus_id', '$bus_code_id', '$driver_id', '$conductor_id', '$route_id', '$departure', '$arrival', '$status', '$fare', '$schedule_date')";
             if (mysqli_query($conn, $sql)) {
                 echo json_encode(array("statusCode"=>200));
             } 
@@ -38,7 +40,9 @@
         if($_POST['type']==2){
             $id=$_POST['id'];
             $bus_id=$_POST['bus_id'];
+            $bus_code_id=$_POST['bus_code_id'];
             $driver_id=$_POST['driver_id'];
+            $conductor_id=$_POST['conductor_id'];
             $route_id=$_POST['route_id'];
             $departure=$_POST['departure'];
             $arrival=$_POST['arrival'];
@@ -52,7 +56,7 @@
 
             $fare=$_POST['fare'];
             
-            $sql = "UPDATE `tblschedule` SET `bus_id`='$bus_id', `driver_id`='$driver_id',  `route_id`='$route_id', `departure`='$departure', `arrival`='$arrival', `fare`='$fare', `schedule_date`='$schedule_date' WHERE id=$id";
+            $sql = "UPDATE `tblschedule` SET `bus_id`='$bus_id', `bus_code_id`='$bus_code_id', `driver_id`='$driver_id', `conductor_id`='$conductor_id',  `route_id`='$route_id', `departure`='$departure', `arrival`='$arrival', `fare`='$fare', `schedule_date`='$schedule_date' WHERE id=$id";
             if (mysqli_query($conn, $sql)) {
                 echo json_encode(array("statusCode"=>200));
             } 

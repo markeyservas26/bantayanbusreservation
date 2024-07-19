@@ -24,6 +24,7 @@
             include('controllers/bus.php');
             include('controllers/vessel.php');
             include('controllers/driver.php');
+            include('controllers/conductor.php'); // Include the conductor controller
             
             $new_route = new Route($db);
             $route = $new_route->getById($schedule["route_id"]);
@@ -31,8 +32,11 @@
             $new_bus = new Bus($db);
             $bus = $new_bus->getById($schedule["bus_id"]);
 
-            $new_driver= new Driver($db);
+            $new_driver = new Driver($db);
             $driver = $new_driver->getById($schedule["driver_id"]);
+
+            $new_conductor = new Conductor($db); // Instantiate the conductor class
+            $conductor = $new_conductor->getById($schedule["conductor_id"]); // Fetch the conductor information
 
             $new_location = new Location($db);
             $location_from = $new_location->getById($route["route_from"]);
@@ -69,16 +73,26 @@
                 </p>
                 <hr>
                 <p class="d-flex align-items-center justify-content-between mb-0">
-                    <span class="text-muted d-block">Bus Driver :</span>
-                    <strong class="text-uppercase"><?php echo $driver['name'] ?></strong>
+                    <span class="text-muted d-block">Bus Driver:</span>
+                    <strong class="text"><?php echo $driver['name'] ?></strong>
                 </p>
                 <p class="d-flex align-items-center justify-content-between mb-0">
-                    <span class="text-muted d-block">Bus Number :</span>
-                    <strong class="text-uppercase"><?php echo $bus['bus_num'] ?></strong>
+                    <span class="text-muted d-block">Bus Conductor:</span>
+                    <strong class="text"><?php echo $conductor['name'] ?></strong> <!-- Display conductor name -->
                 </p>
                 <p class="d-flex align-items-center justify-content-between mb-0">
-                    <span class="text-muted d-block">Bus Type :</span>
-                    <strong class="text-uppercase"><?php echo $bus['bus_type'] ?></strong>
+                    <span class="text-muted d-block">Bus Name:</span>
+                    <strong class="text"><?php echo $bus['bus_num'] ?></strong>
+                </p>
+
+                <p class="d-flex align-items-center justify-content-between mb-0">
+                    <span class="text-muted d-block">Bus Number:</span>
+                    <strong class="text"><?php echo $bus['bus_code'] ?></strong>
+                </p>
+
+                <p class="d-flex align-items-center justify-content-between mb-0">
+                    <span class="text-muted d-block">Bus Type:</span>
+                    <strong class="text"><?php echo $bus['bus_type'] ?></strong>
                 </p>
                 <p class="d-flex align-items-center justify-content-between mb-0">
                     <span class="text-muted d-block">Fare:</span>

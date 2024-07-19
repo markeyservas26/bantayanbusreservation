@@ -36,7 +36,7 @@
   </ol>
   <div class="container1" >
   <center>  <img src="assets/images/bg1.png" style='width:1100px; height: 500px;'> 
-    <div class="carousel-item active">
+    <div class="carousel-item active">7
       <img src="assets/images/slideshow5.jpg" class="d-block m-auto" style='width:40%; height: 400px;border: 1px solid black;' alt="...">
     </div>
   

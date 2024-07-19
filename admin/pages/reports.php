@@ -7,10 +7,12 @@
     
     // Query to fetch driver, conductor, bus, and route data
     $query = "
-        SELECT d.id as driver_id, d.name as driver_name, c.name as conductor_name, rl.location_name as route_from, rl2.location_name as route_to, s.schedule_date
+        SELECT d.id as driver_id, d.name as driver_name, c.name as conductor_name, rl.location_name as route_from, rl2.location_name as route_to, s.schedule_date, b1.bus_num, b2.bus_code
         FROM tbldriver d
         LEFT JOIN tblconductor c ON d.id = c.id
-        LEFT JOIN tblroute r ON d.id = r.route_from
+        LEFT JOIN tblbus b1 ON d.id = b1.id
+        LEFT JOIN tblbus b2 ON d.id = b2.id
+        LEFT JOIN tblroute r ON d.id = r.id
         LEFT JOIN tblschedule s ON d.id = s.driver_id
         LEFT JOIN tbllocation rl ON r.route_from = rl.id
         LEFT JOIN tbllocation rl2 ON r.route_to = rl2.id";
@@ -82,6 +84,8 @@
                 <th scope="col">#</th>
                 <th scope="col">Drivers Name</th>
                 <th scope="col">Conductors Name</th>
+                <th scope="col">Bus Name</th>
+                <th scope="col">Bus Code</th>
                 <th scope="col">From</th>
                 <th scope="col">To</th>
                 <th scope="col">Schedule Date</th>
@@ -97,6 +101,8 @@
                             <th scope='row'>{$i}</th>
                             <td>{$row["driver_name"]}</td>
                             <td>{$row["conductor_name"]}</td>
+                            <td>{$row["bus_num"]}</td>
+                            <td>{$row["bus_code"]}</td>
                             <td>{$row["route_from"]}</td>
                             <td>{$row["route_to"]}</td>
                             <td>{$row["schedule_date"]}</td>

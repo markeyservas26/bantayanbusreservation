@@ -55,7 +55,9 @@
                         
                         <td>
                             <a href="#busEditModal" class="btn btn-sm btn-warning busUpdate"
-                                data-id="<?php echo $row["id"]; ?>" data-bus_num="<?php echo $row["bus_num"]; ?>"
+                                data-id="<?php echo $row["id"]; ?>" 
+                                data-bus_code="<?php echo $row["bus_code"]; ?>"                                
+                                data-bus_num="<?php echo $row["bus_num"]; ?>"
                                 data-bus_type="<?php echo $row["bus_type"]; ?>"
                                
                                 data-toggle="modal">Edit</a>
@@ -131,8 +133,8 @@
                     <input type="hidden" id="id_u" name="id" class="form-control" required>
 
                     <div class="form-group">
-                        <label>Bus Number</label>
-                        <input type="number" id="bus_code_u" name="bus_code" class="form-control" required>
+                        <label>Bus Name</label>
+                        <input type="number" id="bus_code_u" name="bus_code" class="form-control" required readonly>
                     </div>
                     
                     <div class="form-group">
@@ -206,6 +208,7 @@ $("#bus_form").submit(function(event) {
 
 $(document).on("click", ".busUpdate", function(e) {
     var id = $(this).attr("data-id");
+    var bus_code = $(this).attr("data-bus_code");
     var bus_num = $(this).attr("data-bus_num");
     var bus_type = $(this).attr("data-bus_type");
        $("#id_u").val(id);

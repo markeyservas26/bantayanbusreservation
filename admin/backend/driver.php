@@ -8,7 +8,7 @@
             $address=$_POST['address'];
           
             
-            $sql = "INSERT INTO `tbldriver`( `name`, 'phone', 'address') 
+            $sql = "INSERT INTO `tbldriver`( `name`, `phone`, `address`) 
             VALUES ('$name', '$phone', '$address')";
             if (mysqli_query($conn, $sql)) {
                 echo json_encode(array("statusCode"=>200));

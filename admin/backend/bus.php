@@ -9,7 +9,7 @@ require_once '../functions/bus.php';
             $bus_code=$_POST['bus_code'];
 
 
-            if(isBusExist($conn, $bus_num, null)){
+            if(isBusExist($conn, $bus_code, null)){
                 echo json_encode(array("statusCode"=>500, "title"=>"Bus number already exist."));
                 exit();
             }
