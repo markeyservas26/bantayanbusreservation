@@ -1,5 +1,6 @@
 <?php 
     include('includes/layout-header.php');
+    include('controllers/db.php');
     include('controllers/location.php');
 
     $route_from = isset($_GET['route_from']) && !empty($_GET['route_from']) ? $_GET['route_from'] : "";
