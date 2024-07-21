@@ -3,12 +3,13 @@
 <head>
     <?php 
         include('includes/layout-header.php');
+        include('controllers/db.php');
+        include('controllers/location.php');
     ?>
 </head>
 <body>
     <?php
-        include('controllers/db.php');
-        include('controllers/location.php');
+        
 
         $route_from = isset($_GET['route_from']) && !empty($_GET['route_from']) ? $_GET['route_from'] : "";
         $route_to = isset($_GET['route_to']) && !empty($_GET['route_to']) ? $_GET['route_to'] : "";
