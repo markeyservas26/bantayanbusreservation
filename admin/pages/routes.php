@@ -16,6 +16,14 @@
 
 
   </head>
+<?php
+
+$database = new Database();
+$db = $database->getConnection();
+
+$new_location = new Location($db);
+$locations = $new_location->getAll();
+?>
 
 <div>
     <nav aria-label="breadcrumb">
