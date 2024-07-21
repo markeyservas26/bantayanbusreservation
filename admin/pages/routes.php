@@ -17,6 +17,8 @@
 
   </head>
 <?php
+include('../controllers/db.php');
+include('../controllers/location.php');
 
 $database = new Database();
 $db = $database->getConnection();
