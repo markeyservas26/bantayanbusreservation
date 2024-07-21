@@ -16,16 +16,6 @@
 
 
   </head>
-<?php
-include('../controllers/db.php');
-include('../controllers/location.php');
-
-$database = new Database();
-$db = $database->getConnection();
-
-$new_location = new Location($db);
-$locations = $new_location->getAll();
-?>
 
 <div>
     <nav aria-label="breadcrumb">
