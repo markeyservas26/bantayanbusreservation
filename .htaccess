@@ -1,24 +1,3 @@
-# Enable mod_rewrite
-RewriteEngine On
-
-# Redirect HTTP requests to HTTPS
-RewriteCond %{HTTPS} off
-RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
-
-# Set default index file
-DirectoryIndex index.php
-
-# Block access to sensitive files and directories
-<FilesMatch "(^\.|wp-config\.php|\.htaccess)">
-    Order allow,deny
-    Deny from all
-</FilesMatch>
-
-# Remove .php extension from URLs
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME}\.php -f
-RewriteRule ^(.*)$ $1.php [NC,L]
-
-# Handle custom error pages
-ErrorDocument 404 /404.php
-ErrorDocument 500 /500.php
+# HTID:23422420: DO NOT REMOVE OR MODIFY THIS LINE AND THE LINES BELOW
+php_value display_errors 1
+# DO NOT REMOVE OR MODIFY THIS LINE AND THE LINES ABOVE HTID:23422420:
