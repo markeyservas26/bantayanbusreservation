@@ -33,9 +33,7 @@
 
 
   </head>
-  <body class="bg-light" style="background-color: #FFDEE9;
-background-image: linear-gradient(0deg, #FFDEE9 0%, #B5FFFC 100%);
-">
+  <body class="bg-light" >
 
   <!-- Just an image -->
 <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm" style="background-image: linear-gradient(-20deg, #b721ff 0%, #21d4fd 100%);">
@@ -61,7 +59,9 @@ background-image: linear-gradient(0deg, #FFDEE9 0%, #B5FFFC 100%);
   </div>
   </div>
 </nav>
-    <div style="width: 100vw; height: 80vh" class="bg-light">
+    <div style="width: 100vw; height: 80vh" class="bg-light" style="background-color: #FFDEE9;
+background-image: linear-gradient(0deg, #FFDEE9 0%, #B5FFFC 100%);
+">
         <div class="h-100 d-flex flex-column justify-content-center align-items-center">
             <div class="container">
                 <div class="w-100 m-auto" style="max-width: 500px; ">
