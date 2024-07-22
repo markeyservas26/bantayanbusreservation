@@ -17,7 +17,9 @@
 ?>
 
 <?php include('includes/scripts.php')?>
-<main>
+<main style="background-color: #FFDEE9;
+background-image: linear-gradient(0deg, #FFDEE9 0%, #B5FFFC 100%);
+">
    
     <div class="d-flex align-items-center justify-content-center p-4">
         <?php include("includes/forms/schedule-form.php") ?>
