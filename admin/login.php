@@ -22,9 +22,7 @@
     <title>Bantayan Online Bus Reservation</title>
 </head>
 
-<body style="background-color: #FFDEE9;
-background-image: linear-gradient(0deg, #FFDEE9 0%, #B5FFFC 100%);
-">
+<body>
 <link rel="stylesheet" href="./assets/bootstrap/css/bootstrap.min.css" />
     <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -35,7 +33,9 @@ background-image: linear-gradient(0deg, #FFDEE9 0%, #B5FFFC 100%);
 
 
   </head>
-  <body class="bg-light">
+  <body class="bg-light" style="background-color: #FFDEE9;
+background-image: linear-gradient(0deg, #FFDEE9 0%, #B5FFFC 100%);
+">
 
   <!-- Just an image -->
 <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm" style="background-image: linear-gradient(-20deg, #b721ff 0%, #21d4fd 100%);">
