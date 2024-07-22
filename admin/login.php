@@ -22,7 +22,9 @@
     <title>Bantayan Online Bus Reservation</title>
 </head>
 
-<body>
+<body style="background-color: #FFDEE9;
+background-image: linear-gradient(0deg, #FFDEE9 0%, #B5FFFC 100%);
+">
 <link rel="stylesheet" href="./assets/bootstrap/css/bootstrap.min.css" />
     <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
