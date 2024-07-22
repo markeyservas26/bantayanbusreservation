@@ -59,10 +59,10 @@
   </div>
   </div>
 </nav>
-    <div style="width: 100vw; height: 80vh" class="bg-light" style="background-color: #FFDEE9;
+    <div style="width: 100vw; height: 80vh" class="bg-light" >
+        <div class="h-100 d-flex flex-column justify-content-center align-items-center" style="background-color: #FFDEE9;
 background-image: linear-gradient(0deg, #FFDEE9 0%, #B5FFFC 100%);
 ">
-        <div class="h-100 d-flex flex-column justify-content-center align-items-center">
             <div class="container">
                 <div class="w-100 m-auto" style="max-width: 500px; ">
                     <div class="bg-white rounded shadow p-3" style="background: #ADA996; background: -webkit-linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996);  background: linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996);">
