@@ -178,7 +178,7 @@
         // Combine both for printing
         var combinedContent = '<html><head><title>Print Report</title>';
         combinedContent += '<style>';
-        combinedContent += 'table { width: 1350px; border-collapse: collapse; margin-bottom: 20px; }';
+        combinedContent += 'table { width: 1320px; border-collapse: collapse; margin-bottom: 20px; }';
         combinedContent += 'th, td { padding: 8px; text-align: left; border-bottom: 1px solid #ddd; font-size: 20px}';
         combinedContent += '</style>';
         combinedContent += '</head><body>' + chartSVG + table + '</body></html>';
