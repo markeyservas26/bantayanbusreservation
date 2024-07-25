@@ -55,7 +55,10 @@
 
         @media print {
             body {
-                margin: 1in; /* Set the print margin to 1 inch on all sides */
+                margin-top: 1in;
+                margin-bottom: 1in;
+                margin-left: 1in;
+                margin-right: 1in;
             }
         }
     </style>
