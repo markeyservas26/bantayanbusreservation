@@ -52,6 +52,12 @@
         .hide-on-print {
             display: none;
         }
+
+        @media print {
+            body {
+                margin: 1in; /* Set the print margin to 1 inch on all sides */
+            }
+        }
     </style>
 </head>
 <body>
@@ -178,8 +184,9 @@
         // Combine both for printing
         var combinedContent = '<html><head><title>Print Report</title>';
         combinedContent += '<style>';
-        combinedContent += 'table { width: 1240px; border-collapse: collapse; margin-left: 10px; margin-right: 10px; margin-bottom: 20px; }';
+        combinedContent += 'table { width: 1240px; border-collapse: collapse; margin-bottom: 20px; }';
         combinedContent += 'th, td { padding: 8px; text-align: left; border-bottom: 1px solid #ddd; font-size: 20px}';
+        combinedContent += '@media print { body { margin: 1in; }}'; // Adding margin for print
         combinedContent += '</style>';
         combinedContent += '</head><body>' + chartSVG + table + '</body></html>';
 
