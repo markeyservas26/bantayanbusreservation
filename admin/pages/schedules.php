@@ -64,9 +64,9 @@
         </li>
     </ul>
 
-    <div class="tab-content" id="myTabContent" style="background-color: cyan">
+    <div class="tab-content" id="myTabContent">
         <div class="tab-pane fade show active" id="waiting" role="tabpanel" aria-labelledby="waiting-tab">
-            <div class="row mt-3">
+            <div class="row mt-3"  style="background-color: cyan">
                 <?php
                     foreach ($schedules as &$row) {
                         if($row['status'] === 'waiting'){
