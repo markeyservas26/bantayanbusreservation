@@ -108,12 +108,12 @@
                         ?>
                         <div class="col-md-4" id="<?php echo $row["id"]; ?>">
                             <div class="bg-white shadow-sm">
-                                <div class="p-3 bg-primary text-white" style="background-color: cyan"> 
+                                <div class="p-3 bg-primary text-white"> 
                                     <h4 class="mb-0 text-center">
                                         <?php echo $location_from["location_name"].' &#x2192; '.$location_to["location_name"] ?>
                                     </h4>
                                 </div>
-                                <div class="p-3">
+                                <div class="p-3"  style="background-color: cyan">
                                     <p class="d-flex align-items-center justify-content-between mb-0">
                                         <span class="text-muted d-block">Date:</span>
                                         <strong><?php echo date_format(date_create($row['schedule_date']),'F j, Y') ?></strong>
