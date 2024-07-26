@@ -86,14 +86,20 @@ $locations = $new_location->getAll();
 <div class="modal fade" id="newRouteModal" tabindex="-1" aria-labelledby="newRouteModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <form id="route_form" style="background: #3E5151; background: -webkit-linear-gradient(to right, #DECBA4, #3E5151); background: linear-gradient(to right, #DECBA4, #3E5151);">
+            <form id="route_form" style="background: #8e9eab;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #eef2f3, #8e9eab);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #eef2f3, #8e9eab); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+">
                 <div class="modal-header">
                     <h5 class="modal-title" id="newRouteModalLabel">New Route</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body" style="background: #3E5151; background: -webkit-linear-gradient(to right, #DECBA4, #3E5151); background: linear-gradient(to right, #DECBA4, #3E5151);">
+                <div class="modal-body" style="background: #8e9eab;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #eef2f3, #8e9eab);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #eef2f3, #8e9eab); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+">
                     <input type="hidden" value="1" name="type">
 
                     <div class="form-group">
