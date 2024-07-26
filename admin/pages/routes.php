@@ -41,7 +41,7 @@ $locations = $new_location->getAll();
             <i class="fa fa-plus" >    New Route</i>
             </button>
         </div>
-        <div class="card-body">
+        <div class="card-body"  style="background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);">
             <table id="myTable" class="table table-striped">
                 <thead>
                     <tr>
