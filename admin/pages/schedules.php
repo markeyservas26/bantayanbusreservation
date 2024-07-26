@@ -66,7 +66,7 @@
 
     <div class="tab-content" id="myTabContent">
         <div class="tab-pane fade show active" id="waiting" role="tabpanel" aria-labelledby="waiting-tab">
-            <div class="row mt-3"  style="background-color: cyan">
+            <div class="row mt-3" >
                 <?php
                     foreach ($schedules as &$row) {
                         if($row['status'] === 'waiting'){
@@ -107,8 +107,8 @@
 
                         ?>
                         <div class="col-md-4" id="<?php echo $row["id"]; ?>">
-                            <div class="bg-white shadow-sm">
-                                <div class="p-3 bg-primary text-white">
+                            <div class="bg-white shadow-sm" style="background-color: cyan;">
+                                <div class="p-3 bg-primary text-white"> 
                                     <h4 class="mb-0 text-center">
                                         <?php echo $location_from["location_name"].' &#x2192; '.$location_to["location_name"] ?>
                                     </h4>
