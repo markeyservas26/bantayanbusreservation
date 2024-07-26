@@ -93,10 +93,10 @@ $locations = $new_location->getAll();
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body" style="background: #3E5151; background: -webkit-linear-gradient(to right, #DECBA4, #3E5151); background: linear-gradient(to right, #DECBA4, #3E5151);">
                     <input type="hidden" value="1" name="type">
 
-                    <div class="form-group"  style="background: #3E5151; background: -webkit-linear-gradient(to right, #DECBA4, #3E5151); background: linear-gradient(to right, #DECBA4, #3E5151);">
+                    <div class="form-group">
                         <label>Route From</label>
                         <select class="form-control" id="route_from" name="route_from" required>
                             <option value="">Please select location</option>
