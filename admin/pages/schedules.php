@@ -107,8 +107,8 @@
 
                         ?>
                         <div class="col-md-4" id="<?php echo $row["id"]; ?>">
-                            <div class="bg-white shadow-sm" style="background-color: cyan;">
-                                <div class="p-3 bg-primary text-white"> 
+                            <div class="bg-white shadow-sm">
+                                <div class="p-3 bg-primary text-white" style="background-color: cyan"> 
                                     <h4 class="mb-0 text-center">
                                         <?php echo $location_from["location_name"].' &#x2192; '.$location_to["location_name"] ?>
                                     </h4>
