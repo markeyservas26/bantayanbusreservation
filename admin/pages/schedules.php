@@ -113,7 +113,7 @@
                                         <?php echo $location_from["location_name"].' &#x2192; '.$location_to["location_name"] ?>
                                     </h4>
                                 </div>
-                                <div class="p-3"  style="background-image: linear-gradient(to top, #d5d4d0 0%, #d5d4d0 1%, #eeeeec 31%, #efeeec 75%, #e9e9e7 100%);">
+                                <div class="p-3"  style="background-image: linear-gradient(to top, lightgrey 0%, lightgrey 1%, #e0e0e0 26%, #efefef 48%, #d9d9d9 75%, #bcbcbc 100%);">
                                     <p class="d-flex align-items-center justify-content-between mb-0">
                                         <span class="text-muted d-block">Date:</span>
                                         <strong><?php echo date_format(date_create($row['schedule_date']),'F j, Y') ?></strong>
