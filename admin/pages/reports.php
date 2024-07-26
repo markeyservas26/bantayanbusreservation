@@ -187,7 +187,7 @@
         // Combine both for printing
         var combinedContent = '<html><head><title>Print Report</title>';
         combinedContent += '<style>';
-        combinedContent += 'table { width: 1100px; border-collapse: collapse; margin-bottom: 20px; }';
+        combinedContent += 'table { width: 1000px; border-collapse: collapse; margin-bottom: 20px; }';
         combinedContent += 'th, td { padding: 8px; text-align: left; border-bottom: 1px solid #ddd; font-size: 20px}';
         combinedContent += '@media print { body { margin: 1in; }}'; // Adding margin for print
         combinedContent += '</style>';
