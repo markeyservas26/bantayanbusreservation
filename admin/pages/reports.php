@@ -58,7 +58,7 @@
                 margin-top: 1in;
                 margin-bottom: 1in;
                 margin-left: 1in;
-                margin-right: 1in;
+                margin-right: 2in;
             }
         }
     </style>
