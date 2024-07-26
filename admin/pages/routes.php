@@ -84,7 +84,7 @@ $locations = $new_location->getAll();
 
 <!-- New Bus Modal -->
 <div class="modal fade" id="newRouteModal" tabindex="-1" aria-labelledby="newRouteModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog" style="background: #3E5151; background: -webkit-linear-gradient(to right, #DECBA4, #3E5151); background: linear-gradient(to right, #DECBA4, #3E5151);">
         <div class="modal-content">
             <form id="route_form">
                 <div class="modal-header">
