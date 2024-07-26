@@ -15,7 +15,7 @@ require_once '../functions/bus.php';
             }
             
             $sql = "INSERT INTO `tblbus`( `bus_num`, `bus_type`, `bus_code`) 
-            VALUES ('$bus_num', '$bus_num', '$bus_code' )";
+            VALUES ('$bus_num', '$bus_type', '$bus_code' )";
             if (mysqli_query($conn, $sql)) {
                 echo json_encode(array("statusCode"=>200));
             } 
