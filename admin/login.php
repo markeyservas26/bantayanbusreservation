@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="../assets/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="../assets/styles.css">
-    <link rel="icon" href="../assets/img/favicon.ico" type="image/ico">
+    <link rel="icon" href="../assets/img/bus.ico" type="image/ico">
     <title>Bantayan Online Bus Reservation</title>
 </head>
 

@@ -31,7 +31,7 @@
     <link rel="stylesheet" href="../assets/css/adminStyles.css">
     <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" href="../assets/img/favicon.ico" type="image/ico">
+    <link rel="icon" href="../assets/img/bus.ico" type="image/ico">
     <title >Bantayan Online Bus Reservation</title>
      <style>
     body {
