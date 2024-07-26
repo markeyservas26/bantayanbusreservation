@@ -39,7 +39,7 @@
     <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="../assets/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="../assets/styles.css">
-    <!-- <link rel="icon" href="assets/favicon.ico" type="image/ico"> -->
+    <link rel="icon" href="assets/favicon.ico" type="image/ico">
     <title>Ceres</title>
 </head>
 
