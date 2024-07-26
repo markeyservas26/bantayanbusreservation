@@ -119,7 +119,7 @@
                                         <strong><?php echo date_format(date_create($row['schedule_date']),'F j, Y') ?></strong>
                                     </p>
                                     <p class="d-flex align-items-center justify-content-between mb-0">
-                                        <span class="text-muted d-block">Bus Name :</span>
+                                        <span class="text-muted d-block" style="color: gray">Bus Name :</span>
                                         <strong class="text"><?php echo $bus['bus_num'] ?></strong>
                                     </p>
                                     <p class="d-flex align-items-center justify-content-between mb-0">
