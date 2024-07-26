@@ -86,7 +86,7 @@ $locations = $new_location->getAll();
 <div class="modal fade" id="newRouteModal" tabindex="-1" aria-labelledby="newRouteModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <form id="route_form">
+            <form id="route_form" style="background: #3E5151; background: -webkit-linear-gradient(to right, #DECBA4, #3E5151); background: linear-gradient(to right, #DECBA4, #3E5151);">
                 <div class="modal-header">
                     <h5 class="modal-title" id="newRouteModalLabel">New Route</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
