@@ -212,7 +212,16 @@
         </div>
     </div>
 </div>
-                    
+</div>
+
+    <!-- Chart.js canvas -->
+    <div class="row mt-4" style="background-color: #D9AFD9;
+background-image: linear-gradient(0deg, #D9AFD9 0%, #97D9E1 100%);
+">
+        <div class="col-12">
+            <canvas id="myChart"></canvas>
+        </div>
+    </div>
 </div>
 <!-- Chart.js script -->
 <script>
