@@ -72,7 +72,7 @@ background-image: linear-gradient(0deg, #FFDEE9 0%, #B5FFFC 100%);
       <p style="display: inline-block; vertical-align: top; margin-left: 10px;">Description for Destination 2</p>
     </div>
     <div class="destination">
-      <img src="assets/img/d2.png" alt="Destination 3">
+      <img src="assets/img/d2.png" alt="Destination 3" style="width: 150px; height: 100px;">
       <p style="display: inline-block; vertical-align: top; margin-left: 10px;">Description for Destination 3</p>
     </div>
   </div>
