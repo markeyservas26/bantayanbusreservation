@@ -73,8 +73,8 @@ background-image: linear-gradient(0deg, #FFDEE9 0%, #B5FFFC 100%);
     <div class="card">
       <img src="assets/img/d3.png" class="card-img-top" alt="Destination 2">
       <div class="card-body">
-        <h5 class="card-title">Destination 2</h5>
-        <p class="card-text">Description for Destination 2</p>
+        <h5 class="card-title">Bantayan</h5>
+        <p class="card-text" style="max-widht: 300px;">Bantayan Island is a beautiful destination in the Philippines, located in the Visayan Sea, north of Cebu. Known for its pristine beaches, crystal-clear waters, and laid-back atmosphere, it's a popular spot for those seeking a relaxing getaway.</p>
       </div>
     </div>
     <div class="card">
