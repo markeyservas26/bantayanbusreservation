@@ -24,7 +24,7 @@
             include('controllers/bus.php');
             include('controllers/vessel.php');
             include('controllers/driver.php');
-            include('controllers/conductor.php'); // Include the conductor controller
+            include('controllers/conductor.php');
             
             $new_route = new Route($db);
             $route = $new_route->getById($schedule["route_id"]);
@@ -35,8 +35,8 @@
             $new_driver = new Driver($db);
             $driver = $new_driver->getById($schedule["driver_id"]);
 
-            $new_conductor = new Conductor($db); // Instantiate the conductor class
-            $conductor = $new_conductor->getById($schedule["conductor_id"]); // Fetch the conductor information
+            $new_conductor = new Conductor($db);
+            $conductor = $new_conductor->getById($schedule["conductor_id"]);
 
             $new_location = new Location($db);
             $location_from = $new_location->getById($route["route_from"]);
@@ -78,7 +78,7 @@
                 </p>
                 <p class="d-flex align-items-center justify-content-between mb-0">
                     <span class="text-muted d-block">Bus Conductor:</span>
-                    <strong class="text"><?php echo $conductor['name'] ?></strong> <!-- Display conductor name -->
+                    <strong class="text"><?php echo $conductor['name'] ?></strong>
                 </p>
                 <p class="d-flex align-items-center justify-content-between mb-0">
                     <span class="text-muted d-block">Bus Name:</span>
@@ -153,10 +153,16 @@
                                                 $new_book = new Book($db);
                                                 $book = $new_book->checkSeat($schedule["id"], $seat_row_num);
 
+                                                // Define the SVG seat icon with the seat number
+                                                $svg_seat_icon = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <circle cx="12" cy="12" r="10" stroke="black" stroke-width="2" fill="white"/>
+                                                    <text x="12" y="16" font-size="10" text-anchor="middle" fill="black">' . $seat_row_num . '</text>
+                                                </svg>';
+
                                                 if(empty($book["id"])){
-                                                    echo '<td><button data-seat="'.$seat_row_num.'" class="btn-seat btn btn-sm btn-block btn-outline-dark">'.$seat_row_num.'</button></td>';
+                                                    echo '<td><button data-seat="'.$seat_row_num.'" class="btn-seat btn btn-sm btn-block btn-outline-dark" style="background-image: url(data:image/svg+xml;base64,' . base64_encode($svg_seat_icon) . '); background-size: contain; background-repeat: no-repeat; padding: 0; height: 40px; width: 40px; border: 1px solid black;">'.$seat_row_num.'</button></td>';
                                                 }else{
-                                                    echo '<td><button class="btn btn-sm btn-block btn-primary" disabled>'.$seat_row_num.'</button></td>';
+                                                    echo '<td><button class="btn btn-sm btn-block btn-primary" disabled style="background-image: url(data:image/svg+xml;base64,' . base64_encode($svg_seat_icon) . '); background-size: contain; background-repeat: no-repeat; padding: 0; height: 40px; width: 40px; border: 1px solid black;">'.$seat_row_num.'</button></td>';
                                                 }
                                             }
                                         }
@@ -170,7 +176,7 @@
                 </div>
                 <hr />
                 <h2>Total: <span id='total'>0</span></h2>
-                        
+                
                 <hr />
                 <div class="text-right">
                     <a href="index.php" class="btn btn-outline-dark">Cancel</a>
