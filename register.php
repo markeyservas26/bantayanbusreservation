@@ -20,55 +20,57 @@
         $email = $_POST["email"];
         $address = $_POST["address"];
         $password = $_POST["password"];
-
-        $new_passenger->create($first_name, $last_name, $email, $address, $password);
+        
+        if(strlen($password) < 7) {
+            $error = "Password must be at least 7 characters long.";
+        } else {
+            $new_passenger->create($first_name, $last_name, $email, $address, $password);
+        }
     }
 ?>
 
 <main>
-    <div class="container mt-3" >
+    <div class="container mt-3">
         <div class="w-100 m-auto bg-white shadow-sm" style="max-width: 500px">
             <div class="bg-primary p-3" style="background-image: linear-gradient(-20deg, #b721ff 0%, #21d4fd 100%);">
                 <h1 class="text-center">Create an Account</h1>
             </div>
 
-            <div class="p-3" style="background: linear-gradient(to bottom, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.15) 100%), radial-gradient(at top center, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.40) 120%) #989898;
- background-blend-mode: multiply,multiply;">
+            <div class="p-3" style="background: linear-gradient(to bottom, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.15) 100%), radial-gradient(at top center, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.40) 120%) #989898; background-blend-mode: multiply,multiply;">
                 <?php
+                    if(isset($error)){
+                        echo '<div class="alert alert-danger" role="alert">' . $error . '</div>';
+                    }
                     if(isset($_GET["error"])){
                         if($_GET["error"] == "emailExist"){
-                            echo '<div class="alert alert-danger" role="alert">
-                            Email already exist.
-                          </div>';
+                            echo '<div class="alert alert-danger" role="alert">Email already exists.</div>';
                         }else if($_GET["error"] == "stmtfailed"){
-                            echo '<div class="alert alert-danger" role="alert">
-                            Error on creating an account.
-                          </div>';
+                            echo '<div class="alert alert-danger" role="alert">Error creating an account.</div>';
                         }
                     }
                 ?>
 
                 <form method="POST" action="" >
-                    <div class="form-row mb-3" >
+                    <div class="form-row mb-3">
                         <div class="col-md-6">
-                            <label for="first_name" style=" color: white; font-weight: bold">First Name</label>
+                            <label for="first_name" style="color: white; font-weight: bold">First Name</label>
                             <input type="text" class="form-control" id="first_name" name="first_name" required />
                         </div>
                         <div class="col-md-6">
-                            <label for="last_name" style=" color: white; font-weight: bold">Last Name</label>
+                            <label for="last_name" style="color: white; font-weight: bold">Last Name</label>
                             <input type="text" class="form-control" id="last_name" name="last_name" required />
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="address" style=" color: white; font-weight: bold">Address</label>
+                        <label for="address" style="color: white; font-weight: bold">Address</label>
                         <input type="text" class="form-control" id="address" name="address" required />
                     </div>
                     <div class="form-group">
-                        <label for="email" style=" color: white; font-weight: bold">Email address</label>
+                        <label for="email" style="color: white; font-weight: bold">Email address</label>
                         <input type="email" class="form-control" id="email" name="email" required />
                     </div>
                     <div class="form-group">
-                        <label for="password" style=" color: white; font-weight: bold">Password</label>
+                        <label for="password" style="color: white; font-weight: bold">Password</label>
                         <div class="input-group">
                             <input type="password" class="form-control" id="password" name="password" required />
                             <div class="input-group-append">
@@ -79,7 +81,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="confirm_password" style=" color: white; font-weight: bold">Confirm Password</label>
+                        <label for="confirm_password" style="color: white; font-weight: bold">Confirm Password</label>
                         <div class="input-group">
                             <input type="password" class="form-control" id="confirm_password" name="confirm_password" required />
                             <div class="input-group-append">
@@ -91,9 +93,9 @@
                     </div>
                     <button type="submit" class="btn btn-block glow-button" name="sign-up-submit">Register</button>
 
-                    <div class="text-center" style=" color: white; font-weight: bold">
+                    <div class="text-center" style="color: white; font-weight: bold">
                         <span>Already have an account? </span>
-                        <a href="login.php" style=" color: cyan; font-weight: bold">Login here</a>
+                        <a href="login.php" style="color: cyan; font-weight: bold">Login here</a>
                     </div>
                 </form>
             </div>
