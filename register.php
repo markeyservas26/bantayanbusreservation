@@ -56,7 +56,7 @@
                             <label for="first_name" style="color: white; font-weight: bold">First Name</label>
                             <input type="text" class="form-control" id="first_name" name="first_name" required />
                         </div>
-                        <div class="col-md-6">
+                        <div class="form-group">
                             <label for="last_name" style="color: white; font-weight: bold">Last Name</label>
                             <input type="text" class="form-control" id="last_name" name="last_name" required />
                         </div>
