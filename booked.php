@@ -154,10 +154,10 @@
                                                 $book = $new_book->checkSeat($schedule["id"], $seat_row_num);
 
                                                 if(empty($book["id"])){
-                                                    echo '<td><button data-seat="'.$seat_row_num.'" class="btn-seat btn btn-sm btn-outline-dark" style="background-image: url("assets/img/seat.png"); width: 25px;">
+                                                    echo '<td><button data-seat="'.$seat_row_num.'" class="btn-seat btn btn-sm btn-outline-dark" style="background-image: url(\'assets/img/seat.png\'); width: 50px;">
                                                             <span class="seat-number">'.$seat_row_num.'</span></button></td>';
                                                 }else{
-                                                    echo '<td><button class="btn btn-sm btn-primary" disabled style="background-image: url("assets/img/seat.png");">
+                                                    echo '<td><button class="btn btn-sm btn-primary" disabled style="background-image: url(\'assets/img/seat.png\'); width: 50px;">
                                                             <span class="seat-number">'.$seat_row_num.'</span></button></td>';
                                                 }
                                             }
@@ -201,7 +201,7 @@
         top: 50%; /* Center the number vertically */
         left: 50%; /* Center the number horizontally */
         transform: translate(-50%, -50%); /* Adjust for centering */
-        color: white; /* Text color */
+        color: black; /* Text color */
         font-weight: bold; /* Make the text bold */
         font-size: 14px; /* Adjust font size as needed */
     }
