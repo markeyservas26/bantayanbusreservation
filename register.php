@@ -93,7 +93,7 @@
 
                     <div class="text-center" style="color: black; font-weight: bold">
                         <span>Already have an account? </span>
-                        <a href="login.php" style="color: cyan; font-weight: bold">Login here</a>
+                        <a href="login.php" style="color: skyblue; font-weight: bold">Login here</a>
                     </div>
                 </form>
             </div>
