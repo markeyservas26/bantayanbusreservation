@@ -80,8 +80,8 @@ background-image: linear-gradient(0deg, #FFDEE9 0%, #B5FFFC 100%);
     <div class="card">
       <img src="assets/img/d2.png" class="card-img-top" alt="Destination 3">
       <div class="card-body">
-        <h5 class="card-title">Destination 3</h5>
-        <p class="card-text">Description for Destination 3</p>
+        <h5 class="card-title">Santa Fe</h5>
+        <p class="card-text" style="max-width: 300px;">Santa Fe is a charming town located on Bantayan Island in the northern part of Cebu, Philippines. Known for its laid-back vibe and beautiful natural scenery, Santa Fe is a popular destination for those looking to escape the hustle and bustle of city life.</p>
       </div>
     </div>
   </div>
