@@ -32,11 +32,11 @@
 <main>
     <div class="container mt-3">
         <div class="w-100 m-auto bg-white shadow-sm" style="max-width: 500px">
-            <div class="bg-primary p-3" style="background-image: linear-gradient(-20deg, #b721ff 0%, #21d4fd 100%);">
+            <div class="bg-primary p-3" style="background: rgb(51,122,183);background: radial-gradient(circle, rgba(51,122,183,1) 0%, rgba(4,92,167,1) 50%, rgba(0,137,255,1) 100%);">
                 <h1 class="text-center">Create an Account</h1>
             </div>
 
-            <div class="p-3" style="background: rgb(51,122,183); background: radial-gradient(circle, rgba(51,122,183,1) 0%, rgba(4,92,167,1) 50%, rgba(0,137,255,1) 100%);">
+            <div class="p-3" style="white">
                 <?php
                     if(isset($error)){
                         echo '<div class="alert alert-danger" role="alert">' . $error . '</div>';
