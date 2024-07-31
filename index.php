@@ -57,8 +57,7 @@ background-image: linear-gradient(0deg, #FFDEE9 0%, #B5FFFC 100%);
 </center>
 </div>
 <center>
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d430.17561504512923!2d123.71770814168497!3d11.164743038493942!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33a888af8b2a9f5b%3A0x38784c3edd200c99!2sBantayan%20Municipal%20Terminal!5e1!3m2!1sen!2sph!4v1721773406170!5m2!1sen!2sph" width="900" height="565" style="border:0; margin-top: 25px" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-  </center>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d885.5465016292059!2d123.7259123695161!3d11.169638815014642!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33a888a10743cc17%3A0xed6e9bbdb8a9737c!2sRl%20Fitness%20%26%20Sports%20Hub!5e1!3m2!1sen!2sph!4v1722437136974!5m2!1sen!2sph" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>  </center>
 </main>
 
 <br>
