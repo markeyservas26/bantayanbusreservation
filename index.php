@@ -57,7 +57,7 @@ background-image: linear-gradient(0deg, #FFDEE9 0%, #B5FFFC 100%);
 </center>
 </div>
 
-<center style="margin-top: 25px;">
+<center style="margin-top: 50px;">
   <h2>Destinations</h2>
 </center>
 
