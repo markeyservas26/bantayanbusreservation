@@ -30,7 +30,7 @@
 ?>
 
 <main>
-<div style="background-image: url('assets/img/bg1.png'); background-size: 100% 100%; width: 500px; height: 300px;" class="d-flex align-items-center justify-content-center p-4">
+<div style="background-image: url('assets/img/buscv1.jpg'); background-size: 100% 100%; " class="d-flex align-items-center justify-content-center p-4">
     <?php include("includes/forms/schedule-form.php") ?>
 </div>
 
