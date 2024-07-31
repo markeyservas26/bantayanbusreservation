@@ -64,15 +64,15 @@ background-image: linear-gradient(0deg, #FFDEE9 0%, #B5FFFC 100%);
 <div class="container">
   <div class="destinations">
     <div class="destination">
-      <img src="assets/images/destination1.jpg" alt="Destination 1">
+      <img src="assets/img/d1.jpg" alt="Destination 1">
       <p style="display: inline-block; vertical-align: top; margin-left: 10px;">Description for Destination 1</p>
     </div>
     <div class="destination">
-      <img src="assets/images/destination2.jpg" alt="Destination 2">
+      <img src="assets/img/d3.png" alt="Destination 2">
       <p style="display: inline-block; vertical-align: top; margin-left: 10px;">Description for Destination 2</p>
     </div>
     <div class="destination">
-      <img src="assets/images/destination3.jpg" alt="Destination 3">
+      <img src="assets/img/d2.png" alt="Destination 3">
       <p style="display: inline-block; vertical-align: top; margin-left: 10px;">Description for Destination 3</p>
     </div>
   </div>
