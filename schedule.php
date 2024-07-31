@@ -30,7 +30,7 @@
 ?>
 
 <main>
-    <div style="background-color: #ffc432" class="d-flex align-items-center justify-content-center p-4">
+    <div style="background-image: assets/img/bg1.png" class="d-flex align-items-center justify-content-center p-4">
         <?php include("includes/forms/schedule-form.php") ?>
     </div>
 
