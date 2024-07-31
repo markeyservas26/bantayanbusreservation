@@ -155,7 +155,7 @@
 
                                                 if (!empty($book["id"])) {
                                                     // Seat is reserved
-                                                    echo '<td><button class="btn btn-sm btn-primary" disabled style="background-image: url(\'assets/img/seat.png\'); width: 50px; height: 50px;">
+                                                    echo '<td><button class="btn btn-sm btn-primary" disabled style="background-image: url(\'assets/img/seat.png\'); width: 60px; height: 50px;">
                                                             <span class="seat-number">'.$seat_row_num.'</span></button></td>';
                                                 } else {
                                                     // Seat is available
