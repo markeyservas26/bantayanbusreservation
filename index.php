@@ -63,17 +63,26 @@ background-image: linear-gradient(0deg, #FFDEE9 0%, #B5FFFC 100%);
 
 <div class="container">
   <div class="destinations">
-    <div class="destination">
-      <img src="assets/img/d1.jpg" alt="Destination 1">
-      <p style="display: inline-block; vertical-align: top; margin-left: 10px;">Description for Destination 1</p>
+    <div class="card">
+      <img src="assets/images/destination1.jpg" class="card-img-top" alt="Destination 1">
+      <div class="card-body">
+        <h5 class="card-title">Destination 1</h5>
+        <p class="card-text">Description for Destination 1</p>
+      </div>
     </div>
-    <div class="destination">
-      <img src="assets/img/d3.png" alt="Destination 2">
-      <p style="display: inline-block; vertical-align: top; margin-left: 10px;">Description for Destination 2</p>
+    <div class="card">
+      <img src="assets/images/destination2.jpg" class="card-img-top" alt="Destination 2">
+      <div class="card-body">
+        <h5 class="card-title">Destination 2</h5>
+        <p class="card-text">Description for Destination 2</p>
+      </div>
     </div>
-    <div class="destination">
-      <img src="assets/img/d2.png" alt="Destination 3" style="width: 150px; height: 100px;">
-      <p style="display: inline-block; vertical-align: top; margin-left: 10px;">Description for Destination 3</p>
+    <div class="card">
+      <img src="assets/images/destination3.jpg" class="card-img-top" alt="Destination 3">
+      <div class="card-body">
+        <h5 class="card-title">Destination 3</h5>
+        <p class="card-text">Description for Destination 3</p>
+      </div>
     </div>
   </div>
 </div>
@@ -93,3 +102,35 @@ background-image: linear-gradient(0deg, #FFDEE9 0%, #B5FFFC 100%);
 <br>
 <br>
 <?php include('includes/layout-footer.php')?>
+
+<style>
+  .destinations {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+  }
+  .card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 30%;
+    margin: 10px;
+    text-align: center;
+  }
+  .card-img-top {
+    width: 100%;
+    height: auto;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+  .card-body {
+    padding: 15px;
+  }
+  .card-title {
+    margin-bottom: 10px;
+    font-size: 1.25rem;
+  }
+  .card-text {
+    font-size: 1rem;
+  }
+</style>
