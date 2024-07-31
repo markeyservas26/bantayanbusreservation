@@ -154,7 +154,7 @@
                                                 $book = $new_book->checkSeat($schedule["id"], $seat_row_num);
 
                                                 if(empty($book["id"])){
-                                                    echo '<td><button data-seat="'.$seat_row_num.'" class="btn-seat btn btn-sm btn-outline-dark" style="background-image: url(\'assets/img/seat.png\');">
+                                                    echo '<td><button data-seat="'.$seat_row_num.'" class="btn-seat btn btn-sm btn-outline-dark" style="background-image: url(\'assets/img/seat.png\'); width: 25px;">
                                                             <span class="seat-number">'.$seat_row_num.'</span></button></td>';
                                                 }else{
                                                     echo '<td><button class="btn btn-sm btn-primary" disabled style="background-image: url(\'assets/img/seat.png\');">
