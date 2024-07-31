@@ -66,8 +66,8 @@ background-image: linear-gradient(0deg, #FFDEE9 0%, #B5FFFC 100%);
     <div class="card">
       <img src="assets/img/d1.jpg" class="card-img-top" alt="Destination 1">
       <div class="card-body">
-        <h5 class="card-title">Destination 1</h5>
-        <p class="card-text">Description for Destination 1</p>
+        <h5 class="card-title">Madridejos</h5>
+        <p class="card-text" style="max-width: 300px;">Madridejos is a municipality on Bantayan Island, located in the northern part of Cebu Province in the Philippines. It's known for its laid-back atmosphere and beautiful coastal scenery. The area is a blend of traditional Filipino charm and natural beauty, offering picturesque beaches, clear waters, and a relaxed environment.</p>
       </div>
     </div>
     <div class="card">
