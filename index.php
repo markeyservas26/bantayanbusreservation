@@ -60,8 +60,9 @@ background-image: linear-gradient(0deg, #FFDEE9 0%, #B5FFFC 100%);
   <h2>Bantayan Bus Location</h2>
   <div style="display: flex; align-items: center; justify-content: center;">
     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d885.5465016292059!2d123.7259123695161!3d11.169638815014642!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33a888a10743cc17%3A0xed6e9bbdb8a9737c!2sRl%20Fitness%20%26%20Sports%20Hub!5e1!3m2!1sen!2sph!4v1722437136974!5m2!1sen!2sph" width="600" height="450" style="border:5; margin-left: -450px; margin-top: 50px" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <h1>Bantayan Bus Terminal</h1>
     <p style="margin-left: 50px; max-width: 300px;">
-      Welcome to Bantayan Bus Location! This map shows the location of the RL Fitness & Sports Hub in Bantayan. You can use this map to find directions and get a better understanding of the area. Feel free to explore and plan your visit accordingly. 
+      Address: Rl Fitness & Sports Hub <br> Bantayan, Cebu
     </p>
   </div>
 </center>
