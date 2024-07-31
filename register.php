@@ -52,23 +52,23 @@
 
                 <form method="POST" action="" >
                     <div class="form-group">
-                         <label for="first_name" style="color: white; font-weight: bold">First Name</label>
+                         <label for="first_name" style="color: black; font-weight: bold">First Name</label>
                          <input type="text" class="form-control" id="first_name" name="first_name" required />
                     </div>
                     <div class="form-group">
-                            <label for="last_name" style="color: white; font-weight: bold">Last Name</label>
+                            <label for="last_name" style="color: black; font-weight: bold">Last Name</label>
                             <input type="text" class="form-control" id="last_name" name="last_name" required />
                         </div>
                     <div class="form-group">
-                        <label for="address" style="color: white; font-weight: bold">Address</label>
+                        <label for="address" style="color: black; font-weight: bold">Address</label>
                         <input type="text" class="form-control" id="address" name="address" required />
                     </div>
                     <div class="form-group">
-                        <label for="email" style="color: white; font-weight: bold">Email address</label>
+                        <label for="email" style="color: black; font-weight: bold">Email address</label>
                         <input type="email" class="form-control" id="email" name="email" required />
                     </div>
                     <div class="form-group">
-                        <label for="password" style="color: white; font-weight: bold">Password</label>
+                        <label for="password" style="color: black; font-weight: bold">Password</label>
                         <div class="input-group">
                             <input type="password" class="form-control" id="password" name="password" required />
                             <div class="input-group-append">
@@ -79,7 +79,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="confirm_password" style="color: white; font-weight: bold">Confirm Password</label>
+                        <label for="confirm_password" style="color: black; font-weight: bold">Confirm Password</label>
                         <div class="input-group">
                             <input type="password" class="form-control" id="confirm_password" name="confirm_password" required />
                             <div class="input-group-append">
