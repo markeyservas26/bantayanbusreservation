@@ -24,7 +24,7 @@
   <body class="bg-light" >
 
   <!-- Just an image -->
-<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm" style="background-image: linear-gradient(-20deg, #b721ff 0%, #21d4fd 100%);">
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm" style="background: rgb(255,222,47); background: radial-gradient(circle, rgba(255,222,47,1) 0%, rgba(222,190,18,1) 50%, rgba(194,165,13,1) 100%);">
   <div class="container">
     <a class="navbar-brand" href="index.php" style="font-family: 'Times New Roman', serif;">
       <img src="assets/images/bobrs3.png" style="width: 350px; height: 60px;" alt=""><b>
