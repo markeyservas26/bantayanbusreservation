@@ -123,7 +123,7 @@
   padding: 10px 20px;
   font-size: 16px;
   color: white;
-  background-image: linear-gradient(-20deg, #b721ff 0%, #21d4fd 100%);
+  background-image: linear-gradient(-20deg, #337ab7 0%, #337ab7 100%);
   border: none;
   border-radius: 5px;
   cursor: pointer;
