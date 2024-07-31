@@ -52,7 +52,7 @@
 
                 <form method="POST" action="" >
                     <div class="form-row mb-3">
-                        <div class="col-md-6">
+                        <div class="form-group">
                             <label for="first_name" style="color: white; font-weight: bold">First Name</label>
                             <input type="text" class="form-control" id="first_name" name="first_name" required />
                         </div>
