@@ -36,7 +36,7 @@
                 <h1 class="text-center">Create an Account</h1>
             </div>
 
-            <div class="p-3" style="background: linear-gradient(to bottom, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.15) 100%), radial-gradient(at top center, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.40) 120%) #989898; background-blend-mode: multiply,multiply;">
+            <div class="p-3" style="background: rgb(51,122,183); background: radial-gradient(circle, rgba(51,122,183,1) 0%, rgba(4,92,167,1) 50%, rgba(0,137,255,1) 100%);">
                 <?php
                     if(isset($error)){
                         echo '<div class="alert alert-danger" role="alert">' . $error . '</div>';
