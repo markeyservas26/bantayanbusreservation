@@ -27,7 +27,7 @@ background-image: linear-gradient(0deg, #FFDEE9 0%, #B5FFFC 100%);
 
   <br>
   <br>
-<div id="carouselExampleIndicators" class="carousel slide carousel-fade"   style="color: black data-ride="carousel>
+<div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel" style="color: black;">
   <ol class="carousel-indicators" >
     <li data-target="#carouselExampleIndicators" style="color: black" data-slide-to="0" class="active"></li>
     <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -56,6 +56,28 @@ background-image: linear-gradient(0deg, #FFDEE9 0%, #B5FFFC 100%);
   </button>
 </center>
 </div>
+
+<center>
+  <h2>Destinations</h2>
+</center>
+
+<div class="container">
+  <div class="destinations">
+    <div class="destination">
+      <img src="assets/img/d1.jpg" alt="Destination 1">
+      <p>Destination 1</p>
+    </div>
+    <div class="destination">
+      <img src="assets/img/d3.png" alt="Destination 2">
+      <p>Destination 2</p>
+    </div>
+    <div class="destination">
+      <img src="assets/img/d2.png" alt="Destination 3">
+      <p>Destination 3</p>
+    </div>
+  </div>
+</div>
+
 <center>
   <h2>Bantayan Bus Terminal</h2>
   <div style="display: flex; align-items: center; justify-content: center;">
@@ -66,9 +88,8 @@ background-image: linear-gradient(0deg, #FFDEE9 0%, #B5FFFC 100%);
   </div>
 </center>
 
-
 </main>
 
 <br>
-<br
+<br>
 <?php include('includes/layout-footer.php')?>
