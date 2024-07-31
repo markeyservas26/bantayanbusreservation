@@ -52,7 +52,7 @@
                 ?>
                 <div class="mb-3">
                     <h4 class="mb-0">
-                        <?php echo $location_from["location_name"] . ' gray ' . $location_to["location_name"] ?>
+                        <?php echo $location_from["location_name"] . ' &#x2192; ' . $location_to["location_name"] ?>
                     </h4>
                 </div>
 
