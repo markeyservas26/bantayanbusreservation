@@ -2,10 +2,9 @@
     include('includes/layout-header.php');
 
     $schedule_id = isset($_GET['schedule_id']) && !empty($_GET['schedule_id']) ? $_GET['schedule_id'] : "";
-    if (empty($schedule_id)) {
+    if(empty($schedule_id)){
         header('Location: index.php');
-        exit();
-    } else {
+    }else{
         include('controllers/db.php');
         include('controllers/schedule.php');
 
@@ -16,18 +15,17 @@
         $schedule = $new_schedule->getById($schedule_id);
         $fare = $schedule['fare'];
 
-        if (empty($schedule["id"])) {
+        if(empty($schedule["id"])){
             header('Location: index.php');
-            exit();
-        } else {
+        }else{
             include('controllers/route.php');
             include('controllers/location.php');
             include('controllers/book.php');
             include('controllers/bus.php');
             include('controllers/vessel.php');
             include('controllers/driver.php');
-            include('controllers/conductor.php');
-
+            include('controllers/conductor.php'); // Include the conductor controller
+            
             $new_route = new Route($db);
             $route = $new_route->getById($schedule["route_id"]);
 
@@ -37,8 +35,8 @@
             $new_driver = new Driver($db);
             $driver = $new_driver->getById($schedule["driver_id"]);
 
-            $new_conductor = new Conductor($db);
-            $conductor = $new_conductor->getById($schedule["conductor_id"]);
+            $new_conductor = new Conductor($db); // Instantiate the conductor class
+            $conductor = $new_conductor->getById($schedule["conductor_id"]); // Fetch the conductor information
 
             $new_location = new Location($db);
             $location_from = $new_location->getById($route["route_from"]);
@@ -80,23 +78,25 @@
                 </p>
                 <p class="d-flex align-items-center justify-content-between mb-0">
                     <span class="text-muted d-block">Bus Conductor:</span>
-                    <strong class="text"><?php echo $conductor['name'] ?></strong>
+                    <strong class="text"><?php echo $conductor['name'] ?></strong> <!-- Display conductor name -->
                 </p>
                 <p class="d-flex align-items-center justify-content-between mb-0">
                     <span class="text-muted d-block">Bus Name:</span>
                     <strong class="text"><?php echo $bus['bus_num'] ?></strong>
                 </p>
+
                 <p class="d-flex align-items-center justify-content-between mb-0">
                     <span class="text-muted d-block">Bus Number:</span>
                     <strong class="text"><?php echo $bus['bus_code'] ?></strong>
                 </p>
+
                 <p class="d-flex align-items-center justify-content-between mb-0">
                     <span class="text-muted d-block">Bus Type:</span>
                     <strong class="text"><?php echo $bus['bus_type'] ?></strong>
                 </p>
                 <p class="d-flex align-items-center justify-content-between mb-0">
                     <span class="text-muted d-block">Fare:</span>
-                    <strong><?php echo $fare ?></strong>
+                    <strong><?php echo $schedule['fare'] ?></strong>
                 </p>
                 
                 <hr>
@@ -117,7 +117,7 @@
                 </div>
                 
                 <hr />
-                
+
                 <div>
                     <div class="my-3">
                         <p class="mb-0">Legend</p>
@@ -146,20 +146,18 @@
                                     for ($i = 1; $i <= 10; $i++) {
                                         echo '<tr>';
                                         for ($x = 1; $x <= 5; $x++) {
-                                            if ($x == 3) {
-                                                echo '<td>&nbsp;</td>'; // Skip the middle seat
-                                            } else {
+                                            if($x == 3){
+                                                echo '<td>&nbsp;</td>';
+                                            }else{
                                                 $seat_row_num++;
                                                 $new_book = new Book($db);
                                                 $book = $new_book->checkSeat($schedule["id"], $seat_row_num);
 
-                                                if (!empty($book["id"])) {
-                                                    // Seat is reserved
-                                                    echo '<td><button class="btn btn-sm btn-primary" disabled style="background-image: url(\'assets/img/seat.png\'); width: 50px; height: 50px;">
-                                                            <span class="seat-number">'.$seat_row_num.'</span></button></td>';
-                                                } else {
-                                                    // Seat is available
+                                                if(empty($book["id"])){
                                                     echo '<td><button data-seat="'.$seat_row_num.'" class="btn-seat btn btn-sm btn-outline-dark" style="background-image: url(\'assets/img/seat.png\'); width: 50px; height: 50px;">
+                                                            <span class="seat-number">'.$seat_row_num.'</span></button></td>';
+                                                }else{
+                                                    echo '<td><button class="btn btn-sm btn-primary" disabled style="background-image: url(\'assets/img/seat.png\'); width: 50px; height: 50px;">
                                                             <span class="seat-number">'.$seat_row_num.'</span></button></td>';
                                                 }
                                             }
@@ -255,7 +253,7 @@
         }
 
         if (!passenger_id) {
-            alert('Unable to create booking. Please sign in to your account.');
+            alert('Unable to create booking. Please sign in your account.');
             return;
         }
 
