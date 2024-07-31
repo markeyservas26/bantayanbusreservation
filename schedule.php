@@ -30,9 +30,10 @@
 ?>
 
 <main>
-    <div style="background-image: assets/img/bg1.png" class="d-flex align-items-center justify-content-center p-4">
-        <?php include("includes/forms/schedule-form.php") ?>
-    </div>
+<div style="background-image: url('assets/img/bg1.png');" class="d-flex align-items-center justify-content-center p-4">
+    <?php include("includes/forms/schedule-form.php") ?>
+</div>
+
 
     <div class="container mt-3">
         <?php
