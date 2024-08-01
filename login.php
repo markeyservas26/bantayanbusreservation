@@ -24,62 +24,69 @@
 
 <main>
     <div class="container mt-5">
-        <div class="w-100 m-auto bg-white shadow-sm" style="max-width: 500px;">
-            <div class="bg-primary p-3" style="background-image: linear-gradient( 109.6deg,  rgba(254,253,205,1) 11.2%, rgba(163,230,255,1) 91.1% );">
-                <h1 class="text-center">Login</h1>
-            </div>
-
-            <div class="p-3">
-                <?php
-                    if(isset($_GET["signUp"])){
-                        if($_GET["signUp"] == "passengerCreated"){
-                            echo '<div class="alert alert-success" role="alert">
-                            Account created successfully.
-                          </div>';
-                        }
-                    }else if(isset($_GET["newpwd"])){
-                        if($_GET["newpwd"] == "passwordUpdated"){
-                            ?>
-                                <div class="alert alert-success" role="alert">
-                                    Password updated successfully.
-                                </div>
-                            <?php
-                        }
-                    }else if(isset($_GET["signin"])){
-                        if($_GET["signin"] == "fail"){
-                            ?>
-                                <div class="alert alert-danger" role="alert">
-                                    Invalid email or password.
-                                </div>
-                            <?php
-                        }
-                    }
-                ?>
-
-                <form method="POST" action="">
-                    <div class="form-group">
-                        <label for="email">Email address</label>
-                        <input type="email" class="form-control" id="email" name="email" required />
+        <div class="row">
+            <div class="col-md-6 d-flex align-items-center">
+                <div class="w-100 bg-white shadow-sm p-3" style="max-width: 500px;">
+                    <div class="bg-primary p-3" style="background-image: linear-gradient(109.6deg, rgba(254,253,205,1) 11.2%, rgba(163,230,255,1) 91.1%);">
+                        <h1 class="text-center">Login</h1>
                     </div>
-                    <div class="form-group">
-                        <label for="password">Password</label>
-                        <div class="input-group">
-                            <input type="password" class="form-control" id="password" name="password" required />
-                            <div class="input-group-append">
-                                <span class="input-group-text" id="toggle-password">
-                                    <i class="fa fa-eye" aria-hidden="true"></i>
-                                </span>
+
+                    <div class="p-3">
+                        <?php
+                            if(isset($_GET["signUp"])){
+                                if($_GET["signUp"] == "passengerCreated"){
+                                    echo '<div class="alert alert-success" role="alert">
+                                    Account created successfully.
+                                  </div>';
+                                }
+                            }else if(isset($_GET["newpwd"])){
+                                if($_GET["newpwd"] == "passwordUpdated"){
+                                    ?>
+                                        <div class="alert alert-success" role="alert">
+                                            Password updated successfully.
+                                        </div>
+                                    <?php
+                                }
+                            }else if(isset($_GET["signin"])){
+                                if($_GET["signin"] == "fail"){
+                                    ?>
+                                        <div class="alert alert-danger" role="alert">
+                                            Invalid email or password.
+                                        </div>
+                                    <?php
+                                }
+                            }
+                        ?>
+
+                        <form method="POST" action="">
+                            <div class="form-group">
+                                <label for="email">Email address</label>
+                                <input type="email" class="form-control" id="email" name="email" required />
                             </div>
-                        </div>
-                        <a href="forget-password.php">Forgot password?</a>
-                    </div>
-                    <button type="submit" class="btn btn-block btn-dark" name="sign-in-submit">Login</button>
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <div class="input-group">
+                                    <input type="password" class="form-control" id="password" name="password" required />
+                                    <div class="input-group-append">
+                                        <span class="input-group-text" id="toggle-password">
+                                            <i class="fa fa-eye" aria-hidden="true"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                                <a href="forget-password.php">Forgot password?</a>
+                            </div>
+                            <button type="submit" class="btn btn-block btn-dark" name="sign-in-submit">Login</button>
 
-                    <div class="text-center">
-                        <span>Not register yet? </span>
-                        <a href="register.php">Create an account</a>
+                            <div class="text-center">
+                                <span>Not registered yet? </span>
+                                <a href="register.php">Create an account</a>
+                            </div>
+                        </form>
                     </div>
-                </form>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <!-- Optional: Add content here if needed -->
             </div>
         </div>
     </div>
