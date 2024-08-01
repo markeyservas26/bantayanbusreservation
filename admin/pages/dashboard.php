@@ -191,27 +191,27 @@
             </div>
         </div>
         <div class="col-6 col-sm-4 col-md-3 mb-3">
-    <div class="bg-white shadow border-top p-3 border-primary rounded h-100" style="background-image: linear-gradient(to top, #fddb92 0%, #d1fdff 100%);">
-        <div class="d-flex align-items-center">
-            <!-- Replacing SVG with the currency symbol -->
-            <div class="text-center" style="font-size: 50px; color: #000000;">
-                &#8369;
-            </div>
-            <div class="text-center w-100">
-                <p class="mb-0" style="font-family: 'Times New Roman', serif;"><b>TOTAL FARE</b></p>
-                <h1>
-                    <?php
-                    $query = mysqli_query($conn, "SELECT SUM(total) AS total_fare FROM tblbook");
-                    $row = mysqli_fetch_assoc($query);
-                    $totalFare = $row['total_fare'];
-                    echo $totalFare;
-                    ?>
-                </h1>
+            <div class="bg-white shadow border-top p-3 border-primary rounded h-100" style="background-image: linear-gradient(to top, #fddb92 0%, #d1fdff 100%);">
+                <div class="d-flex align-items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="50px" viewBox="0 0 24 24" width="50px"
+                        fill="#000000">
+                        <path d="M0 0h24v24H0V0z" fill="none" />
+                        <path
+                            d="M12 6c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2m0 9c2.7 0 5.8 1.29 6 2v1H6v-.99c.2-.72 3.3-2.01 6-2.01m0-11C9.79 4 8 5.79 8 8s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm0 9c-2.67 0-8 1.34-8 4v3h16v-3c0-2.66-5.33-4-8-4z" />
+                    </svg>
+                    <div class="text-center w-100">
+                        <p class="mb-0" style="font-family: 'Times New Roman', serif;"><b>TOTAL CONDUCTORS</b></p>
+                        <h1>
+                            <?php
+                    $q = mysqli_query($conn,"SELECT * from tblconductor");
+                    $num_rows = mysqli_num_rows($q);
+                    echo $num_rows;
+                ?>
+                        </h1>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</div>
-
 </div>
 
     <!-- Chart.js canvas -->
@@ -241,6 +241,7 @@ background-image: linear-gradient(0deg, #D9AFD9 0%, #97D9E1 100%);
                     echo mysqli_num_rows(mysqli_query($conn, "SELECT * FROM tblbus")) . ',';
                     echo mysqli_num_rows(mysqli_query($conn, "SELECT * FROM tbldriver")) . ',';
                     echo mysqli_num_rows(mysqli_query($conn, "SELECT * FROM tblpassenger"));
+                    echo mysqli_num_rows(mysqli_query($conn, "SELECT * FROM tblconductor")) . ',';
                     ?>
                 ],
                 backgroundColor: [
@@ -251,6 +252,7 @@ background-image: linear-gradient(0deg, #D9AFD9 0%, #97D9E1 100%);
                     '#E6E6FA',
                     '#FFAA33',
                     '#A0A0A0',
+                    '#A0A0A0',
                 ],
                 borderColor: [
                     'rgba(255, 99, 132, 1)',
@@ -259,6 +261,7 @@ background-image: linear-gradient(0deg, #D9AFD9 0%, #97D9E1 100%);
                     'rgba(75, 192, 192, 1)',
                     'rgba(153, 102, 255, 1)',
                     'rgba(255, 159, 64, 1)',
+                    'rgba(199, 199, 199, 1)',
                     'rgba(199, 199, 199, 1)',
                 ],
                 borderWidth: 1
