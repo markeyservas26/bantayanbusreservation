@@ -96,7 +96,7 @@ background-image: linear-gradient(0deg, #FFDEE9 0%, #B5FFFC 100%);
   </div>
 </center>
 
-<center style="margin-top: 55px;">
+<center style="margin-top: 50px;">
   <div style="background-color: white; padding: 20px; border-radius: 10px; color: black; text-align: left; width: 1500px; font-family: 'Courier New', Courier, monospace;">
     <h2 style="text-align: center;">About Us</h2><br><br>
     <p style="font-size: 100%">An Overview of BantayanBusBooking.com</p><br>
