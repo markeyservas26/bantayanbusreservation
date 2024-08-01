@@ -227,7 +227,7 @@ background-image: linear-gradient(0deg, #D9AFD9 0%, #97D9E1 100%);
 <script>
     var ctx = document.getElementById('myChart').getContext('2d');
     var myChart = new Chart(ctx, {
-        type: 'bar',
+        type: 'horizontal-bar',
         data: {
             labels: ['Bookings', 'Schedules', 'Routes', 'Locations', 'Buses', 'Drivers', 'Passengers', 'Conductor'],
             datasets: [{
