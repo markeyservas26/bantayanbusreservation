@@ -97,7 +97,7 @@ background-image: linear-gradient(0deg, #FFDEE9 0%, #B5FFFC 100%);
 </center>
 
 <center style="margin-top: 55px;">
-  <div style="background-color: white; padding: 20px; border-radius: 10px; color: black; text-align: left; width: 1500px;">
+  <div style="background-color: white; padding: 20px; border-radius: 10px; color: black; text-align: left; width: 1500px; ">
     <h2 style="text-align: center;">About Us</h2><br><br>
     <p style="font-size: 100%">An Overview of BantayanBusBooking.com</p><br>
     <p>Buses are a practical and affordable mode of transportation for various purposes, such as daily commuting, traveling to different provinces, or enjoying a weekend getaway. BantayanBusBooking.com is a user-friendly website that offers convenient access to bus schedules specifically for Bantayan Island. Its main objective is to simplify travel planning by providing users with the most up-to-date information on bus routes and schedules. With just a few clicks, you can easily find the perfect bus schedule that suits your needs.
@@ -116,37 +116,44 @@ background-image: linear-gradient(0deg, #FFDEE9 0%, #B5FFFC 100%);
 
 <style>
   .destinations {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 20px;
-  }
-  .card {
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    width: 30%;
-    margin: 10px;
-    text-align: center;
-    transition: transform 0.3s ease; /* Add transition for smooth animation */
-  }
-  .card:hover {
-    transform: translateY(-20px); /* Raise the card by 10px */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Increase shadow for a more pronounced effect */
-  }
-  .card-img-top {
-    width: 100%;
-    height: auto;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-  }
-  .card-body {
-    padding: 15px;
-  }
-  .card-title {
-    margin-bottom: 10px;
-    font-size: 1.25rem;
-  }
-  .card-text {
-    font-size: 1rem;
-  }
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 30%;
+  margin: 10px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add transition for smooth animation */
+}
+
+.card:hover {
+  transform: translateY(-20px); /* Raise the card by 20px */
+  box-shadow: 0 0 15px rgba(0, 0, 255, 0.6); /* Add a glowing effect */
+}
+
+.card-img-top {
+  width: 100%;
+  height: auto;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.card-body {
+  padding: 15px;
+}
+
+.card-title {
+  margin-bottom: 10px;
+  font-size: 1.25rem;
+}
+
+.card-text {
+  font-size: 1rem;
+}
+
 </style>
