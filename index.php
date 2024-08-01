@@ -24,6 +24,7 @@ background-image: linear-gradient(0deg, #FFDEE9 0%, #B5FFFC 100%);
     <div class="d-flex align-items-center justify-content-center p-4">
         <?php include("includes/forms/schedule-form.php") ?>
     </div>
+    <h1>Where is your next stop?</h1>
 
   <br>
   <br>
