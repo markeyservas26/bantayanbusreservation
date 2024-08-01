@@ -99,7 +99,10 @@ background-image: linear-gradient(0deg, #FFDEE9 0%, #B5FFFC 100%);
 <center style="margin-top: 60px;">
   <div style="background-color: white; padding: 20px; border-radius: 10px; color: black; text-align: left; width: 1500px;">
     <h2 style="text-align: center;">About Us</h2><br><br>
-    <p>We are a team of dedicated professionals committed to providing exceptional services and products. Our mission is to deliver high-quality solutions that meet the needs of our clients and exceed their expectations. With years of experience and a passion for excellence, we strive to innovate and lead in our industry.</p>
+    <h1>An Overview of BantayanBusBooking.com</h1>
+    <p>Buses are a practical and affordable mode of transportation for various purposes, such as daily commuting, traveling to different provinces, or enjoying a weekend getaway. BantayanBusBooking.com is a user-friendly website that offers convenient access to bus schedules specifically for Bantayan Island. Its main objective is to simplify travel planning by providing users with the most up-to-date information on bus routes and schedules. With just a few clicks, you can easily find the perfect bus schedule that suits your needs.
+      To use the website, simply visit BantayanBusBooking.com and select your point of origin and destination. You also have the option to choose the date, time, and preferred bus company for your trip. Once you click the search button, a comprehensive list of available bus schedules for your chosen route will be displayed. Additionally, the website provides details on fares and the type of bus that will be used for your journey. This allows you to save time and effort, ensuring a smooth and hassle-free travel experience.
+      So, whether you're a frequent bus traveler or planning your first trip to Bantayan Island, BantayanBusBooking.com is your go-to platform for all your bus scheduling needs.</p>
     <p>Our team is composed of experts in various fields, working together to bring you the best in technology, customer service, and support. We value integrity, transparency, and customer satisfaction above all. Join us on our journey to make a positive impact in the world.</p>
   </div>
 </center>
