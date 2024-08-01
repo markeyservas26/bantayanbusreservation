@@ -102,7 +102,7 @@ background-image: linear-gradient(0deg, #FFDEE9 0%, #B5FFFC 100%);
 
 <div class="container">
   <div class="destinations">
-    <div class="card" style="width: 2500px">
+    <div class="card" style="width: 4500px">
       <div class="card-body">
         <h5 class="card-title">An Overview of BantayanBusBooking.com</h5>
         <p class="card-text">Buses are a practical and affordable mode of transportation for various purposes. Whether you’re commuting daily to work, traveling to different provinces, or enjoying a weekend getaway, buses offer a reliable solution. BantayanBusBooking.com is a user-friendly website dedicated to making your travel planning effortless by providing the latest bus schedules for routes to and from Bantayan.
