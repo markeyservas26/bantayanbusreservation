@@ -96,8 +96,8 @@ background-image: linear-gradient(0deg, #FFDEE9 0%, #B5FFFC 100%);
   </div>
 </center>
 
-<center style="margin-top: 50px;">
-  <h2>Destinations</h2>
+<center style="margin-top: 70px;">
+  <h2>About Us</h2>
 </center>
 
 <div class="container">
