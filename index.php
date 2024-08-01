@@ -98,7 +98,7 @@ background-image: linear-gradient(0deg, #FFDEE9 0%, #B5FFFC 100%);
 
 <center style="margin-top: 60px;">
   <div style="background-color: white; padding: 20px; border-radius: 10px; color: black; text-align: left; width: 1500px;">
-    <h2>About Us</h2>
+    <h2 style="text-align: center;">About Us</h2>
     <p>We are a team of dedicated professionals committed to providing exceptional services and products. Our mission is to deliver high-quality solutions that meet the needs of our clients and exceed their expectations. With years of experience and a passion for excellence, we strive to innovate and lead in our industry.</p>
     <p>Our team is composed of experts in various fields, working together to bring you the best in technology, customer service, and support. We value integrity, transparency, and customer satisfaction above all. Join us on our journey to make a positive impact in the world.</p>
   </div>
