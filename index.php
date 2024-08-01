@@ -96,11 +96,35 @@ background-image: linear-gradient(0deg, #FFDEE9 0%, #B5FFFC 100%);
   </div>
 </center>
 
+<center style="margin-top: 60px;">
+  <div style="background-image: linear-gradient(90.5deg, rgba(152,45,255,1) 0.7%, rgba(90,241,255,1) 51.5%, rgba(65,239,164,1) 100.6%); padding: 20px; border-radius: 10px; color: white;">
+    <h2>About Us</h2>
+    <p>We are a team of dedicated professionals committed to providing exceptional services and products. Our mission is to deliver high-quality solutions that meet the needs of our clients and exceed their expectations. With years of experience and a passion for excellence, we strive to innovate and lead in our industry.</p>
+    <button id="readMoreBtn" style="background-color: #6200EA; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">Read More</button>
+    <div id="moreContent" style="display: none; margin-top: 20px;">
+      <p>Our team is composed of experts in various fields, working together to bring you the best in technology, customer service, and support. We value integrity, transparency, and customer satisfaction above all. Join us on our journey to make a positive impact in the world.</p>
+    </div>
+  </div>
+</center>
+
 </main>
 
 <br>
 <br>
 <?php include('includes/layout-footer.php')?>
+
+<script>
+  document.getElementById('readMoreBtn').addEventListener('click', function() {
+    var moreContent = document.getElementById('moreContent');
+    if (moreContent.style.display === 'none') {
+      moreContent.style.display = 'block';
+      this.textContent = 'Read Less';
+    } else {
+      moreContent.style.display = 'none';
+      this.textContent = 'Read More';
+    }
+  });
+</script>
 
 <style>
   .destinations {
