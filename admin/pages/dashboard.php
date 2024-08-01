@@ -229,7 +229,7 @@ background-image: linear-gradient(0deg, #D9AFD9 0%, #97D9E1 100%);
     var myChart = new Chart(ctx, {
         type: 'bar',
         data: {
-            labels: ['Bookings', 'Schedules', 'Routes', 'Locations', 'Buses', 'Drivers', 'Passengers'],
+            labels: ['Bookings', 'Schedules', 'Routes', 'Locations', 'Buses', 'Drivers', 'Passengers', 'Conductor'],
             datasets: [{
                 label: 'Total Count',
                 data: [
