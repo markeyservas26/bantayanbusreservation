@@ -130,7 +130,7 @@ background-image: linear-gradient(0deg, #FFDEE9 0%, #B5FFFC 100%);
     transition: transform 0.3s ease; /* Add transition for smooth animation */
   }
   .card:hover {
-    transform: translateY(-10px); /* Raise the card by 10px */
+    transform: translateY(-20px); /* Raise the card by 10px */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Increase shadow for a more pronounced effect */
   }
   .card-img-top {
