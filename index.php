@@ -32,18 +32,16 @@ background-image: linear-gradient(0deg, #FFDEE9 0%, #B5FFFC 100%);
     <li data-target="#carouselExampleIndicators" style="color: black" data-slide-to="0" class="active"></li>
     <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
     <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
+
   </ol>
   <div class="container1" >
   <center>  <img src="assets/images/bg1.png" style='width:1100px; height: 500px;'> 
     <div class="carousel-item active">
-      <img src="assets/images/slideshow5.jpg" class="d-block m-auto" style='width:40%; height: 400px;border: 1px solid black;' alt="...">
+      <img src="assets/images/slideshow5.jpg" class="d-block m-auto" style='width:40%; height: 400px;border: 5px solid black;' alt="...">
     </div>
   
     <div class="carousel-item">
-      <img src="assets/images/slideshow6.jpg" class="d-block m-auto" style='width:40%; height: 400px;border: 1px solid black;' alt="...">
+      <img src="assets/images/slideshow6.jpg" class="d-block m-auto" style='width:40%; height: 400px;border: 5px solid black;' alt="...">
     </div>
   </div>
   <button class="carousel-control-prev" type="button" data-target="#carouselExampleIndicators" data-slide="prev">
