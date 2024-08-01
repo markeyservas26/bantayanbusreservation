@@ -131,7 +131,7 @@ background-image: linear-gradient(0deg, #FFDEE9 0%, #B5FFFC 100%);
     border: 1px solid #ddd;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    width: 150px;
+    width: 30%;
     margin: 10px;
     text-align: center;
   }
