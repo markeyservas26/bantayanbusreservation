@@ -240,8 +240,8 @@ background-image: linear-gradient(0deg, #D9AFD9 0%, #97D9E1 100%);
                     echo mysqli_num_rows(mysqli_query($conn, "SELECT * FROM tbllocation")) . ',';
                     echo mysqli_num_rows(mysqli_query($conn, "SELECT * FROM tblbus")) . ',';
                     echo mysqli_num_rows(mysqli_query($conn, "SELECT * FROM tbldriver")) . ',';
-                    echo mysqli_num_rows(mysqli_query($conn, "SELECT * FROM tblpassenger"));
-                    echo mysqli_num_rows(mysqli_query($conn, "SELECT * FROM tblconductor")) . ',';
+                    echo mysqli_num_rows(mysqli_query($conn, "SELECT * FROM tblpassenger")) . ',';
+                    echo mysqli_num_rows(mysqli_query($conn, "SELECT * FROM tblconductor"));
                     ?>
                 ],
                 backgroundColor: [
