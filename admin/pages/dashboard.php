@@ -252,7 +252,7 @@ background-image: linear-gradient(0deg, #D9AFD9 0%, #97D9E1 100%);
                     '#E6E6FA',
                     '#FFAA33',
                     '#A0A0A0',
-                    '#A0A0A0',
+                    '#0b4e78',
                 ],
                 borderColor: [
                     'rgba(255, 99, 132, 1)',
@@ -262,7 +262,7 @@ background-image: linear-gradient(0deg, #D9AFD9 0%, #97D9E1 100%);
                     'rgba(153, 102, 255, 1)',
                     'rgba(255, 159, 64, 1)',
                     'rgba(199, 199, 199, 1)',
-                    'rgba(199, 199, 199, 1)',
+                    'rgba(11, 78, 120 1)',
                 ],
                 borderWidth: 1
             }]
