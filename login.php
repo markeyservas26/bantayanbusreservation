@@ -85,8 +85,8 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-6">
-                <!-- Optional: Add content here if needed -->
+            <div class="col-md-6 d-flex align-items-center">
+                <img src="assets/img/d3.png" alt="Description of image" class="img-fluid" style="max-width: 100%; height: auto;" />
             </div>
         </div>
     </div>
