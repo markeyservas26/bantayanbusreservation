@@ -104,8 +104,12 @@ background-image: linear-gradient(0deg, #FFDEE9 0%, #B5FFFC 100%);
   <div class="destinations">
     <div class="card">
       <div class="card-body">
-        <h5 class="card-title">About Us</h5>
-        <p class="card-text">Madridejos is a municipality on Bantayan Island, located in the northern part of Cebu Province in the Philippines. It's known for its laid-back atmosphere and beautiful coastal scenery. The area is a blend of traditional Filipino charm and natural beauty, offering picturesque beaches, clear waters, and a relaxed environment.</p>
+        <h5 class="card-title">An Overview of BantayanBusBooking.com</h5>
+        <p class="card-text">Buses are a practical and affordable mode of transportation for various purposes. Whether you’re commuting daily to work, traveling to different provinces, or enjoying a weekend getaway, buses offer a reliable solution. BantayanBusBooking.com is a user-friendly website dedicated to making your travel planning effortless by providing the latest bus schedules for routes to and from Bantayan.
+                              Easy Access to Bus Schedules
+                              Our primary goal is to simplify your travel experience by offering you the most up-to-date information on bus routes and schedules. With just a few clicks, you can easily find the perfect bus schedule that suits your needs. Simply visit BantayanBusBooking.com, select your point of origin and destination, and choose your preferred date, time, and bus company for your trip.
+                              Comprehensive Bus Schedule Information
+                              Once you click the search button, a comprehensive list of available bus schedules for your chosen route will be displayed. Additionally, our website provides details on fares and the types of buses available for your journey, ensuring you can make informed decisions for a smooth and hassle-free travel experience.</p>
       </div>
     </div>
   </div>
