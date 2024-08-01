@@ -86,7 +86,7 @@
                 </div>
             </div>
             <div class="col-md-6 d-flex align-items-center justify-content-center">
-                <img src="assets/img/plaza.jpg" alt="Description of image" class="rounded-circle img-fluid" style="width: 550px; height: 550px; object-fit: cover;" />
+                <img src="assets/img/plaza.jpg" alt="Description of image" class="rounded-circle img-fluid" style="width: 450px; height: 450px; object-fit: cover;" />
             </div>
         </div>
     </div>
@@ -98,6 +98,7 @@
 <style>
     .login-form {
         max-width: 1500px; /* Adjust width here */
+        margin-left: -250px
     }
 </style>
 
