@@ -96,25 +96,6 @@ background-image: linear-gradient(0deg, #FFDEE9 0%, #B5FFFC 100%);
   </div>
 </center>
 
-<center style="margin-top: 70px;">
-  <h2>About Us</h2>
-</center>
-
-<div class="container">
-  <div class="destinations">
-    <div class="card" style="width: 500%">
-      <div class="card-body">
-        <h5 class="card-title">An Overview of BantayanBusBooking.com</h5>
-        <p class="card-text">Buses are a practical and affordable mode of transportation for various purposes. Whether you’re commuting daily to work, traveling to different provinces, or enjoying a weekend getaway, buses offer a reliable solution. BantayanBusBooking.com is a user-friendly website dedicated to making your travel planning effortless by providing the latest bus schedules for routes to and from Bantayan.
-                              Easy Access to Bus Schedules
-                              Our primary goal is to simplify your travel experience by offering you the most up-to-date information on bus routes and schedules. With just a few clicks, you can easily find the perfect bus schedule that suits your needs. Simply visit BantayanBusBooking.com, select your point of origin and destination, and choose your preferred date, time, and bus company for your trip.
-                              Comprehensive Bus Schedule Information
-                              Once you click the search button, a comprehensive list of available bus schedules for your chosen route will be displayed. Additionally, our website provides details on fares and the types of buses available for your journey, ensuring you can make informed decisions for a smooth and hassle-free travel experience.</p>
-      </div>
-    </div>
-  </div>
-</div>
-
 </main>
 
 <br>
@@ -134,6 +115,11 @@ background-image: linear-gradient(0deg, #FFDEE9 0%, #B5FFFC 100%);
     width: 30%;
     margin: 10px;
     text-align: center;
+    transition: transform 0.3s ease; /* Add transition for smooth animation */
+  }
+  .card:hover {
+    transform: translateY(-10px); /* Raise the card by 10px */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Increase shadow for a more pronounced effect */
   }
   .card-img-top {
     width: 100%;
