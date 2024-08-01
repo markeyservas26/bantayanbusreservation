@@ -27,7 +27,7 @@
         <div class="row">
             <div class="col-md-6 d-flex align-items-center">
                 <div class="w-100 bg-white shadow-sm p-3 login-form"> <!-- Applied custom class here -->
-                    <div class="bg-primary p-3" style="background-image: linear-gradient(109.6deg, rgba(254,253,205,1) 11.2%, rgba(163,230,255,1) 91.1%);">
+                    <div class="bg-primary p-3" style="background-color: white;">
                         <h1 class="text-center">Login</h1>
                     </div>
 
