@@ -24,8 +24,8 @@
 
 <main>
     <div class="container mt-5">
-        <div class="row" style="margin-left: -150px; width: 350px">
-            <div class="col-md-6 d-flex align-items-center" >
+        <div class="row">
+            <div class="col-md-6 d-flex align-items-center" style="margin-left: -150px; width: 2500px">
                 <div class="w-100 bg-white shadow-sm p-3" style="max-width: 500px;">
                     <div class="bg-primary p-3">
                         <h1 class="text-center">Login</h1>
