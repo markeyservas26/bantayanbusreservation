@@ -97,8 +97,8 @@
 
 <style>
     .login-form {
-        max-width: 2500px; /* Adjust width here */
-        margin-left: -150px
+        max-width: 1500px; /* Adjust width here */
+        margin-left: -100px
     }
 </style>
 
