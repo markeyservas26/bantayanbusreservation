@@ -24,7 +24,7 @@ background-image: linear-gradient(0deg, #FFDEE9 0%, #B5FFFC 100%);
     <div class="d-flex align-items-center justify-content-center p-4">
         <?php include("includes/forms/schedule-form.php") ?>
     </div>
-    <p style="margin-left: 420px; font-weight: 1000;">What's Your Next Stop?&#xf3c5;</p>
+    <p style="margin-left: 420px; font-weight: 1000;">What's Your Next Stop <i class='fas'>&#xf3c5;</i>?</p>
 
   <br>
   <br>
