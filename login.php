@@ -85,7 +85,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-6 d-flex align-items-center justify-content-center">
+            <div class="col-md-6 d-flex align-items-center justify-content-center" style="margin-left: 250px">
                 <img src="assets/img/plaza.jpg" alt="Description of image" class="rounded-circle img-fluid" style="width: 500px; height: 500px; object-fit: cover;" />
             </div>
         </div>
