@@ -25,7 +25,7 @@
 <main>
     <div class="container mt-5">
         <div class="row">
-            <div class="col-md-6 d-flex align-items-center">
+            <div class="col-md-6 d-flex align-items-center" style="margin-left: -150px">
                 <div class="w-100 bg-white shadow-sm p-3" style="max-width: 500px;">
                     <div class="bg-primary p-3" style="background-image: linear-gradient(109.6deg, rgba(254,253,205,1) 11.2%, rgba(163,230,255,1) 91.1%);">
                         <h1 class="text-center">Login</h1>
@@ -86,7 +86,7 @@
                 </div>
             </div>
             <div class="col-md-6 d-flex align-items-center justify-content-center">
-                <img src="assets/img/plaza.jpg" alt="Description of image" class="rounded-circle img-fluid" style="width: 300px; height: 300px; object-fit: cover;" />
+                <img src="assets/img/plaza.jpg" alt="Description of image" class="rounded-circle img-fluid" style="width: 500px; height: 500px; object-fit: cover;" />
             </div>
         </div>
     </div>
