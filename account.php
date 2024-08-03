@@ -178,7 +178,6 @@
                                                       
                                                     <div class="p-3">
                                                         <button class="btn btn-sm btn-danger" onclick="cancelBook('<?php echo $row['book_id'] ?>')">Cancel</button>
-                                                        <button class="btn btn-sm btn-danger" onclick="editBook('<?php echo $row['schedule_id'] ?>')">Edit</button>
                                                      </div>
                                                 </div>
                                             </div>
@@ -422,20 +421,6 @@
 </main>
 
 <script>
-
-
-    function editBook(id) {
-        // Assuming you have a modal or edit page to handle the booking edit
-        // For example, you can open a modal or redirect to an edit page
-
-        // Open a modal (you'll need to implement this modal in your HTML)
-        // $('#editBookingModal').modal('show');
-
-        // Or redirect to an edit page
-        window.location.href = 'booked.php?schedule_id' + id;
-    }
-
-
     function PrintElem(divId)
     {
         var printContents = document.getElementById(divId).innerHTML;
