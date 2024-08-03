@@ -178,7 +178,7 @@
                                                       
                                                     <div class="p-3">
                                                         <button class="btn btn-sm btn-danger" onclick="cancelBook('<?php echo $row['book_id'] ?>')">Cancel</button>
-                                                        <button class="btn btn-sm btn-danger" onclick="editBook('<?php echo $row['book_id'] ?>')">Edit</button>
+                                                        <button class="btn btn-sm btn-danger" onclick="editBook('<?php echo $row['schedule_id'] ?>')">Edit</button>
                                                      </div>
                                                 </div>
                                             </div>
