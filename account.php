@@ -83,110 +83,94 @@
                 </ul>
 
                 <div class="tab-content" id="myTabContent">
-                    <div class="tab-pane fade show active p-3" id="Pending" role="tabpanel" aria-labelledby="Pending-tab" >
-                        <div class="row">
-                            <?php
-                                foreach ($bookings as &$row)
-                                {
-                                    if($row['payment_status'] == 'pending')
-                                    {
-                                        $route_from = $new_location->getById($row['route_from']);
-                                        $route_to = $new_location->getById($row['route_to']);
-                                       
-                                        $bus = $new_bus->getById($row["bus_id"]);
-                                        $driver = $new_driver->getById($row["driver_id"]);
-            
-                                        $vessel = $new_vessel->getById($row["vessel_id"]);
-                                        ?>
-                                            <div class="col-md-4 mb-3">
-                                                <div class="border bg-light">
-                                                    <div id="<?php echo 'print_'.$row['book_id'] ?>">
-                                                        <div class="bg-primary p-3">
-                                                            <h4 class="mb-0">
-                                                                <?php echo $route_from["location_name"].' &#x2192; '.$route_to["location_name"] ?>
-                                                            </h4>
-                                                        </div>
-                                                       
-                                            
-                                            <div class="p-3" style="background-image: linear-gradient( 109.6deg,  rgba(254,253,205,1) 11.2%, rgba(163,230,255,1) 91.1% );">
-                                                <p class="mb-0 d-flex align-items-center justify-content-between">
-                                                    <span class="text-muted">Booked Date:</span>
-                                                    <span class="font-weight-bold"><?php echo date_format(date_create($row['book_date']),'F j, Y') ?></span>
-                                                </p>
-                                                <hr>
-                                                <p class="mb-0 d-flex align-items-center justify-content-between">
-                                                    <span class="text-muted">Reference:</span>
-                                                    <span class="font-weight-bold"><?php echo $row['book_reference'] ?></span>
-                                                </p>
-                                                <p class="mb-0 d-flex align-items-center justify-content-between">
-                                                                <span class="text-muted">Passenger:</span>
-                                                                <span class="font-weight-bold"><?php echo $passenger['first_name'].' '. $passenger['last_name'] ?></span>
-                                                            </p>
-                                                           
-                                                <p class="mb-0 d-flex align-items-center justify-content-between">
-                                                    <span class="text-muted">Bus Name :</span>
-                                                    <span class="font-weight-bold"><?php echo $bus['bus_num'] ?></span>
-                                                </p>
-
-                                                <p class="mb-0 d-flex align-items-center justify-content-between">
-                                                    <span class="text-muted">Bus Number :</span>
-                                                    <span class="font-weight-bold"><?php echo $bus['bus_code'] ?></span>
-                                                </p>
-                                                
-                                                <p class="d-flex align-items-center justify-content-between mb-0">
-                                                <span class="text-muted d-block">Bus Driver :</span>
-                                                 <strong class="text-uppercase"><?php echo $driver['name'] ?></strong>
-                                                 </p>
-                                                <p class="mb-0 d-flex align-items-center justify-content-between">
-                                                    <span class="text-muted">Bus Type :</span>
-                                                    <span class="font-weight-bold"><?php echo $bus['bus_type'] ?></span>
-                                                </p>
-                                                <!-- <p class="mb-0 d-flex align-items-center justify-content-between">
-                                                    <span class="text-muted">Rate per kilometer :</span>
-                                                    <span class="font-weight-bold"><?php echo $bus['rate_km'] ?></span>
-                                                </p> -->
-                                                <p class="mb-0 d-flex align-items-center justify-content-between">
-                                                    <span class="text-muted">Seat Number:</span>
-                                                    <span class="font-weight-bold"><?php echo $row['seat_num'] ?></span>
-                                                </p>
-                                                <p class="mb-0 d-flex align-items-center justify-content-between">
-                                                    <span class="text-muted">Status:</span>
-                                                    <span class="font-weight-bold text-uppercase badge badge-success"><?php echo $row['payment_status'] ?></span>
-                                                </p>
-                                                <p class="mb-0 d-flex align-items-center justify-content-between">
-                                                    <span class="text-muted">Schedule Date:</span>
-                                                    <span class="font-weight-bold"><?php echo date_format(date_create($row['schedule_date']),'F j, Y') ?></span>
-                                                </p>
-                                                <p class="mb-0 d-flex align-items-center justify-content-between">
-                                                    <span class="text-muted">Departure Time:</span>
-                                                    <span class="font-weight-bold"><?php echo date_format(date_create($row["departure"]), 'g:i A') ?></span>
-                                                </p>
-                                                <p class="mb-0 d-flex align-items-center justify-content-between">
-                                                    <span class="text-muted">Arrival Time:</span>
-                                                    <span class="font-weight-bold"><?php echo date_format(date_create($row["arrival"]), 'g:i A') ?></span>
-                                                </p>
-                                                   
- 
-                                                <p class="d-flex align-items-center justify-content-between mb-0">
-                                        <span class="text-muted d-block">Fare:</span>
-                                        <strong><?php echo $row['fare'] ?></strong>
-                                    </p>
-                                   
-                                                
-                                            </div>
-                                        </div>
-                                                      
-                                                    <div class="p-3">
-                                                        <button class="btn btn-sm btn-danger" onclick="cancelBook('<?php echo $row['book_id'] ?>')">Cancel</button>
-                                                     </div>
-                                                </div>
-                                            </div>
-                                        <?php
-                                    }
-                                }
-                            ?>
+    <div class="tab-pane fade show active p-3" id="Pending" role="tabpanel" aria-labelledby="Pending-tab">
+        <div class="row">
+            <?php
+                foreach ($bookings as &$row) {
+                    if ($row['payment_status'] == 'pending') {
+                        $route_from = $new_location->getById($row['route_from']);
+                        $route_to = $new_location->getById($row['route_to']);
+                        $bus = $new_bus->getById($row["bus_id"]);
+                        $driver = $new_driver->getById($row["driver_id"]);
+                        $vessel = $new_vessel->getById($row["vessel_id"]);
+                        ?>
+                        <div class="col-md-4 mb-3">
+                            <div class="border bg-light">
+                                <div id="<?php echo 'print_'.$row['book_id'] ?>">
+                                    <div class="bg-primary p-3">
+                                        <h4 class="mb-0">
+                                            <?php echo $route_from["location_name"].' &#x2192; '.$route_to["location_name"] ?>
+                                        </h4>
+                                    </div>
+                                    <div class="p-3" style="background-image: linear-gradient( 109.6deg,  rgba(254,253,205,1) 11.2%, rgba(163,230,255,1) 91.1% );">
+                                        <p class="mb-0 d-flex align-items-center justify-content-between">
+                                            <span class="text-muted">Booked Date:</span>
+                                            <span class="font-weight-bold"><?php echo date_format(date_create($row['book_date']), 'F j, Y') ?></span>
+                                        </p>
+                                        <hr>
+                                        <p class="mb-0 d-flex align-items-center justify-content-between">
+                                            <span class="text-muted">Reference:</span>
+                                            <span class="font-weight-bold"><?php echo $row['book_reference'] ?></span>
+                                        </p>
+                                        <p class="mb-0 d-flex align-items-center justify-content-between">
+                                            <span class="text-muted">Passenger:</span>
+                                            <span class="font-weight-bold"><?php echo $passenger['first_name'].' '. $passenger['last_name'] ?></span>
+                                        </p>
+                                        <p class="mb-0 d-flex align-items-center justify-content-between">
+                                            <span class="text-muted">Bus Name :</span>
+                                            <span class="font-weight-bold"><?php echo $bus['bus_num'] ?></span>
+                                        </p>
+                                        <p class="mb-0 d-flex align-items-center justify-content-between">
+                                            <span class="text-muted">Bus Number :</span>
+                                            <span class="font-weight-bold"><?php echo $bus['bus_code'] ?></span>
+                                        </p>
+                                        <p class="d-flex align-items-center justify-content-between mb-0">
+                                            <span class="text-muted d-block">Bus Driver :</span>
+                                            <strong class="text-uppercase"><?php echo $driver['name'] ?></strong>
+                                        </p>
+                                        <p class="mb-0 d-flex align-items-center justify-content-between">
+                                            <span class="text-muted">Bus Type :</span>
+                                            <span class="font-weight-bold"><?php echo $bus['bus_type'] ?></span>
+                                        </p>
+                                        <p class="mb-0 d-flex align-items-center justify-content-between">
+                                            <span class="text-muted">Seat Number:</span>
+                                            <span class="font-weight-bold"><?php echo $row['seat_num'] ?></span>
+                                        </p>
+                                        <p class="mb-0 d-flex align-items-center justify-content-between">
+                                            <span class="text-muted">Status:</span>
+                                            <span class="font-weight-bold text-uppercase badge badge-success"><?php echo $row['payment_status'] ?></span>
+                                        </p>
+                                        <p class="mb-0 d-flex align-items-center justify-content-between">
+                                            <span class="text-muted">Schedule Date:</span>
+                                            <span class="font-weight-bold"><?php echo date_format(date_create($row['schedule_date']), 'F j, Y') ?></span>
+                                        </p>
+                                        <p class="mb-0 d-flex align-items-center justify-content-between">
+                                            <span class="text-muted">Departure Time:</span>
+                                            <span class="font-weight-bold"><?php echo date_format(date_create($row["departure"]), 'g:i A') ?></span>
+                                        </p>
+                                        <p class="mb-0 d-flex align-items-center justify-content-between">
+                                            <span class="text-muted">Arrival Time:</span>
+                                            <span class="font-weight-bold"><?php echo date_format(date_create($row["arrival"]), 'g:i A') ?></span>
+                                        </p>
+                                        <p class="d-flex align-items-center justify-content-between mb-0">
+                                            <span class="text-muted d-block">Fare:</span>
+                                            <strong><?php echo $row['fare'] ?></strong>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="p-3">
+                                    <button class="btn btn-sm btn-danger" onclick="cancelBook('<?php echo $row['book_id'] ?>')">Cancel</button>
+                                    <button class="btn btn-sm btn-primary" onclick="editSeat('<?php echo $row['book_id'] ?>', '<?php echo $row['seat_num'] ?>')">Edit</button>
+                                </div>
+                            </div>
                         </div>
-                    </div>
+                        <?php
+                    }
+                }
+            ?>
+        </div>
+    </div>
+</div>
                     <div class="tab-pane fade p-3" id="Confirmed" role="tabpanel" aria-labelledby="Confirmed-tab">
                         <div class="row">
                             <?php
@@ -455,6 +439,34 @@
             });
         }
     }
+
+    function editSeat(bookId, currentSeatNum) {
+        const newSeatNum = prompt("Enter new seat number:", currentSeatNum);
+        if (newSeatNum != null && newSeatNum != currentSeatNum) {
+            // Perform AJAX request to update seat number in the backend
+            $.ajax({
+                url: 'booked.php',
+                type: 'POST',
+                data: {
+                    book_id: bookId,
+                    seat_num: newSeatNum
+                },
+                success: function(response) {
+                    if (response.success) {
+                        alert("Seat number updated successfully.");
+                        location.reload(); // Reload the page to reflect changes
+                    } else {
+                        alert("Failed to update seat number.");
+                    }
+                },
+                error: function() {
+                    alert("An error occurred while updating the seat number.");
+                }
+            });
+        }
+    }
+
+
 </script>
 
 <?php include('includes/scripts.php')?>
