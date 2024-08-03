@@ -422,6 +422,20 @@
 </main>
 
 <script>
+
+
+    function editBook(id) {
+        // Assuming you have a modal or edit page to handle the booking edit
+        // For example, you can open a modal or redirect to an edit page
+
+        // Open a modal (you'll need to implement this modal in your HTML)
+        // $('#editBookingModal').modal('show');
+
+        // Or redirect to an edit page
+        window.location.href = 'booked.php?schedule_id' + id;
+    }
+
+
     function PrintElem(divId)
     {
         var printContents = document.getElementById(divId).innerHTML;
