@@ -160,7 +160,7 @@
                                 </div>
                                 <div class="p-3 d-flex justify-content-between">
                                     <button class="btn btn-sm btn-danger" onclick="cancelBook('<?php echo $row['book_id'] ?>')">Cancel</button>
-                                    <a href="booked.php=<?php echo $row['id']; ?>" class="btn btn-sm btn-primary">Edit</a>
+                                    <a href="booked.php?schedule_id=<?php echo $row['id']; ?>" class="btn btn-sm btn-primary">Edit</a>
                                 </div>
                             </div>
                         </div>
