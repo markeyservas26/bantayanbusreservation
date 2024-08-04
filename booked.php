@@ -156,7 +156,7 @@
                                                 if(empty($book["id"])){
                                                     echo '<td><button data-seat="'.$seat_row_num.'" class="btn-seat btn btn-sm btn-block btn-outline-dark" style="background-image: url(\'assets/img/seats.png\'); background-size: cover; height: 50px;width: 50px;">'.$seat_row_num.'</button></td>';
                                                 }else{
-                                                    echo '<td><button class="btn btn-sm btn-block btn-primary" disabled style="background-image: url(\'assets/img/seats.png\'); background-size: cover; height: 50px;width: 50px;">'.$seat_row_num.'</button></td>';
+                                                    echo '<td><button class="btn btn-sm btn-block btn-primary" disabled style="background-image: url(\'assets/img/seats1.png\'); background-size: cover; height: 50px;width: 50px;">'.$seat_row_num.'</button></td>';
                                                 }
                                             }
                                         }
