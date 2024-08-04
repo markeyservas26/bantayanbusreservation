@@ -42,7 +42,7 @@ background-image: linear-gradient(0deg, #FFDEE9 0%, #B5FFFC 100%);
     </div>
   
     <div class="carousel-item">
-      <img src="assets/images/slideshow6.jpg" class="d-block m-auto" style='width:40%; height: 400px; border: 2px solid black; border-radius: 40px;' alt="...">
+      <img src="assets/images/slideshow6.jpg" class="d-block m-auto" style='width:90%; height: 500px; border: 2px solid black; border-radius: 40px;' alt="...">
     </div>
   </div>
   <button class="carousel-control-prev" type="button" data-target="#carouselExampleIndicators" data-slide="prev">
