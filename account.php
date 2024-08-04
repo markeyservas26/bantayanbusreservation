@@ -160,7 +160,6 @@
                                 </div>
                                 <div class="p-3">
                                     <button class="btn btn-sm btn-danger" onclick="cancelBook('<?php echo $row['book_id'] ?>')">Cancel</button>
-                                    <button class="btn btn-sm btn-primary" onclick="editSeat('<?php echo $row['book_id'] ?>', '<?php echo $row['seat_num'] ?>')">Edit</button>
                                 </div>
                             </div>
                         </div>
@@ -171,35 +170,6 @@
         </div>
     </div>
 </div>
-
-<script>
-    function editSeat(bookId, currentSeatNum) {
-        const newSeatNum = prompt("Enter new seat number:", currentSeatNum);
-        if (newSeatNum != null && newSeatNum != currentSeatNum) {
-            // Perform AJAX request to update seat number in the backend
-            $.ajax({
-                url: 'update_seat.php',
-                type: 'POST',
-                data: {
-                    book_id: bookId,
-                    seat_num: newSeatNum
-                },
-                success: function(response) {
-                    if (response.success) {
-                        alert("Seat number updated successfully.");
-                        location.reload(); // Reload the page to reflect changes
-                    } else {
-                        alert("Failed to update seat number.");
-                    }
-                },
-                error: function() {
-                    alert("An error occurred while updating the seat number.");
-                }
-            });
-        }
-    }
-</script>
-
                     <div class="tab-pane fade p-3" id="Confirmed" role="tabpanel" aria-labelledby="Confirmed-tab">
                         <div class="row">
                             <?php
