@@ -154,11 +154,9 @@
                                                 $book = $new_book->checkSeat($schedule["id"], $seat_row_num);
 
                                                 if(empty($book["id"])){
-                                                    echo '<td><button data-seat="'.$seat_row_num.'" class="btn-seat btn btn-sm btn-outline-dark" style="background-image: url(\'assets/img/seats.png\'); width: 50px; height: 50px;">
-                                                            <span class="seat-number">'.$seat_row_num.'</span></button></td>';
+                                                    echo '<td><button data-seat="'.$seat_row_num.'" class="btn-seat btn btn-sm btn-block btn-outline-dark">'.$seat_row_num.'</button></td>';
                                                 }else{
-                                                    echo '<td><button class="btn btn-sm btn-primary" disabled style="background-image: url(\'assets/img/seats.png\'); width: 50px; height: 50px;">
-                                                            <span class="seat-number">'.$seat_row_num.'</span></button></td>';
+                                                    echo '<td><button class="btn btn-sm btn-block btn-primary" disabled>'.$seat_row_num.'</button></td>';
                                                 }
                                             }
                                         }
@@ -184,28 +182,6 @@
 </main>
 
 <?php include('includes/scripts.php')?>
-
-<style>
-    /* Seat button styles */
-    .btn-seat {
-        background-size: cover; /* Ensure the icon covers the button */
-        background-repeat: no-repeat; /* Prevent the background from repeating */
-        background-position: center; /* Center the background image */
-        position: relative; /* Required to position the seat number */
-        padding: 20px 0; /* Adjust padding as needed */
-    }
-
-    /* Seat number styles */
-    .seat-number {
-        position: absolute; /* Absolute positioning for the number */
-        top: 50%; /* Center the number vertically */
-        left: 50%; /* Center the number horizontally */
-        transform: translate(-50%, -50%); /* Adjust for centering */
-        color: black; /* Text color */
-        font-weight: bold; /* Make the text bold */
-        font-size: 14px; /* Adjust font size as needed */
-    }
-</style>
 
 <script>
     const from = '<?php echo $location_from["location_name"] ?>';
