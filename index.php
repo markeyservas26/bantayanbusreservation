@@ -38,7 +38,7 @@ background-image: linear-gradient(0deg, #FFDEE9 0%, #B5FFFC 100%);
   <div class="container1" >
   <center>  <img src="assets/images/bg1.png" style='width:1100px; height: 500px;'> 
     <div class="carousel-item active">
-      <img src="assets/images/slideshow5.jpg" class="d-block m-auto" style='width:40%; height: 400px; border: 2px solid black; border-radius: 40px;' alt="...">
+      <img src="assets/images/slideshow5.jpg" class="d-block m-auto" style='width:100%; height: 400px; border: 2px solid black; border-radius: 40px;' alt="...">
     </div>
   
     <div class="carousel-item">
