@@ -157,7 +157,7 @@
                                                     echo '<td><button data-seat="'.$seat_row_num.'" class="btn-seat btn btn-sm btn-outline-dark" style="background-image: url(\'assets/img/seats.png\'); width: 50px; height: 50px;">
                                                             <span class="seat-number">'.$seat_row_num.'</span></button></td>';
                                                 }else{
-                                                    echo '<td><button class="btn btn-sm btn-primary" disabled style="background-image: url(\'assets/img/seats.png\'); width: 50px; height: 50px;">
+                                                    echo '<td><button class="btn btn-sm btn-primary" disabled style="background-image: url(\'assets/img/seat.png\'); width: 50px; height: 50px;">
                                                             <span class="seat-number">'.$seat_row_num.'</span></button></td>';
                                                 }
                                             }
