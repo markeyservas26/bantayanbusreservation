@@ -185,6 +185,28 @@
 
 <?php include('includes/scripts.php')?>
 
+<style>
+    /* Seat button styles */
+    .btn-seat {
+        background-size: cover; /* Ensure the icon covers the button */
+        background-repeat: no-repeat; /* Prevent the background from repeating */
+        background-position: center; /* Center the background image */
+        position: relative; /* Required to position the seat number */
+        padding: 20px 0; /* Adjust padding as needed */
+    }
+
+    /* Seat number styles */
+    .seat-number {
+        position: absolute; /* Absolute positioning for the number */
+        top: 50%; /* Center the number vertically */
+        left: 50%; /* Center the number horizontally */
+        transform: translate(-50%, -50%); /* Adjust for centering */
+        color: black; /* Text color */
+        font-weight: bold; /* Make the text bold */
+        font-size: 14px; /* Adjust font size as needed */
+    }
+</style>
+
 <script>
     const from = '<?php echo $location_from["location_name"] ?>';
     const to = '<?php echo $location_to["location_name"] ?>';
