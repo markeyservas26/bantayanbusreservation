@@ -175,7 +175,7 @@
 <script>
 function editBook(bookId) {
     // Replace with the actual URL to the edit page and pass the bookId as a parameter
-    window.location.href = 'editSchedule.php?book_id=' + bookId;
+    window.location.href = 'booked.php?schedule_id=' + bookId;
 }
 </script>
 
