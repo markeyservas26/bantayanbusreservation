@@ -160,7 +160,6 @@
                                 </div>
                                 <div class="p-3">
                                     <button class="btn btn-sm btn-danger" onclick="cancelBook('<?php echo $row['book_id'] ?>')">Cancel</button>
-                                    <button class="btn btn-sm btn-primary" onclick="editBook('<?php echo $row['book_id'] ?>')">Edit</button>
                                 </div>
                             </div>
                         </div>
@@ -171,14 +170,6 @@
         </div>
     </div>
 </div>
-
-<script>
-function editBook(bookId) {
-    // Replace with the actual URL to the edit page and pass the bookId as a parameter
-    window.location.href = 'booked.php?schedule_id=' + bookId;
-}
-</script>
-
                     <div class="tab-pane fade p-3" id="Confirmed" role="tabpanel" aria-labelledby="Confirmed-tab">
                         <div class="row">
                             <?php
