@@ -102,7 +102,7 @@
                                             <?php echo $route_from["location_name"].' &#x2192; '.$route_to["location_name"] ?>
                                         </h4>
                                     </div>
-                                    <div class="p-3" style="background-image: linear-gradient(109.6deg, rgba(254,253,205,1) 11.2%, rgba(163,230,255,1) 91.1%);">
+                                    <div class="p-3" style="background-image: linear-gradient( 109.6deg,  rgba(254,253,205,1) 11.2%, rgba(163,230,255,1) 91.1% );">
                                         <p class="mb-0 d-flex align-items-center justify-content-between">
                                             <span class="text-muted">Booked Date:</span>
                                             <span class="font-weight-bold"><?php echo date_format(date_create($row['book_date']), 'F j, Y') ?></span>
@@ -114,7 +114,7 @@
                                         </p>
                                         <p class="mb-0 d-flex align-items-center justify-content-between">
                                             <span class="text-muted">Passenger:</span>
-                                            <span class="font-weight-bold"><?php echo $passenger['first_name'].' '.$passenger['last_name'] ?></span>
+                                            <span class="font-weight-bold"><?php echo $passenger['first_name'].' '. $passenger['last_name'] ?></span>
                                         </p>
                                         <p class="mb-0 d-flex align-items-center justify-content-between">
                                             <span class="text-muted">Bus Name :</span>
@@ -158,9 +158,8 @@
                                         </p>
                                     </div>
                                 </div>
-                                <div class="p-3 d-flex justify-content-between">
+                                <div class="p-3">
                                     <button class="btn btn-sm btn-danger" onclick="cancelBook('<?php echo $row['book_id'] ?>')">Cancel</button>
-                                    <button class="btn btn-sm btn-primary" onclick="editBook('<?php echo $row['book_id'] ?>', '<?php echo $row['schedule_id'] ?>')">Edit</button>
                                 </div>
                             </div>
                         </div>
@@ -171,16 +170,6 @@
         </div>
     </div>
 </div>
-<script>
-    function cancelBook(bookId) {
-        // Existing cancelBook function
-    }
-
-    function editBook(bookId, scheduleId) {
-        window.location.href = `booked.php?schedule_id=${scheduleId}&book_id=${bookId}`;
-    }
-</script>
-
                     <div class="tab-pane fade p-3" id="Confirmed" role="tabpanel" aria-labelledby="Confirmed-tab">
                         <div class="row">
                             <?php
