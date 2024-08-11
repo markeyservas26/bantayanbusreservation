@@ -86,7 +86,7 @@
                 </div>
             </div>
             <div class="col-md-6 d-flex align-items-center justify-content-center">
-                <img src="assets/img/bantayan.jpg" alt="Description of image" style="width: 450px; height: 450px; object-fit: cover;" />
+                <img src="assets/img/bantayan.png" alt="Description of image" style="width: 450px; height: 450px; object-fit: cover;" />
             </div>
         </div>
     </div>
