@@ -218,52 +218,55 @@
     <div class="row mt-4" style="background-color: #D9AFD9;
 background-image: linear-gradient(0deg, #D9AFD9 0%, #97D9E1 100%);
 ">
-        <div class="col-12">
-            <canvas id="myChart"></canvas>
-        </div>
+    <div class="col-12">
+        <canvas id="bookingChart"></canvas>
     </div>
 </div>
+
 <!-- Chart.js script -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 <script>
-    var ctx = document.getElementById('myChart').getContext('2d');
-    var myChart = new Chart(ctx, {
+    var ctx = document.getElementById('bookingChart').getContext('2d');
+    
+    <?php
+    // Fetch the total number of bookings per month
+    $query = "
+        SELECT 
+            MONTH(book_date) as month_number, 
+            MONTHNAME(book_date) as month, 
+            COUNT(*) as total 
+        FROM tblbook 
+        GROUP BY MONTH(book_date) 
+        ORDER BY MONTH(book_date)";
+    
+    $result = mysqli_query($conn, $query);
+
+    // Initialize an array with all 12 months
+    $months = [
+        'January', 'February', 'March', 'April', 'May', 'June', 
+        'July', 'August', 'September', 'October', 'November', 'December'
+    ];
+
+    // Initialize an array with 0 totals for each month
+    $totals = array_fill(0, 12, 0);
+
+    // Populate the totals array with data from the database
+    while ($row = mysqli_fetch_assoc($result)) {
+        // Subtract 1 from month_number to match array index (0-11)
+        $totals[$row['month_number'] - 1] = $row['total'];
+    }
+    ?>
+
+    var bookingChart = new Chart(ctx, {
         type: 'bar',
         data: {
-            labels: ['Bookings', 'Schedules', 'Routes', 'Locations', 'Buses', 'Drivers', 'Passengers', 'Conductor'],
+            labels: <?php echo json_encode($months); ?>,  // X-axis labels (all 12 months)
             datasets: [{
-                label: 'Total Count',
-                data: [
-                    <?php
-                    echo mysqli_num_rows(mysqli_query($conn, "SELECT * FROM tblbook")) . ',';
-                    echo mysqli_num_rows(mysqli_query($conn, "SELECT * FROM tblschedule")) . ',';
-                    echo mysqli_num_rows(mysqli_query($conn, "SELECT * FROM tblroute")) . ',';
-                    echo mysqli_num_rows(mysqli_query($conn, "SELECT * FROM tbllocation")) . ',';
-                    echo mysqli_num_rows(mysqli_query($conn, "SELECT * FROM tblbus")) . ',';
-                    echo mysqli_num_rows(mysqli_query($conn, "SELECT * FROM tbldriver")) . ',';
-                    echo mysqli_num_rows(mysqli_query($conn, "SELECT * FROM tblpassenger")) . ',';
-                    echo mysqli_num_rows(mysqli_query($conn, "SELECT * FROM tblconductor"));
-                    ?>
-                ],
-                backgroundColor: [
-                    '#FA8072',
-                    '#6CB4EE',
-                    '#F0E68C',
-                    '#0CAFFF',
-                    '#E6E6FA',
-                    '#FFAA33',
-                    '#A0A0A0',
-                    '#0b4e78',
-                ],
-                borderColor: [
-                    'rgba(255, 99, 132, 1)',
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(255, 206, 86, 1)',
-                    'rgba(75, 192, 192, 1)',
-                    'rgba(153, 102, 255, 1)',
-                    'rgba(255, 159, 64, 1)',
-                    'rgba(199, 199, 199, 1)',
-                    'rgba(11, 78, 120 1)',
-                ],
+                label: 'Total Bookings',
+                data: <?php echo json_encode($totals); ?>,  // Y-axis data corresponding to each month
+                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                borderColor: 'rgba(75, 192, 192, 1)',
                 borderWidth: 1
             }]
         },
@@ -272,12 +275,14 @@ background-image: linear-gradient(0deg, #D9AFD9 0%, #97D9E1 100%);
                 y: {
                     beginAtZero: true
                 }
+            },
+            plugins: {
+                legend: {
+                    display: false
+                }
             }
         }
     });
-
-    
-    
 </script>
 </body>
 </html>
