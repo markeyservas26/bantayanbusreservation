@@ -1,21 +1,3 @@
 # HTID:23422420: DO NOT REMOVE OR MODIFY THIS LINE AND THE LINES BELOW
 php_value display_errors 1
 # DO NOT REMOVE OR MODIFY THIS LINE AND THE LINES ABOVE HTID:23422420:
-
-# Restrict Access to Admin Directory by IP Address
-<Files "admin">
-    Order Deny,Allow
-    Deny from all
-    Allow from 123.45.67.89   # Replace with your IP address
-</Files>
-
-# Enable Basic Authentication
-<Directory "/path/to/admin">
-    AuthType Basic
-    AuthName "Restricted Area"
-    AuthUserFile /path/to/.htpasswd  # Path to .htpasswd file
-    Require valid-user
-</Directory>
-
-# Protect against directory listing
-Options -Indexes
