@@ -93,6 +93,9 @@
         </div>
     </div>
 
+    <?php include('includes/scripts.php')?>
+
+
     <script src="../assets/bootstrap/js/jquery.min.js"></script>
     <script src="../assets/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="../assets/jquery.dataTables.min.js"></script>

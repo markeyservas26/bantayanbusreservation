@@ -12,7 +12,7 @@
                 New Conductor
             </button>
         </div> -->
-        <div class="card-body">
+        <div class="card-body" style="background-image: linear-gradient(to top, #f3e7e9 0%, #e3eeff 99%, #e3eeff 100%);">
         <table id="myTable">
             <thead>
                 <tr>
@@ -178,7 +178,38 @@
         </div>
     </div>
 </div>
+<style>
+        @keyframes ledBorder {
+            0% { border-color: #f00; }
+            50% { border-color: #0f0; }
+            100% { border-color: #00f; }
+        }
+        
+        .card {
+            border: 3px solid transparent;
+            border-radius: 5px;
+            animation: ledBorder 1.5s infinite alternate;
+        }
 
+        .card-header {
+            background-color: #f8f9fa;
+            border-bottom: 1px solid #dee2e6;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #004085;
+        }
+
+        .fa-plus {
+            margin-right: 5px;
+        }
+    </style>
 <script>
 $('#myTable').DataTable();
 
@@ -261,3 +292,4 @@ $("#delete_customer_form").submit(function(event) {
     });
 });
 </script>
+<?php include('includes/scripts.php')?>

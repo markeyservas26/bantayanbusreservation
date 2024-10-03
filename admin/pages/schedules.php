@@ -13,7 +13,41 @@
     <link rel="stylesheet" href="./assets/styles.css" />
     
     <title>Bantayan Online Bus Reservation</title>
+    <style>
+        @keyframes ledBorder {
+            0% { border-color: #FCCF31; }
+            50% { border-color: #F55555; }
+            100% { border-color: #FCCF31; }
+        }
+        
+        
+        .nav-tabs {
+            background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+            padding: 10px;
+            border-radius: 5px;
+            border: 3px solid transparent;
+            animation: ledBorder 1.5s infinite alternate;
+        }
 
+        .nav-tabs .nav-link {
+            position: relative;
+            padding: 10px 15px;
+            margin: 0 -1px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .nav-tabs .nav-link.active {
+            background-color: #fff;
+            color: #007bff;
+            border-color: #007bff;
+        }
+
+        .nav-tabs .nav-link:hover {
+            background-color: #e9ecef;
+        }
+    </style>
 
   </head>
 <?php
@@ -49,7 +83,7 @@
         </button>
     </div>
 
-    <ul class="nav nav-tabs" id="myTab" role="tablist"  style="background-image: linear-gradient(to left, #BDBBBE 0%, #9D9EA3 100%), radial-gradient(88% 271%, rgba(255, 255, 255, 0.25) 0%, rgba(254, 254, 254, 0.25) 1%, rgba(0, 0, 0, 0.25) 100%), radial-gradient(50% 100%, rgba(255, 255, 255, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%); background-blend-mode: normal, lighten, soft-light;">
+    <ul class="nav nav-tabs" id="myTab" role="tablist"  style="background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);">
         <li class="nav-item" role="presentation">
             <a class="nav-link active" id="waiting-tab" data-toggle="tab" href="#waiting" role="tab" aria-controls="waiting" aria-selected="true" style="color: black;">Waiting</a>
         </li>
@@ -981,3 +1015,5 @@ function updateStatus(id, status) {
     schedule_date_u.min =new Date().toISOString().split("T")[0];
 
 </script>
+
+<?php include('includes/scripts.php')?>

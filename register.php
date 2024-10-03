@@ -21,10 +21,24 @@
         $address = $_POST["address"];
         $password = $_POST["password"];
         
-        if(strlen($password) < 7) {
+        // Regular expressions for validation
+        $name_pattern = "/^[a-zA-Z]+$/";
+        $address_pattern = "/^[a-zA-Z\s]+$/"; // Allows spaces for address
+
+        // Validation
+        if (!preg_match($name_pattern, $first_name)) {
+            $error = "First name can only contain letters.";
+        } elseif (!preg_match($name_pattern, $last_name)) {
+            $error = "Last name can only contain letters.";
+        } elseif (!preg_match($address_pattern, $address)) {
+            $error = "Address can only contain letters and spaces.";
+        } elseif (strlen($password) < 7) {
             $error = "Password must be at least 7 characters long.";
         } else {
+            // Create the new passenger
             $new_passenger->create($first_name, $last_name, $email, $address, $password);
+            header("Location: success.php");
+            exit;
         }
     }
 ?>
@@ -44,21 +58,23 @@
                     if(isset($_GET["error"])){
                         if($_GET["error"] == "emailExist"){
                             echo '<div class="alert alert-danger" role="alert">Email already exists.</div>';
-                        }else if($_GET["error"] == "stmtfailed"){
+                        } else if($_GET["error"] == "stmtfailed"){
                             echo '<div class="alert alert-danger" role="alert">Error creating an account.</div>';
                         }
                     }
                 ?>
 
-                <form method="POST" action="" >
+                <form method="POST" action="" id="signupForm">
                     <div class="form-group">
-                         <label for="first_name" style="color: black; font-weight: bold">First Name</label>
-                         <input type="text" class="form-control" id="first_name" name="first_name" required />
+                        <label for="first_name" style="color: black; font-weight: bold">First Name</label>
+                        <input type="text" class="form-control" id="first_name" name="first_name" required />
+                        <small id="firstNameError" class="form-text text-danger" style="display:none;">First name can only contain letters.</small>
                     </div>
                     <div class="form-group">
-                            <label for="last_name" style="color: black; font-weight: bold">Last Name</label>
-                            <input type="text" class="form-control" id="last_name" name="last_name" required />
-                        </div>
+                        <label for="last_name" style="color: black; font-weight: bold">Last Name</label>
+                        <input type="text" class="form-control" id="last_name" name="last_name" required />
+                        <small id="lastNameError" class="form-text text-danger" style="display:none;">Last name can only contain letters.</small>
+                    </div>
                     <div class="form-group">
                         <label for="address" style="color: black; font-weight: bold">Address</label>
                         <input type="text" class="form-control" id="address" name="address" required />
@@ -105,6 +121,27 @@
 <?php include('includes/layout-footer.php')?>
 
 <script>
+    // Real-time validation for first name and last name fields
+    document.getElementById('first_name').addEventListener('input', function() {
+        var firstName = this.value;
+        var firstNameError = document.getElementById('firstNameError');
+        if (/[^a-zA-Z]/.test(firstName)) {
+            firstNameError.style.display = 'block';  // Show error message
+        } else {
+            firstNameError.style.display = 'none';  // Hide error message
+        }
+    });
+
+    document.getElementById('last_name').addEventListener('input', function() {
+        var lastName = this.value;
+        var lastNameError = document.getElementById('lastNameError');
+        if (/[^a-zA-Z]/.test(lastName)) {
+            lastNameError.style.display = 'block';  // Show error message
+        } else {
+            lastNameError.style.display = 'none';  // Hide error message
+        }
+    });
+
     document.querySelectorAll('.toggle-password').forEach(function(icon) {
         icon.addEventListener('click', function(e) {
             var passwordField = (icon.id === 'toggle-password') ? document.getElementById('password') : document.getElementById('confirm_password');

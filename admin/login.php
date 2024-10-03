@@ -20,6 +20,8 @@
     <link rel="stylesheet" href="../assets/styles.css">
     <link rel="icon" href="../assets/img/bus.ico" type="image/ico">
     <title>Bantayan Online Bus Reservation</title>
+
+    
 </head>
 
 <body>
@@ -30,10 +32,12 @@
     <link rel="stylesheet" href="./assets/styles.css" />
 
     <title>Bantayan Online Bus Reservation System</title>
-
+    
 
   </head>
-  <body class="bg-light" >
+  <body class="bg-light" style="background-color: #FFDEE9;
+background-image: linear-gradient(0deg, #FFDEE9 0%, #B5FFFC 100%);
+">
 
   <!-- Just an image -->
 <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm" style="background-image: linear-gradient(-20deg, #b721ff 0%, #21d4fd 100%);">
@@ -49,10 +53,10 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav ml-auto">
     <li class="nav-item">
-              <a class="nav-link" href="/bantayan/index.php"> <i class="fa fa-home w3-large " style="color: black"> <b>Home</a></b></i>
+              <a class="nav-link" href="/bantayanv2/index.php"> <i class="fa fa-home w3-large " style="color: black"> <b>Home</a></b></i>
               </li>
               <li class="nav-item">
-              <a class="nav-link" href="/bantayan/login.php"> <i class="fa fa-user icon w3-large " style="color: black"> <b>User</a></b></i>
+              <a class="nav-link" href="/bantayanv2/login.php"> <i class="fa fa-user icon w3-large " style="color: black"> <b>User</a></b></i>
               </li>
        
     </ul>
@@ -135,6 +139,9 @@ background-image: linear-gradient(0deg, #FFDEE9 0%, #B5FFFC 100%);
         });
     });
     </script>
+
+<?php include('includes/scripts.php')?>
+
 </body>
 
 </html>

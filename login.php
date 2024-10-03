@@ -1,36 +1,35 @@
 <?php 
-    include('includes/layout-header.php');
+include('includes/layout-header.php');
+
+if(isset($_SESSION["userId"])){
+    header("location: account.php");
+    exit;
+}
+
+include('controllers/db.php');
+include('controllers/passenger.php');
+
+$database = new Database();
+$db = $database->getConnection();
+
+if(isset($_POST["sign-in-submit"])){
+    $new_passenger = new Passenger($db);
+
+    $email = $_POST["email"];
+    $password = $_POST["password"];
     
-    if(isset($_SESSION["userId"])){
-        header("location: account.php");
-        exit;
-    }
-
-    include('controllers/db.php');
-    include('controllers/passenger.php');
-
-    $database = new Database();
-    $db = $database->getConnection();
-
-    if(isset($_POST["sign-in-submit"])){
-        $new_passenger = new Passenger($db);
-
-        $email = $_POST["email"];
-        $password = $_POST["password"];
-        
-        $new_passenger->login($email, $password);
-    }
+    $new_passenger->login($email, $password);
+}
 ?>
 
 <main>
     <div class="container mt-5">
         <div class="row">
             <div class="col-md-6 d-flex align-items-center">
-                <div class="w-100 bg-white shadow-sm p-3 login-form"> <!-- Applied custom class here -->
+                <div class="w-100 bg-white shadow-sm p-3 login-form">
                     <div class="bg-primary p-3" style="background-image: linear-gradient(109.6deg, rgba(254,253,205,1) 11.2%, rgba(163,230,255,1) 91.1%);">
                         <h1 class="text-center">Login</h1>
                     </div>
-
                     <div class="p-3">
                         <?php
                             if(isset($_GET["signUp"])){
@@ -57,7 +56,6 @@
                                 }
                             }
                         ?>
-
                         <form method="POST" action="">
                             <div class="form-group">
                                 <label for="email">Email address</label>
@@ -76,7 +74,6 @@
                                 <a href="forget-password.php">Forgot password?</a>
                             </div>
                             <button type="submit" class="btn btn-block btn-dark" name="sign-in-submit">Login</button>
-
                             <div class="text-center">
                                 <span>Not registered yet? </span>
                                 <a href="register.php">Create an account</a>
@@ -97,7 +94,7 @@
 
 <style>
     .login-form {
-        max-width: 1500px; /* Adjust width here */
+        max-width: 1500px;
         margin-left: -100px
     }
 </style>

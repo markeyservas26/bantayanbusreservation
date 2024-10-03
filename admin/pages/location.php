@@ -13,6 +13,38 @@
     <link rel="stylesheet" href="./assets/styles.css" />
     
     <title>Bantayan Online Bus Reservation</title>
+    <style>
+        @keyframes ledBorder {
+            0% { border-color: #f00; }
+            50% { border-color: #0f0; }
+            100% { border-color: #00f; }
+        }
+        
+        .card {
+            border: 3px solid transparent;
+            border-radius: 5px;
+            animation: ledBorder 1.5s infinite alternate;
+        }
+
+        .card-header {
+            background-color: #f8f9fa;
+            border-bottom: 1px solid #dee2e6;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #004085;
+        }
+
+        .fa-plus {
+            margin-right: 5px;
+        }
+    </style>
 
   </head>
 <div>
@@ -29,8 +61,8 @@
             <i class="fa fa-plus" >  New Location</i> 
             </button>
         </div>
-        <div class="card-body">
-        <table id="myTable">
+        <div class="card-body" style="background-image: linear-gradient(to top, #f3e7e9 0%, #e3eeff 99%, #e3eeff 100%);">
+        <table id="myTable" class="table table-striped">
             <thead>
                 <tr>
                     <th scope="col">#</th>
@@ -221,3 +253,4 @@ $("#delete_location_form").submit(function(event) {
     });
 });
 </script>
+<?php include('includes/scripts.php')?>

@@ -16,6 +16,13 @@
     //         }
     //     }
     // }
+
+     // Fetch pending bookings
+     $query = "SELECT * FROM tblbook WHERE payment_status = 'pending'";
+     $result = mysqli_query($conn, $query);
+     $pendingBookings = mysqli_fetch_all($result, MYSQLI_ASSOC);
+     $pendingCount = count($pendingBookings);
+
 ?>
 
 <!doctype html>
@@ -32,31 +39,39 @@
     <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="../assets/img/bus.ico" type="image/ico">
-    <title >Bantayan Online Bus Reservation</title>
+    <title>Bantayan Online Bus Reservation</title>
+
      <style>
-    body {
-        background-image: url(../assets/img/buscv1.jpg);
-        min-height: 100vh;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
+        body {
+            background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url(../assets/img/buscv1.jpg);
+            min-height: 100vh;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .dropdown, .dropleft, .dropright, .dropup {
+    position: relative;
+    left: 325px;
+    top:-35px;
+}
+    </style>
 
 
   
     </style>
 </head>
 
-<body class="bg-light"  >
+<body class="bg-light">
     <script src="../assets/bootstrap/js/jquery.min.js"></script>
     <script src="../assets/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="../assets/jquery.dataTables.min.js"></script>
 
-    <div class="wrapper" >
-    <div class="navigation" style="background-image: linear-gradient(-20deg, #b721ff 0%, #21d4fd 100%);">
+    <div class="wrapper">
+        <div class="navigation" style="background-image: linear-gradient(-20deg, #b721ff 0%, #21d4fd 100%);">
             <ul class="nav flex-column" style="background-image: linear-gradient(-20deg, #b721ff 0%, #21d4fd 100%);">
-          <center>  <img src="../assets/images/bobrs.png"  class="w3-circle" alt="" style="width:50%" > </center>
-            
+                <center><img src="../assets/images/bobrs.png" class="w3-circle" alt="" style="width:50%"></center>
+                
              <li>
                    <a class="nav-item <?php if((isset($_GET['page']) && $_GET['page'] === 'dashboard') || empty($_GET['page'])) echo 'bg-primary' ?>">
                     <a class="nav-link text-white" href="index.php">
@@ -230,6 +245,66 @@
                     </svg>
                     <span style="font-family: 'Times New Roman', "><b> BANTAYAN ONLINE BUS RESERVATION SYSTEM</b></span>
                 </a>
+
+                <!-- Notification Bell Start -->
+<li class="nav-item dropdown">
+    <a class="nav-link text-white" href="#" id="notificationDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <span class="icon">
+            <img src="../assets/img/notif.png" alt="Notifications" style="width: 30px; height: 26px; top: 50px; left: -19px; position: absolute;">
+        </span>
+        <?php if ($pendingCount > 0): ?>
+            <span class="badge badge-danger"><?php echo $pendingCount; ?></span>
+        <?php endif; ?>
+    </a>
+
+    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="notificationDropdown">
+        <?php if ($pendingCount > 0): ?>
+            <?php foreach ($pendingBookings as $booking): ?>
+                <a class="dropdown-item booking-item" href="index.php?page=booking&id=<?php echo $booking['id']; ?>">
+                    Reference #: <?php echo $booking['book_reference']; ?> - <span class="text-warning">Pending</span>
+                </a>
+            <?php endforeach; ?>
+        <?php else: ?>
+            <a class="dropdown-item" href="#">No new bookings</a>
+        <?php endif; ?>
+    </div>
+</li>
+<!-- Notification Bell End -->
+
+<audio id="notificationSound" src="../assets/sounds/notification-sound.mp3" preload="auto"></audio>
+<script>
+    // Function to play sound
+    function playNotificationSound() {
+        var sound = document.getElementById('notificationSound');
+        sound.play().catch(function(error) {
+            console.error("Error playing sound: ", error);
+        });
+    }
+
+    // Function to check pending bookings
+    function checkPendingBookings() {
+        var pendingCount = <?php echo $pendingCount; ?>;
+        if (pendingCount > 0) {
+            playNotificationSound();
+        }
+    }
+
+    // Check for pending bookings when the page loads
+    document.addEventListener('DOMContentLoaded', function() {
+        checkPendingBookings();
+    });
+
+    // Play sound when booking item is clicked
+    document.querySelectorAll('.booking-item').forEach(function(item) {
+        item.addEventListener('click', function() {
+            // Play sound when booking is clicked
+            playNotificationSound();
+        });
+    });
+</script>
+
+
+
                 <div>
                     <a class="btn btn-link mr-auto" href="./backend/logout.php"><i class="fa fa-sign-out icon w3-large ">Logout</a></i>
                 </div>
@@ -263,6 +338,9 @@
         main.classList.toggle('active')
     }
     </script>
+
+<?php include('includes/scripts.php')?>
+
 </body>
 
 </html>
