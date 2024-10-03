@@ -53,10 +53,10 @@ background-image: linear-gradient(0deg, #FFDEE9 0%, #B5FFFC 100%);
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav ml-auto">
     <li class="nav-item">
-              <a class="nav-link" href="/bantayanv2/index.php"> <i class="fa fa-home w3-large " style="color: black"> <b>Home</a></b></i>
+              <a class="nav-link" href="/bantayan/index.php"> <i class="fa fa-home w3-large " style="color: black"> <b>Home</a></b></i>
               </li>
               <li class="nav-item">
-              <a class="nav-link" href="/bantayanv2/login.php"> <i class="fa fa-user icon w3-large " style="color: black"> <b>User</a></b></i>
+              <a class="nav-link" href="/bantayan/login.php"> <i class="fa fa-user icon w3-large " style="color: black"> <b>User</a></b></i>
               </li>
        
     </ul>
