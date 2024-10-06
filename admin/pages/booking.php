@@ -118,8 +118,8 @@
                         $total = $fare - $discount_amount;
             ?>
             <div class="col-md-4 mb-3">
-            <div class="border bg-light" style="background-image: linear-gradient(to top, #f3e7e9 0%, #e3eeff 99%, #e3eeff 100%);">
-            <div id="<?php echo 'print_'.$row['book_id'] ?>">
+                <div class="border bg-light" style="background-image: linear-gradient(to top, #f3e7e9 0%, #e3eeff 99%, #e3eeff 100%);">
+                    <div id="<?php echo 'print_'.$row['book_id'] ?>">
                         <div class="bg-primary text-white p-3">
                             <h4 class="mb-0">
                                 <?php echo $route_from["location_name"] . ' &#x2192; ' . $route_to["location_name"] ?>
@@ -134,6 +134,10 @@
                             <p class="mb-0 d-flex align-items-center justify-content-between">
                                 <span class="text-muted">Reference:</span>
                                 <span class="font-weight-bold"><?php echo $row['book_reference'] ?></span>
+                            </p>
+                            <p class="mb-0 d-flex align-items-center justify-content-between">
+                                <span class="text-muted">Upload ID:</span>
+                                <span class="font-weight-bold"><?php echo $row['upload_id'] ?></span>
                             </p>
                             <p class="mb-0 d-flex align-items-center justify-content-between">
                                 <span class="text-muted">Passenger Type:</span>
@@ -205,6 +209,7 @@
         </div>
     </div>
 </div>
+
 
 <div class="tab-pane fade p-3" id="Confirmed" role="tabpanel" aria-labelledby="Confirmed-tab">
     <div class="row">

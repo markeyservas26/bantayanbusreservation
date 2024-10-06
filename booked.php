@@ -108,7 +108,6 @@ if(empty($schedule_id)){
                         <option value="student">Student</option>
                         <option value="senior">Senior Citizen</option>
                         <option value="pwd">Person with Disability (PWD)</option>
-                        <option value="luggage">Luggage</option> <!-- Added Luggage Option -->
                     </select>
                 </div>
                 <div class="form-group" id="uploadIdSection" style="display: none;">
@@ -116,14 +115,6 @@ if(empty($schedule_id)){
                     <input type="file" id="uploadId" class="form-control">
                 </div>
                 
-                <hr />
-
-                <!-- Luggage Count Section -->
-                <div class="form-group" id="luggageCountSection" style="display: none;">
-                    <label for="luggageCount">Number of Luggage:</label>
-                    <input type="number" id="luggageCount" class="form-control" min="1" value="1">
-                </div>
-
                 <hr />
 
                 <!-- Seat Selection -->
@@ -179,15 +170,11 @@ if(empty($schedule_id)){
                 </div>
                 <hr />
                 
-                 <!-- Fare, Discount, and Total -->
+                <!-- Fare, Discount, and Total -->
                 <div id="fareSection">
                     <p class="d-flex align-items-center justify-content-between mb-0">
                         <span class="text-muted d-block">Fare per Seat:</span>
                         <strong id="farePerSeat"><?php echo $schedule['fare'] ?></strong>
-                    </p>
-                    <p class="d-flex align-items-center justify-content-between mb-0">
-                        <span class="text-muted d-block">Luggage Fee:</span>
-                        <strong id="luggageFee">0.00</strong>
                     </p>
                     <p class="d-flex align-items-center justify-content-between mb-0">
                         <span class="text-muted d-block">Discount Amount:</span>
@@ -225,109 +212,106 @@ if(empty($schedule_id)){
     let seats = [];
     let discount = 0;
     let totalFare = 0;
-    const luggageFarePerPiece = 50; // Set your luggage fee per piece
-    let luggageFee = 0;
 
     $("#passengerType").change(function() {
-    const passengerType = $(this).val();
-    $("#uploadIdSection").hide();
-    $("#luggageCountSection").hide();
-    $(".btn-seat").prop("disabled", false); // Enable seat selection by default
-    luggageFee = 0; // Reset luggage fee
-    discount = 0; // Reset discount to 0 by default
+        const passengerType = $(this).val();
+        if (passengerType === "student" || passengerType === "senior" || passengerType === "pwd") {
+            discount = 0.20;
+            $("#uploadIdSection").show();
+        } else {
+            discount = 0;
+            $("#uploadIdSection").hide();
+        }
+        handleTotal();
+    });
 
-    if (passengerType === "student" || passengerType === "senior" || passengerType === "pwd") {
-        discount = 0.20; // 20% discount
-        $("#uploadIdSection").show();
-    } else if (passengerType === "luggage") {
-        $("#luggageCountSection").show();
-        $(".btn-seat").prop("disabled", true); // Disable seat selection
-        discount = 0; // Set discount to 0 when "Luggage" is selected
+    $(".btn-seat").click(function() {
+        const seat = $(this).data("seat");
+
+        if($(this).hasClass("btn-outline-dark")) {
+            $(this).removeClass("btn-outline-dark").addClass("bg-dark text-white");
+            seats.push(seat);
+        } else {
+            $(this).addClass("btn-outline-dark").removeClass("bg-dark text-white");
+            seats = seats.filter(s => s !== seat);
+        }
+
+        handleTotal();
+    });
+
+    function handleTotal() {
+        const discountAmount = fare * discount;
+        totalFare = seats.length * fare * (1 - discount);
+        $("#farePerSeat").text(fare.toFixed(2));
+        $("#discountAmount").text(discountAmount.toFixed(2));
+        $("#total").text(totalFare.toFixed(2));
     }
-
-    handleTotal();
-});
-
-$("#luggageCount").on('input', function() {
-    luggageFee = parseInt($(this).val()) * luggageFarePerPiece;
-    handleTotal();
-});
-
-$(".btn-seat").click(function() {
-    const seat = $(this).data("seat");
-
-    if ($(this).hasClass("btn-outline-dark")) {
-        $(this).removeClass("btn-outline-dark").addClass("bg-dark text-white");
-        seats.push(seat);
-    } else {
-        $(this).addClass("btn-outline-dark").removeClass("bg-dark text-white");
-        seats = seats.filter(s => s !== seat);
-    }
-
-    handleTotal();
-});
-
-function handleTotal() {
-    const discountAmount = fare * discount;
-    totalFare = (seats.length * fare) + luggageFee - discountAmount;
-    $("#farePerSeat").text(fare.toFixed(2));
-    $("#luggageFee").text(luggageFee.toFixed(2));
-    $("#discountAmount").text(discountAmount.toFixed(2));
-    $("#total").text(totalFare.toFixed(2));
-}
-
 
     $("#booked").click(async function() {
-        if (seats.length === 0 && $("#passengerType").val() !== "luggage") {
-            alert('Please select seat number or add luggage.');
+        if (seats.length === 0) {
+            alert('Please select seat number.');
             return;
         }
 
         if (!passenger_id) {
-            alert('Please log in to book your ticket.');
+            alert('Unable to create booking. Please sign in to your account.');
             return;
         }
 
-        const seatNum = JSON.stringify(seats);
-        const schedule_id = schedule_id;
-        const passenger_id = passenger_id;
-        const payment_status = 'pending';
-        const total = totalFare.toFixed(2);
-        const routeName = routeName;
-        const passenger_type = $("#passengerType").val();
-        const luggageCount = passenger_type === "luggage" ? $("#luggageCount").val() : 0;
-        const upload_id = passenger_type === 'student' || passenger_type === 'senior' || passenger_type === 'pwd' ? $('#uploadId').val() : '';
-        
-        // AJAX request to create a booking
-        $.ajax({
-            url: 'controllers/book.php',
-            type: 'POST',
-            data: {
-                schedule_id,
-                passenger_id,
-                seatNum,
-                payment_status,
-                total,
-                routeName,
-                passenger_type,
-                luggageCount,
-                upload_id
-            },
-            success: function(response) {
-                if(response.success) {
-                    alert('Booking successful!');
-                    window.location.href = "index.php";
-                } else {
-                    alert(response.message);
+        if (!isVerified) {
+            alert('Unable to create booking. Please verify your account.');
+            return;
+        }
+
+        const passengerType = $("#passengerType").val();
+        const uploadIdFile = $("#uploadId")[0].files[0];
+
+        if (passengerType !== "regular" && !uploadIdFile) {
+            alert('Please upload an ID for discounted passengers.');
+            return;
+        }
+
+        if (status === 'waiting') {
+            let promises = [];
+            for (let i = 0; i < seats.length; i++) {
+                const seat = seats[i];
+
+                let formData = new FormData();
+                formData.append('type', 1);
+                formData.append('schedule_id', schedule_id);
+                formData.append('passenger_id', passenger_id);
+                formData.append('total', totalFare);
+                formData.append('seat_num', seat);
+                formData.append('routeName', routeName);
+                formData.append('passenger_email', passenger_email);
+                formData.append('passenger_type', passengerType);
+
+                // Append the uploaded file to the FormData
+                if (uploadIdFile) {
+                    formData.append('upload_id', uploadIdFile);
                 }
-            },
-            error: function(err) {
-                console.error(err);
-                alert('An error occurred while booking. Please try again.');
+
+                promises.push(
+                    fetch('controllers/create-booking.php', {
+                        method: 'POST',
+                        body: formData,
+                    })
+                );
             }
-        });
+
+            try {
+                const values = await Promise.all(promises);
+                console.log('values', values);
+                alert("New booking added successfully!");
+                window.location.href = 'account.php';
+            } catch (error) {
+                alert("Error on booking.");
+                location.reload();
+            }
+        } else {
+            alert('Oops! Unable to book this schedule.');
+            return;
+        }
     });
 </script>
-
-<?php include('includes/layout-footer.php'); ?>
-<?php include('includes/scripts.php')?>
+<?php include('includes/layout-footer.php')?>

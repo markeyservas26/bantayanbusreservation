@@ -411,7 +411,7 @@
 
 
             <div class="tab-pane fade bg-white p-3 border-right border-left border-bottom" id="settings" role="tabpanel" aria-labelledby="settings-tab">
-                <form method="POST" action="">
+                <form method="POST" action="" style="margin-top: -1700px;">
                     <div class="form-row mb-3">
                      <div class="col-md-6">
                             <label for="first_name"><b>First Name</label></b>

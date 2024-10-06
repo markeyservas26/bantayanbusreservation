@@ -9,7 +9,7 @@
             $payment_status=$_POST['payment_status'];
             $email=$_POST['email'];
             
-            $sql = "UPDATE `tblbook` SET `payment_status`='$payment_status' WHERE id=$id";
+            $sql = "UPDATE `tblbooks` SET `payment_status`='$payment_status' WHERE id=$id";
             if (mysqli_query($conn, $sql)) {
                 $to = $email;
     

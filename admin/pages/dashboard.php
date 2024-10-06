@@ -59,7 +59,7 @@
                 <p class="mb-0" style="font-family: 'Times New Roman', serif;"><b>TOTAL BOOKINGS</b></p>
                 <h1>
                     <?php
-                    $q = mysqli_query($conn,"SELECT * from tblbook");
+                    $q = mysqli_query($conn,"SELECT * from tblbooks");
                     $num_rows = mysqli_num_rows($q);
                     echo $num_rows;
                     ?>
@@ -249,7 +249,7 @@ background-image: linear-gradient(0deg, #D9AFD9 0%, #97D9E1 100%);
             MONTH(book_date) as month_number, 
             MONTHNAME(book_date) as month, 
             COUNT(*) as total 
-        FROM tblbook 
+        FROM tblbooks
         GROUP BY MONTH(book_date) 
         ORDER BY MONTH(book_date)";
     
